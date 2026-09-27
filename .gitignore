@@ -1,0 +1,30 @@
+.DS_Store
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Next.js build output
+.next/
+**/.next/
+out/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local/private evidence. Keep templates in git, but avoid raw screenshots
+# or identifiable participant data unless the repo is private and approved.
+Evidence_Hub/**/Competitor_Screenshots/
+Evidence_Hub/**/*截图*
+Evidence_Hub/**/*原始*
+Evidence_Hub/**/*录音*
+Evidence_Hub/**/*recording*
+Evidence_Hub/**/*Recording*

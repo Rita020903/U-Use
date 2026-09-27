@@ -1,0 +1,196 @@
+U Use｜Weekly Log：Week 4 到 Week 14 骨架（黄yx 每周填空即可）
+用法：每周六前，把当周那一块复制到在线 Weekly Log 文档末尾，填掉「【填】」的地方。
+每块都按课程邮件要求的 7 项写好了框架：产出与版本 / 变化 / 最强与反面证据 / 决策与理由 / supervisor 的 action / ≤3 个问题 / 三项 declarations。
+════════════════════════════════════════════
+
+──────────────── Week 4 Entry（2026-09-28 – 10-04）────────────────
+本周 named output 与版本：Research Design v1 + Consent & Data Plan v1 + 问卷（投放）
+更新日期：【填 10-03 前】
+1. 本周产出与版本
+· 研究设计与数据计划 —— Evidence_Hub/Week_4/W4_Research_Design_v1.md
+· 同意与数据计划（含在上一份文件第 3 节）
+· 问卷最终版已投放 —— Evidence_Hub/Week_5/W05_问卷成品_v1.md
+2. 相比上次 checkpoint 改变了什么
+· 从"做市场"转向"设计研究方法"：5 条研究问题分别对应假设 H01-H07。
+· 制定同意与数据计划（不收集姓名/学号，访谈用匿名编号）。
+3. 最强证据 / 反面证据
+· 最强证据：问卷已投放，回收数【填 实际份数】。
+· 反面证据：访谈尚未开始；问卷样本仍可能集中在熟人圈。
+4. 团队决策与理由
+· 决策：先做 3 次访谈 + 2 次原型测试，凑满 5 次用户互动。
+· 理由：handbook Week 5 明确要求 3-5 次；原型测试可复用 Week 9 的任务卡。
+· Blocker / 风险：【填】
+5. Supervisor 指定的 action
+· 【填 session 后老师的话】
+6. 给 supervisor 的问题（≤3）
+1. 5 人访谈 + 20 份问卷的样本量对 A1 是否足够？
+2. 原型测试算不算"user interaction"？
+3. 【填】
+7. 三项 Team Declarations
+□ 材料全组看过　□ 证据可追溯、伦理合规　□ AI 使用已记录并人工核实
+
+──────────────── Week 5 Entry（2026-10-12 – 10-18）────────────────
+本周 named output 与版本：Primary Data Collection v1（3-5 次用户互动 + 原始证据）
+更新日期：【填 10-17 前】
+1. 本周产出与版本
+· 访谈记录 U01-U0x（匿名）—— Evidence_Hub/Week_5/
+· 原型测试记录 T01-T02 —— Evidence_Hub/Week_5/
+· 问卷结果 —— Evidence_Hub/Week_5/W05_Survey_Results_v1.xlsx（回收【填】份）
+· 中间小结 —— W05_Primary_Data_Collection_v1.md 第 3 节
+2. 相比上次 checkpoint 改变了什么
+· 首次有了一手证据；市场测算的 I3/I4 用问卷数据替换，另存 W3_Market_Sizing_v2.md。
+3. 最强证据 / 反面证据
+· 最强证据：【填 那条最有力的原话 + 编号】；问卷 Q3「经常+偶尔」占比【填】%。
+· 反面证据：【填 与我们预期不符的结果，必须写】
+4. 团队决策与理由
+· 决策：【填 根据证据做了什么调整】
+· Blocker / 风险：【填】
+5. Supervisor 指定的 action
+· 【填】
+6. 给 supervisor 的问题（≤3）
+1. 我们是否需要扩大样本？2. 【填】 3. 【填】
+7. 三项 Team Declarations
+□ 材料全组看过　□ 证据可追溯、伦理合规　□ AI 使用已记录并人工核实
+
+──────────────── Week 6 Entry（2026-10-19 – 10-25）────────────────
+本周 named output 与版本：Insight Synthesis v1 + Persona/Journey v2 + Pivot/Persevere 决策
+更新日期：【填 10-24 前】
+1. 本周产出与版本
+· 洞察聚类（≥3 条）—— Evidence_Hub/Week_6/W6_Insight_Synthesis_v1.md
+· Persona 与 Journey Map v2 —— 08_用户画像与用户旅程.md（用真实证据改写）
+· Problem Statement v2
+2. 相比上次 checkpoint 改变了什么
+· 从"收集证据"转向"分析证据"；问题陈述按数据修订。
+3. 最强证据 / 反面证据
+· 最强证据：洞察 I-1【填】支持证据【填】。
+· 反面证据：洞察 I-【填】存在反例【填】。
+4. 团队决策与理由
+· 决策：□ Persevere（继续 U Use）　□ Pivot（转向【填】）
+· 理由（必须引用证据 ID）：【填】
+· Blocker / 风险：【填】
+5. Supervisor 指定的 action
+· 【填】
+6. 给 supervisor 的问题（≤3）
+1. 我们的洞察是否足够"分析型"？2. 【填】 3. 【填】
+7. 三项 Team Declarations
+□ 材料全组看过　□ 证据可追溯、伦理合规　□ AI 使用已记录并人工核实
+
+──────────────── Week 7 Entry（2026-10-26 – 11-01）────────────────
+本周 named output 与版本：Option Comparison v1 + A1 Six-Slide Storyboard v1
+更新日期：【填 10-31 前】
+1. 本周产出与版本
+· 三方案加权比较（A 二手 3.00 / B 回收 2.85 / C U Use 4.90）—— Evidence_Hub/Week_7/W7_Ideation_与_Storyboard_v1.md
+· 六页 storyboard —— 02_A1_六页PitchDeck_可直接改.md
+2. 相比上次 checkpoint 改变了什么
+· 依据新证据复核了评分权重，改动处已记录原因。
+3. 最强证据 / 反面证据
+· 最强证据：三方案在用户目标上互不可替换。
+· 反面证据：【填】
+4. 团队决策与理由
+· 决策：选定方案 C（U Use）作为 A1 主线。
+· 理由：【填，引用 W6 洞察与比较矩阵】
+· Blocker / 风险：A1 还有【填】页没有证据支撑。
+5. Supervisor 指定的 action
+· 【填】
+6. 给 supervisor 的问题（≤3）
+1. storyboard 的页序是否符合评分标准？2. 【填】 3. 【填】
+7. 三项 Team Declarations
+□ 材料全组看过　□ 证据可追溯、伦理合规　□ AI 使用已记录并人工核实
+
+──────────────── Week 8 Entry（2026-11-02 – 11-08）★ A1 提交周 ────────────────
+本周 named output 与版本：BMC v1 + Claim-Evidence Map v1 + **A1 六页 deck（正式提交）**
+更新日期：【填 11-07 前】
+1. 本周产出与版本
+· A1 最终 deck（6 页，无 appendix）—— 文件名【填】
+· BMC —— Evidence_Hub/Week_8/W8_BMC_与_A1提交_v1.md
+· Claim-Evidence Map —— 16_Claim_Evidence_Map.md（每条 claim 均有证据 ID）
+2. 相比上次 checkpoint 改变了什么
+· deck 收敛到严格 6 页；每个 claim 都挂了证据 ID。
+3. 最强证据 / 反面证据
+· 最强证据：【填 一手证据中最强的一条 + 编号】
+· 反面证据：【填 仍未验证的部分】
+4. 团队决策与理由
+· 决策：11-06 提交 A1，版本【填】。
+· Blocker / 风险：提交系统 / 文件格式风险已通过【填】规避。
+5. Supervisor 指定的 action
+· 【填】
+6. 给 supervisor 的问题（≤3）
+1. 【填】 2. 【填】 3. 【填】
+7. 三项 Team Declarations（提交周必须全部打勾）
+□ 材料全组看过　□ 证据可追溯、伦理合规　□ AI 使用已记录并人工核实
+※ 附：A1 提交回执已存 Evidence_Hub/Week_8/，提交时间【填】
+
+──────────────── Week 9 Entry（2026-11-09 – 11-15）────────────────
+本周 named output 与版本：Prototype Test（≥3 人）+ Iteration Log v1 + A1 反馈自查
+更新日期：【填 11-14 前】
+1. 本周产出与版本
+· 原型测试记录 T01-T03 —— Evidence_Hub/Week_9/
+· 迭代日志 —— W9_原型测试与迭代_v1.md 第 3 节
+· A1 反馈自查表 —— 22_A1反馈自查表.md
+2. 相比上次 checkpoint 改变了什么
+· 根据测试结果改了【填 具体改动】。
+3. 最强证据 / 反面证据
+· 最强证据：【填 用户在测试中的真实反应】
+· 反面证据：【填 用户卡住/误解的地方】
+4. 团队决策与理由
+· 决策：【填】；Blocker / 风险：【填】
+5. Supervisor 指定的 action
+· 【填】
+6. 给 supervisor 的问题（≤3）
+1. 原型测试的样本量是否足够？2. 【填】 3. 【填】
+7. 三项 Team Declarations
+□ 材料全组看过　□ 证据可追溯、伦理合规　□ AI 使用已记录并人工核实
+
+──────────────── Week 10 Entry（2026-11-16 – 11-22）────────────────
+本周 named output 与版本：Semester 1 Evidence Close-Out v1 + A2 Roadmap v1
+更新日期：【填 11-21 前】
+1. 本周产出与版本
+· 归档清单（13 项）—— Evidence_Hub/Week_10/W10_Semester1_CloseOut_v1.md
+· A2 路线图与 Week 11-14 构建目标
+· Semester 1 checkpoint 记录（导师签核）
+2. 相比上次 checkpoint 改变了什么
+· Semester 1 证据全部归档；目标从 A1 转向 A2。
+3. 最强证据 / 反面证据
+· 最强证据：【填】；反面证据：【填】
+4. 团队决策与理由
+· 决策：Week 11-14 的四个构建目标【填】。理由：【填】
+· Blocker / 风险：【填】
+5. Supervisor 指定的 action
+· 【填】
+6. 给 supervisor 的问题（≤3）
+1. A2 视频最想看到哪个部分？2. 【填】 3. 【填】
+7. 三项 Team Declarations
+□ 材料全组看过　□ 证据可追溯、伦理合规　□ AI 使用已记录并人工核实
+
+──────────────── Week 11 Entry（2026-11-23 – 11-29）────────────────
+本周 named output：学生端 MVP 打磨 + 素材库建立
+1. 产出与版本：【填 改了哪些功能】—— xjtlu-market-app/
+2. 相比上次改变：【填】　3. 最强/反面证据：【填】
+4. 决策与理由：【填】　5. Supervisor action：【填】
+6. 问题：1.【填】 2.【填】 3.【填】
+7. 三项 Declarations：□ □ □
+
+──────────────── Week 12 Entry（2026-11-30 – 12-06）────────────────
+本周 named output：双校区与信任流程 + A2 脚本初稿
+1. 产出与版本：【填】　2. 相比上次改变：【填】　3. 最强/反面证据：【填】
+4. 决策与理由：【填】　5. Supervisor action：【填】
+6. 问题：1.【填】 2.【填】 3.【填】
+7. 三项 Declarations：□ □ □
+
+──────────────── Week 13 Entry（2026-12-07 – 12-13）────────────────
+本周 named output：管理端可演示 + 视频片段录制完成
+1. 产出与版本：【填】　2. 相比上次改变：【填】　3. 最强/反面证据：【填】
+4. 决策与理由：【填】　5. Supervisor action：【填】
+6. 问题：1.【填】 2.【填】 3.【填】
+7. 三项 Declarations：□ □ □
+
+──────────────── Week 14 Entry（2026-12-14 – 12-20）★ A2 提交周 ────────────────
+本周 named output：**A2 3-6 分钟 Pitch Video（正式提交）**
+1. 产出与版本：视频【填 时长】分钟，文件名【填】
+2. 相比上次改变：完成剪辑与全组审片
+3. 最强/反面证据：【填】
+4. 决策与理由：最终版本的选择理由【填】
+5. Supervisor action：【填】
+6. 问题：1.【填】 2.【填】 3.【填】
+7. 三项 Declarations（提交周必须全部打勾）：□ □ □
+※ 附：A2 提交回执已存 Evidence_Hub/Week_11-14/，提交时间【填】

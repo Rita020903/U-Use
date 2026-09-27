@@ -1,0 +1,1520 @@
+<!doctype html>
+<html lang="en" data-visualize-standalone>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Xjtlu Market</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Xjtlu Market" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Xjtlu Market&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --icon-size: 16px;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --corner-shape: round;
+  --radius: var(--border-radius-lg, 10px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: var(--visualize-paint-gutter, 0px);
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: var(--corner-shape);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.nav-link,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn,
+.nav-link {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover,
+.nav-link:not(:disabled):not([aria-disabled=&quot;true&quot;]):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled=&quot;true&quot;] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: var(--corner-shape);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, var(--font-size-normal));
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+
+  .form-range::-webkit-slider-runnable-track {
+    height: 44px;
+  }
+
+  .form-range::-moz-range-track {
+    height: 44px;
+  }
+
+  .form-range::-webkit-slider-thumb {
+    margin-top: 12px;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;xjtlu-market-complete&quot;&gt;
+  &lt;style&gt;
+    #xjtlu-market-complete{--ink:#17241e;--muted:#718078;--line:#e5ebe6;--bg:#f5f8f4;--white:#fff;--green:#176b51;--deep:#103f32;--mint:#e9f4ee;--gold:#f2c66b;--orange:#a6672d;--red:#b9574b;color:var(--ink);background:var(--bg);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,&quot;PingFang SC&quot;,&quot;Microsoft YaHei&quot;,sans-serif;min-height:790px;padding:18px}
+    #xjtlu-market-complete *{box-sizing:border-box}#xjtlu-market-complete button,#xjtlu-market-complete input,#xjtlu-market-complete select,#xjtlu-market-complete textarea{font:inherit}#xjtlu-market-complete button{cursor:pointer}
+    .uc-frame{width:min(430px,100%);margin:auto;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:var(--white);box-shadow:0 18px 50px rgba(22,43,32,.14)}.uc-app{min-height:754px;position:relative;background:var(--bg)}
+    .uc-header{padding:17px;background:var(--white);border-bottom:1px solid var(--line)}.uc-topline,.uc-titleline,.uc-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.uc-brand{display:flex;align-items:center;gap:9px}.uc-logo{width:30px;height:30px;display:grid;place-items:center;border-radius:8px;background:var(--green);color:#fff;font-weight:800}.uc-brand strong{display:block;font-size:15px}.uc-brand small{color:var(--muted);font-size:10px}.uc-verified{color:var(--green);background:var(--mint);border-radius:999px;padding:6px 8px;font-size:10px}.uc-titleline{margin-top:16px;align-items:end}.uc-titleline h1{margin:0;font-size:25px;line-height:1.14}.uc-titleline p{margin:6px 0 0;color:var(--muted);font-size:12px}.uc-campus{min-width:110px;border:1px solid var(--line);background:#fff;border-radius:10px;padding:8px 9px;text-align:left}.uc-campus span{display:block;color:var(--muted);font-size:10px}.uc-campus b{display:block;color:var(--green);font-size:13px;margin-top:2px}.uc-search{display:flex;align-items:center;gap:8px;margin-top:14px;padding:10px 11px;background:#fff;border:1px solid var(--line);border-radius:11px}.uc-search input{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:14px}
+    .uc-main{padding:14px 14px 83px;max-height:616px;overflow:auto}.uc-tabs,.uc-controls,.uc-actions,.uc-choice{display:grid;grid-template-columns:1fr 1fr;gap:8px}.uc-tabs{margin-bottom:12px}.uc-tab{padding:10px 8px;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--muted);font-size:13px}.uc-tab.active{border-color:var(--green);color:#fff;background:var(--green)}
+    .uc-map{height:208px;position:relative;overflow:hidden;margin-bottom:11px;border-radius:17px;background:#dceade;border:1px solid #d2e0d4}.uc-map:before{content:&quot;&quot;;position:absolute;inset:16px 18px 20px;border-radius:37% 18% 29% 17%;border:1px solid #bdd3c0;background:#eef6ea;transform:rotate(-6deg)}.uc-map:after{content:&quot;&quot;;position:absolute;z-index:1;width:80%;height:17px;left:10%;top:98px;border-top:3px solid #c5d8c1;border-bottom:3px solid #c5d8c1;transform:rotate(-18deg)}.uc-map.taicang:before{border-radius:23% 41% 20% 35%;transform:rotate(8deg)}.uc-map.taicang:after{top:105px;transform:rotate(16deg)}.uc-map-label,.uc-map-note{position:absolute;z-index:5;padding:6px 8px;border-radius:7px;background:rgba(255,255,255,.88);font-size:10px}.uc-map-label{top:11px;left:11px;color:var(--green);font-weight:800}.uc-map-note{right:10px;bottom:9px;color:var(--muted)}.uc-place{position:absolute;z-index:2;padding:5px 7px;border:1px solid #d2e0d6;border-radius:6px;background:rgba(255,255,255,.84);color:var(--muted);font-size:10px}.uc-place.a{left:19px;top:43px}.uc-place.b{right:19px;top:44px}.uc-place.c{left:120px;bottom:26px}.uc-place.d{right:37px;bottom:32px}.uc-pin{position:absolute;z-index:4;width:28px;height:28px;padding:0;border:2px solid #fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--green);color:#fff;box-shadow:0 4px 9px rgba(0,0,0,.18)}.uc-pin span{display:block;transform:rotate(45deg);font-size:10px;font-weight:800}.uc-pin.p1{left:40%;top:31%}.uc-pin.p2{left:62%;top:52%;background:#b87334}.uc-pin.p3{left:26%;top:61%;background:#536e9f}.uc-pin.me{left:49%;top:48%;width:23px;height:23px;transform:none;border-radius:50%;background:var(--gold);color:var(--deep)}.uc-pin.me span{transform:none;font-size:13px}
+    .uc-controls{margin-bottom:12px}.uc-control{width:100%;border:1px solid var(--line);border-radius:11px;background:#fff;color:var(--muted);padding:10px;font-size:12px}.uc-control.on{color:var(--green);background:var(--mint);border-color:#bdd7c4}
+    .uc-list{display:grid;gap:9px}.uc-item{display:grid;grid-template-columns:70px 1fr;gap:10px;width:100%;padding:9px;border:1px solid var(--line);border-radius:13px;background:#fff;text-align:left}.uc-item.active{outline:2px solid var(--green)}.uc-thumb{height:70px;display:grid;place-items:center;border-radius:10px;background:#e0ebdf;font-size:30px}.uc-thumb.orange{background:#f2e0c9}.uc-thumb.blue{background:#dfe5f1}.uc-thumb.red{background:#edd9d4}.uc-thumb.gold{background:#e9e7c9}.uc-item h3{margin:2px 0 8px;font-size:14px;line-height:1.25}.uc-price{color:var(--green);font-size:17px;font-weight:850}.uc-meta{color:var(--muted);font-size:11px}.uc-cross{color:var(--orange);background:#fff0da;border-radius:5px;padding:3px 6px;font-size:10px}.uc-empty{padding:25px 10px;color:var(--muted);text-align:center;font-size:13px}
+    .uc-panel{display:none}.uc-panel.active{display:block}.uc-section-title{margin:0 0 13px;font-size:20px;line-height:1.2}.uc-copy{margin:-5px 0 15px;color:var(--muted);font-size:12px;line-height:1.5}.uc-detail,.uc-card{padding:14px;border:1px solid var(--line);border-radius:15px;background:#fff;margin-bottom:10px}.uc-detail h2{margin:11px 0 9px;font-size:20px;line-height:1.25}.uc-detail-visual{height:150px;display:grid;place-items:center;border-radius:12px;background:#e0ebdf;font-size:69px}.uc-detail-price{margin:0 0 12px;color:var(--green);font-size:27px;font-weight:900}.uc-line{display:grid;grid-template-columns:50px 1fr;gap:8px;padding:11px 0;border-top:1px solid var(--line);font-size:12px;line-height:1.45}.uc-line b{color:var(--muted);font-weight:500}.uc-primary,.uc-secondary,.uc-danger{border-radius:10px;padding:11px;font-size:12px;font-weight:750}.uc-primary{border:0;background:var(--green);color:#fff}.uc-secondary{border:1px solid var(--line);background:#fff;color:var(--ink)}.uc-danger{border:1px solid #efd5d2;background:#fff7f6;color:var(--red)}
+    .uc-form{display:grid;gap:11px}.uc-form label{display:grid;gap:6px;color:var(--muted);font-size:11px;font-weight:700}.uc-form input,.uc-form select,.uc-form textarea{width:100%;border:1px solid var(--line);outline:0;border-radius:9px;padding:10px;background:#fff;color:var(--ink);font-size:13px}.uc-form textarea{min-height:84px;resize:vertical}.uc-chat{display:grid;gap:10px}.uc-message{max-width:84%;padding:10px 11px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:12px;line-height:1.45}.uc-message.mine{margin-left:auto;color:#fff;background:var(--green);border-color:var(--green)}.uc-message small{display:block;margin-top:4px;opacity:.7;font-size:10px}.uc-profile-head{display:flex;align-items:center;gap:11px}.uc-avatar{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:#ead5c5;color:#754b34;font-size:17px}.uc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:13px}.uc-stat{padding:10px;border-radius:8px;background:var(--bg);text-align:center}.uc-stat b{display:block;font-size:19px}.uc-stat span{color:var(--muted);font-size:10px}.uc-menu{display:grid;gap:1px}.uc-menu button{display:flex;justify-content:space-between;border:0;border-bottom:1px solid var(--line);padding:13px 0;background:transparent;color:var(--ink);text-align:left;font-size:13px}.uc-admin-top{display:flex;justify-content:space-between;gap:9px;align-items:start;margin-bottom:14px}.uc-admin-top h2{margin:0;font-size:20px}.uc-admin-top small{color:var(--muted);display:block;margin-top:5px;font-size:11px}.uc-admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:13px}.uc-admin-stat{padding:12px;border:1px solid var(--line);border-radius:9px;background:#fff}.uc-admin-stat span{color:var(--muted);font-size:10px}.uc-admin-stat b{display:block;margin-top:4px;font-size:22px}.uc-case{padding:11px 0;border-top:1px solid var(--line);font-size:12px}.uc-case small{display:block;color:var(--muted);margin-top:4px}
+    .uc-bottom{position:absolute;left:0;right:0;bottom:0;z-index:7;height:64px;display:grid;grid-template-columns:repeat(5,1fr);background:rgba(255,255,255,.97);border-top:1px solid var(--line)}.uc-bottom button{border:0;background:transparent;color:var(--muted);font-size:10px;padding:7px 2px}.uc-bottom button strong{display:block;color:inherit;font-size:19px;line-height:1.1;font-weight:500}.uc-bottom button.active{color:var(--green);font-weight:800}.uc-toast{position:absolute;z-index:20;left:50%;bottom:75px;transform:translate(-50%,10px);opacity:0;pointer-events:none;padding:9px 13px;border-radius:999px;background:var(--ink);color:#fff;white-space:nowrap;font-size:12px;transition:.18s ease}.uc-toast.show{opacity:1;transform:translate(-50%,0)}
+    @media(max-width:460px){#xjtlu-market-complete{padding:0;min-height:760px}.uc-frame{width:100%;border:0;border-radius:0;box-shadow:none}}
+  &lt;/style&gt;
+  &lt;div class=&quot;uc-frame&quot;&gt;&lt;div class=&quot;uc-app&quot;&gt;
+    &lt;header class=&quot;uc-header&quot;&gt;
+      &lt;div class=&quot;uc-topline&quot;&gt;&lt;div class=&quot;uc-brand&quot;&gt;&lt;div class=&quot;uc-logo&quot;&gt;U&lt;/div&gt;&lt;div&gt;&lt;strong&gt;U Market&lt;/strong&gt;&lt;small&gt;西浦校园闲置&lt;/small&gt;&lt;/div&gt;&lt;/div&gt;&lt;span class=&quot;uc-verified&quot;&gt;✓ 邮箱已验证&lt;/span&gt;&lt;/div&gt;
+      &lt;div class=&quot;uc-titleline&quot;&gt;&lt;div&gt;&lt;h1 id=&quot;page-title&quot;&gt;发现闲置&lt;/h1&gt;&lt;p id=&quot;page-subtitle&quot;&gt;默认优先展示你所在校区&lt;/p&gt;&lt;/div&gt;&lt;button class=&quot;uc-campus&quot; id=&quot;campus-switch&quot;&gt;&lt;span&gt;当前校区&lt;/span&gt;&lt;b id=&quot;campus-name&quot;&gt;SIP&lt;/b&gt;&lt;/button&gt;&lt;/div&gt;
+      &lt;label class=&quot;uc-search&quot;&gt;⌕ &lt;input id=&quot;search&quot; placeholder=&quot;搜耳机、教材、自行车&quot;&gt;&lt;/label&gt;
+    &lt;/header&gt;
+    &lt;main class=&quot;uc-main&quot;&gt;
+      &lt;section class=&quot;uc-panel active&quot; data-panel=&quot;home&quot;&gt;
+        &lt;div class=&quot;uc-tabs&quot;&gt;&lt;button class=&quot;uc-tab active&quot; data-scope=&quot;local&quot;&gt;本校区优先&lt;/button&gt;&lt;button class=&quot;uc-tab&quot; data-scope=&quot;cross&quot;&gt;跨校区可交易&lt;/button&gt;&lt;/div&gt;
+        &lt;div class=&quot;uc-map&quot; id=&quot;map&quot; aria-label=&quot;校区附近商品地图&quot;&gt;&lt;span class=&quot;uc-map-label&quot; id=&quot;map-label&quot;&gt;SIP 校区 · 附近商品&lt;/span&gt;&lt;span class=&quot;uc-place a&quot;&gt;图书馆&lt;/span&gt;&lt;span class=&quot;uc-place b&quot;&gt;学生中心&lt;/span&gt;&lt;span class=&quot;uc-place c&quot;&gt;宿舍区&lt;/span&gt;&lt;span class=&quot;uc-place d&quot;&gt;校车点&lt;/span&gt;&lt;button class=&quot;uc-pin p1&quot; data-pin=&quot;1&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;/button&gt;&lt;button class=&quot;uc-pin p2&quot; data-pin=&quot;2&quot;&gt;&lt;span&gt;2&lt;/span&gt;&lt;/button&gt;&lt;button class=&quot;uc-pin p3&quot; data-pin=&quot;3&quot;&gt;&lt;span&gt;3&lt;/span&gt;&lt;/button&gt;&lt;button class=&quot;uc-pin me&quot;&gt;&lt;span&gt;⌖&lt;/span&gt;&lt;/button&gt;&lt;span class=&quot;uc-map-note&quot;&gt;点标记看商品&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;uc-controls&quot;&gt;&lt;button class=&quot;uc-control&quot; id=&quot;locate&quot;&gt;开启定位&lt;/button&gt;&lt;select class=&quot;uc-control&quot; id=&quot;sort&quot; aria-label=&quot;商品排序&quot;&gt;&lt;option value=&quot;near&quot;&gt;就近推荐&lt;/option&gt;&lt;option value=&quot;new&quot;&gt;最新发布&lt;/option&gt;&lt;option value=&quot;high&quot;&gt;价格高到低&lt;/option&gt;&lt;option value=&quot;low&quot;&gt;价格低到高&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+        &lt;div class=&quot;uc-list&quot; id=&quot;product-list&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
+      &lt;/section&gt;
+      &lt;section class=&quot;uc-panel&quot; data-panel=&quot;category&quot;&gt;&lt;h2 class=&quot;uc-section-title&quot;&gt;分类浏览&lt;/h2&gt;&lt;p class=&quot;uc-copy&quot;&gt;按需求快速筛选校园闲置，结果默认限定在当前校区。&lt;/p&gt;&lt;div class=&quot;uc-choice&quot; id=&quot;category-list&quot;&gt;&lt;button class=&quot;uc-secondary active&quot; data-category=&quot;全部&quot;&gt;全部&lt;/button&gt;&lt;button class=&quot;uc-secondary&quot; data-category=&quot;教材资料&quot;&gt;教材资料&lt;/button&gt;&lt;button class=&quot;uc-secondary&quot; data-category=&quot;数码产品&quot;&gt;数码产品&lt;/button&gt;&lt;button class=&quot;uc-secondary&quot; data-category=&quot;宿舍用品&quot;&gt;宿舍用品&lt;/button&gt;&lt;button class=&quot;uc-secondary&quot; data-category=&quot;交通&quot;&gt;自行车交通&lt;/button&gt;&lt;button class=&quot;uc-secondary&quot; data-category=&quot;生活用品&quot;&gt;生活用品&lt;/button&gt;&lt;/div&gt;&lt;div style=&quot;height:14px&quot;&gt;&lt;/div&gt;&lt;div class=&quot;uc-list&quot; id=&quot;category-results&quot;&gt;&lt;/div&gt;&lt;/section&gt;
+      &lt;section class=&quot;uc-panel&quot; data-panel=&quot;publish&quot;&gt;&lt;h2 class=&quot;uc-section-title&quot;&gt;发布闲置&lt;/h2&gt;&lt;p class=&quot;uc-copy&quot;&gt;发布后由平台审核，审核通过才会展示给同校同学。&lt;/p&gt;&lt;form class=&quot;uc-form&quot; id=&quot;publish-form&quot;&gt;&lt;label&gt;商品名称&lt;input required placeholder=&quot;例如：高等数学教材 2025 版&quot;&gt;&lt;/label&gt;&lt;label&gt;分类&lt;select&gt;&lt;option&gt;教材资料&lt;/option&gt;&lt;option&gt;数码产品&lt;/option&gt;&lt;option&gt;宿舍用品&lt;/option&gt;&lt;option&gt;交通&lt;/option&gt;&lt;option&gt;生活用品&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label&gt;价格&lt;input required placeholder=&quot;输入 0 表示免费&quot;&gt;&lt;/label&gt;&lt;label&gt;所在校区&lt;select&gt;&lt;option&gt;SIP 校区&lt;/option&gt;&lt;option&gt;太仓校区&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label&gt;交付地点&lt;input required placeholder=&quot;例如：图书馆门口 / 校车点&quot;&gt;&lt;/label&gt;&lt;label&gt;商品描述&lt;textarea placeholder=&quot;写清楚使用情况、瑕疵和可以交易的时间&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;button class=&quot;uc-primary&quot; type=&quot;submit&quot;&gt;提交审核&lt;/button&gt;&lt;/form&gt;&lt;/section&gt;
+      &lt;section class=&quot;uc-panel&quot; data-panel=&quot;messages&quot;&gt;&lt;h2 class=&quot;uc-section-title&quot;&gt;消息与预约&lt;/h2&gt;&lt;p class=&quot;uc-copy&quot;&gt;确认地点后再当面交易。&lt;/p&gt;&lt;div class=&quot;uc-card&quot;&gt;&lt;div class=&quot;uc-row&quot;&gt;&lt;strong&gt;王同学&lt;/strong&gt;&lt;span class=&quot;uc-meta&quot;&gt;刚刚&lt;/span&gt;&lt;/div&gt;&lt;p class=&quot;uc-copy&quot; style=&quot;margin:7px 0 0&quot;&gt;高数教材还在吗？我今晚可以在学生中心取。&lt;/p&gt;&lt;button class=&quot;uc-primary&quot; id=&quot;open-chat&quot; style=&quot;width:100%&quot;&gt;打开会话&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;uc-card&quot;&gt;&lt;div class=&quot;uc-row&quot;&gt;&lt;strong&gt;跨校区预约&lt;/strong&gt;&lt;span class=&quot;uc-cross&quot;&gt;待确认&lt;/span&gt;&lt;/div&gt;&lt;p class=&quot;uc-copy&quot; style=&quot;margin:7px 0 0&quot;&gt;太仓自行车 · 建议约校车点交付&lt;/p&gt;&lt;button class=&quot;uc-secondary&quot; id=&quot;confirm-cross&quot; style=&quot;width:100%&quot;&gt;查看预约&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;uc-chat&quot; id=&quot;chat-box&quot; style=&quot;display:none&quot;&gt;&lt;div class=&quot;uc-message&quot;&gt;你好，耳机还在吗？&lt;small&gt;买家 · 18:20&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;uc-message mine&quot;&gt;还在，可以在图书馆门口当面验货。&lt;small&gt;我 · 18:22&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;uc-message&quot;&gt;好的，我发起预约，今晚 19:00 见。&lt;small&gt;买家 · 18:23&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;uc-actions&quot;&gt;&lt;button class=&quot;uc-secondary&quot; id=&quot;report-chat&quot;&gt;举报&lt;/button&gt;&lt;button class=&quot;uc-primary&quot; id=&quot;complete-trade&quot;&gt;交易完成&lt;/button&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+      &lt;section class=&quot;uc-panel&quot; data-panel=&quot;profile&quot;&gt;&lt;h2 class=&quot;uc-section-title&quot;&gt;我的&lt;/h2&gt;&lt;div class=&quot;uc-card&quot;&gt;&lt;div class=&quot;uc-profile-head&quot;&gt;&lt;div class=&quot;uc-avatar&quot;&gt;林&lt;/div&gt;&lt;div&gt;&lt;strong&gt;林同学&lt;/strong&gt;&lt;div class=&quot;uc-verified&quot; style=&quot;display:inline-block;margin-top:5px&quot;&gt;✓ 西浦学生邮箱已验证&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;uc-stats&quot;&gt;&lt;div class=&quot;uc-stat&quot;&gt;&lt;b&gt;3&lt;/b&gt;&lt;span&gt;在售&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;uc-stat&quot;&gt;&lt;b&gt;8&lt;/b&gt;&lt;span&gt;完成交易&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;uc-stat&quot;&gt;&lt;b&gt;12&lt;/b&gt;&lt;span&gt;收藏&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;uc-card uc-menu&quot;&gt;&lt;button id=&quot;my-items&quot;&gt;我的发布 &lt;span&gt;3 件 ›&lt;/span&gt;&lt;/button&gt;&lt;button id=&quot;my-bookings&quot;&gt;我的预约 &lt;span&gt;2 条 ›&lt;/span&gt;&lt;/button&gt;&lt;button id=&quot;my-favorites&quot;&gt;我的收藏 &lt;span&gt;12 件 ›&lt;/span&gt;&lt;/button&gt;&lt;button id=&quot;admin-entry&quot;&gt;运营管理 &lt;span&gt;管理员入口 ›&lt;/span&gt;&lt;/button&gt;&lt;/div&gt;&lt;/section&gt;
+      &lt;section class=&quot;uc-panel&quot; data-panel=&quot;admin&quot;&gt;&lt;div class=&quot;uc-admin-top&quot;&gt;&lt;div&gt;&lt;h2&gt;运营后台&lt;/h2&gt;&lt;small&gt;西浦双校区 · 2026 年 9 月 14 日&lt;/small&gt;&lt;/div&gt;&lt;button class=&quot;uc-secondary&quot; id=&quot;admin-back&quot;&gt;返回用户端&lt;/button&gt;&lt;/div&gt;&lt;div class=&quot;uc-admin-grid&quot;&gt;&lt;div class=&quot;uc-admin-stat&quot;&gt;&lt;span&gt;认证用户&lt;/span&gt;&lt;b&gt;1,284&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;uc-admin-stat&quot;&gt;&lt;span&gt;在售商品&lt;/span&gt;&lt;b&gt;386&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;uc-admin-stat&quot;&gt;&lt;span&gt;待处理举报&lt;/span&gt;&lt;b style=&quot;color:var(--u-red)&quot;&gt;7&lt;/b&gt;&lt;/div&gt;&lt;div class=&quot;uc-admin-stat&quot;&gt;&lt;span&gt;本周成交&lt;/span&gt;&lt;b&gt;96&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;uc-card&quot;&gt;&lt;strong&gt;待处理事项&lt;/strong&gt;&lt;div class=&quot;uc-case&quot;&gt;&lt;b&gt;MacBook Air M1&lt;/b&gt;&lt;small&gt;商品审核 · 赵同学 · 10 分钟前&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;uc-case&quot;&gt;&lt;b&gt;低价代购球鞋&lt;/b&gt;&lt;small&gt;疑似诈骗举报 · 需要查看证据&lt;/small&gt;&lt;/div&gt;&lt;div class=&quot;uc-case&quot;&gt;&lt;b&gt;邮箱异常登录&lt;/b&gt;&lt;small&gt;账号风控 · 同一邮箱多设备&lt;/small&gt;&lt;/div&gt;&lt;button class=&quot;uc-primary&quot; id=&quot;admin-process&quot; style=&quot;width:100%&quot;&gt;处理第一条&lt;/button&gt;&lt;/div&gt;&lt;/section&gt;
+      &lt;section class=&quot;uc-panel&quot; data-panel=&quot;detail&quot;&gt;&lt;div id=&quot;detail-content&quot;&gt;&lt;/div&gt;&lt;/section&gt;
+      &lt;section class=&quot;uc-panel&quot; data-panel=&quot;booking&quot;&gt;&lt;h2 class=&quot;uc-section-title&quot;&gt;确认交易预约&lt;/h2&gt;&lt;p class=&quot;uc-copy&quot; id=&quot;booking-copy&quot;&gt;请确认公共区域、时间和交易方式。&lt;/p&gt;&lt;form class=&quot;uc-form&quot; id=&quot;booking-form&quot;&gt;&lt;label&gt;交付校区&lt;select id=&quot;booking-campus&quot;&gt;&lt;option&gt;SIP 校区&lt;/option&gt;&lt;option&gt;太仓校区&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label&gt;交付地点&lt;input required value=&quot;图书馆门口&quot;&gt;&lt;/label&gt;&lt;label&gt;预约时间&lt;input required value=&quot;今晚 19:00&quot;&gt;&lt;/label&gt;&lt;label&gt;备注&lt;textarea placeholder=&quot;例如：到达后在入口处联系，不进入宿舍楼&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;button class=&quot;uc-primary&quot; type=&quot;submit&quot;&gt;发送预约&lt;/button&gt;&lt;/form&gt;&lt;/section&gt;
+      &lt;section class=&quot;uc-panel&quot; data-panel=&quot;report&quot;&gt;&lt;h2 class=&quot;uc-section-title&quot;&gt;举报与反馈&lt;/h2&gt;&lt;p class=&quot;uc-copy&quot;&gt;举报对象：&lt;span id=&quot;report-target&quot;&gt;当前商品&lt;/span&gt;&lt;/p&gt;&lt;form class=&quot;uc-form&quot; id=&quot;report-form&quot;&gt;&lt;label&gt;举报原因&lt;select&gt;&lt;option&gt;疑似诈骗&lt;/option&gt;&lt;option&gt;商品与描述不符&lt;/option&gt;&lt;option&gt;违禁商品&lt;/option&gt;&lt;option&gt;骚扰或辱骂&lt;/option&gt;&lt;option&gt;诱导站外交易&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;&lt;label&gt;补充说明&lt;textarea required placeholder=&quot;请描述你发现的问题&quot;&gt;&lt;/textarea&gt;&lt;/label&gt;&lt;button class=&quot;uc-danger&quot; type=&quot;submit&quot;&gt;提交举报&lt;/button&gt;&lt;/form&gt;&lt;/section&gt;
+    &lt;/main&gt;
+    &lt;nav class=&quot;uc-bottom&quot; aria-label=&quot;底部导航&quot;&gt;&lt;button class=&quot;active&quot; data-nav=&quot;home&quot;&gt;&lt;strong&gt;⌂&lt;/strong&gt;发现&lt;/button&gt;&lt;button data-nav=&quot;category&quot;&gt;&lt;strong&gt;⌘&lt;/strong&gt;分类&lt;/button&gt;&lt;button data-nav=&quot;publish&quot;&gt;&lt;strong&gt;＋&lt;/strong&gt;发布&lt;/button&gt;&lt;button data-nav=&quot;messages&quot;&gt;&lt;strong&gt;◌&lt;/strong&gt;消息&lt;/button&gt;&lt;button data-nav=&quot;profile&quot;&gt;&lt;strong&gt;◯&lt;/strong&gt;我的&lt;/button&gt;&lt;/nav&gt;
+    &lt;div class=&quot;uc-toast&quot; id=&quot;toast&quot;&gt;已更新&lt;/div&gt;
+  &lt;/div&gt;&lt;/div&gt;
+  &lt;script&gt;
+    (function () {
+      var root = document.getElementById(&quot;xjtlu-market-complete&quot;);
+      var state = { campus: &quot;SIP&quot;, scope: &quot;local&quot;, located: false, category: &quot;全部&quot;, selected: null };
+      var products = [
+        { id: 1, title: &quot;Sony XM5 降噪耳机&quot;, price: 1280, campus: &quot;SIP&quot;, spot: &quot;图书馆&quot;, km: .4, category: &quot;数码产品&quot;, text: &quot;几乎全新&quot;, icon: &quot;🎧&quot;, tone: &quot;&quot; },
+        { id: 2, title: &quot;高数教材 + 习题册&quot;, price: 35, campus: &quot;SIP&quot;, spot: &quot;学生中心&quot;, km: .8, category: &quot;教材资料&quot;, text: &quot;轻微使用&quot;, icon: &quot;📚&quot;, tone: &quot;orange&quot; },
+        { id: 3, title: &quot;宜家白色书桌&quot;, price: 80, campus: &quot;SIP&quot;, spot: &quot;宿舍区&quot;, km: 1.3, category: &quot;宿舍用品&quot;, text: &quot;毕业搬宿舍&quot;, icon: &quot;🪑&quot;, tone: &quot;blue&quot; },
+        { id: 4, title: &quot;捷安特通勤自行车&quot;, price: 680, campus: &quot;TAICANG&quot;, spot: &quot;生活区&quot;, km: 44, category: &quot;交通&quot;, text: &quot;可约校车点交付&quot;, icon: &quot;🚲&quot;, tone: &quot;red&quot; },
+        { id: 5, title: &quot;小米 24 寸显示器&quot;, price: 260, campus: &quot;TAICANG&quot;, spot: &quot;公寓区&quot;, km: 45, category: &quot;数码产品&quot;, text: &quot;支持跨校区交付&quot;, icon: &quot;🖥️&quot;, tone: &quot;gold&quot; },
+        { id: 6, title: &quot;宿舍落地灯&quot;, price: 0, campus: &quot;SIP&quot;, spot: &quot;北门&quot;, km: 2.1, category: &quot;生活用品&quot;, text: &quot;免费自取&quot;, icon: &quot;💡&quot;, tone: &quot;gold&quot; }
+      ];
+      var panels = root.querySelectorAll(&quot;.uc-panel&quot;);
+      var list = root.querySelector(&quot;#product-list&quot;);
+      var categoryResults = root.querySelector(&quot;#category-results&quot;);
+      var search = root.querySelector(&quot;#search&quot;);
+      var sort = root.querySelector(&quot;#sort&quot;);
+      var map = root.querySelector(&quot;#map&quot;);
+      var toast = root.querySelector(&quot;#toast&quot;);
+      function say(text) { toast.textContent = text; toast.classList.add(&quot;show&quot;); window.setTimeout(function () { toast.classList.remove(&quot;show&quot;); }, 1500); }
+      function campusName(code) { return code === &quot;TAICANG&quot; ? &quot;太仓&quot; : &quot;SIP&quot;; }
+      function showPanel(name) {
+        Array.prototype.forEach.call(panels, function (panel) { panel.classList.toggle(&quot;active&quot;, panel.getAttribute(&quot;data-panel&quot;) === name); });
+        Array.prototype.forEach.call(root.querySelectorAll(&quot;[data-nav]&quot;), function (button) { button.classList.toggle(&quot;active&quot;, button.getAttribute(&quot;data-nav&quot;) === name); });
+        var titles = { home: [&quot;发现闲置&quot;, &quot;默认优先展示你所在校区&quot;], category: [&quot;分类浏览&quot;, &quot;按需求快速筛选校园闲置&quot;], publish: [&quot;发布闲置&quot;, &quot;让下一位同学更快找到它&quot;], messages: [&quot;消息与预约&quot;, &quot;确认地点后再当面交易&quot;], profile: [&quot;我的&quot;, &quot;你的发布、预约和收藏&quot;] };
+        if (titles[name]) { root.querySelector(&quot;#page-title&quot;).textContent = titles[name][0]; root.querySelector(&quot;#page-subtitle&quot;).textContent = titles[name][1]; }
+        root.querySelector(&quot;.uc-search&quot;).style.display = [&quot;home&quot;, &quot;category&quot;].indexOf(name) &gt;= 0 ? &quot;flex&quot; : &quot;none&quot;;
+      }
+      function matches(item) {
+        var q = search.value.trim().toLowerCase();
+        var campusMatch = state.scope === &quot;cross&quot; ? item.campus !== state.campus : item.campus === state.campus;
+        var catMatch = state.category === &quot;全部&quot; || item.category === state.category;
+        var textMatch = !q || (item.title + item.category + item.spot + item.text).toLowerCase().indexOf(q) &gt;= 0;
+        return campusMatch &amp;&amp; catMatch &amp;&amp; textMatch;
+      }
+      function rows() {
+        var result = products.filter(matches);
+        if (sort.value === &quot;near&quot;) result.sort(function (a, b) { return a.km - b.km; });
+        if (sort.value === &quot;high&quot;) result.sort(function (a, b) { return b.price - a.price; });
+        if (sort.value === &quot;low&quot;) result.sort(function (a, b) { return a.price - b.price; });
+        return result;
+      }
+      function itemMarkup(item) {
+        var cross = item.campus !== state.campus;
+        var price = item.price === 0 ? &quot;免费&quot; : &quot;¥&quot; + item.price;
+        return &#x27;&lt;button class=&quot;uc-item &#x27; + (state.selected &amp;&amp; state.selected.id === item.id ? &quot;active&quot; : &quot;&quot;) + &#x27;&quot; data-item=&quot;&#x27; + item.id + &#x27;&quot;&gt;&lt;div class=&quot;uc-thumb &#x27; + item.tone + &#x27;&quot;&gt;&#x27; + item.icon + &#x27;&lt;/div&gt;&lt;div&gt;&lt;h3&gt;&#x27; + item.title + &#x27;&lt;/h3&gt;&lt;div class=&quot;uc-row&quot;&gt;&lt;span class=&quot;uc-price&quot;&gt;&#x27; + price + &#x27;&lt;/span&gt;&lt;span class=&quot;&#x27; + (cross ? &quot;uc-cross&quot; : &quot;uc-meta&quot;) + &#x27;&quot;&gt;&#x27; + (cross ? &quot;跨校区&quot; : (state.located ? item.km + &quot; km&quot; : item.spot)) + &#x27;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;uc-row&quot; style=&quot;margin-top:7px&quot;&gt;&lt;span class=&quot;uc-meta&quot;&gt;&#x27; + campusName(item.campus) + &quot; · &quot; + item.spot + &#x27;&lt;/span&gt;&lt;span class=&quot;uc-meta&quot;&gt;&#x27; + item.text + &#x27;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/button&gt;&#x27;;
+      }
+      function bindItems(container) { Array.prototype.forEach.call(container.querySelectorAll(&quot;[data-item]&quot;), function (button) { button.onclick = function () { openDetail(products.find(function (item) { return item.id === Number(button.getAttribute(&quot;data-item&quot;)); })); }; }); }
+      function renderList() {
+        var result = rows();
+        list.innerHTML = result.map(itemMarkup).join(&quot;&quot;) || &#x27;&lt;div class=&quot;uc-empty&quot;&gt;没有找到合适的商品，换个关键词试试。&lt;/div&gt;&#x27;;
+        categoryResults.innerHTML = result.map(itemMarkup).join(&quot;&quot;) || &#x27;&lt;div class=&quot;uc-empty&quot;&gt;这个分类暂时没有商品。&lt;/div&gt;&#x27;;
+        bindItems(list); bindItems(categoryResults);
+        root.querySelector(&quot;#map-label&quot;).textContent = state.scope === &quot;cross&quot; ? &quot;跨校区商品 · 约校车点交付&quot; : campusName(state.campus) + &quot; 校区 · 附近商品&quot;;
+        root.querySelector(&quot;#campus-name&quot;).textContent = campusName(state.campus);
+        map.classList.toggle(&quot;taicang&quot;, state.campus === &quot;TAICANG&quot;);
+      }
+      function openDetail(item) {
+        state.selected = item;
+        var cross = item.campus !== state.campus;
+        var price = item.price === 0 ? &quot;免费&quot; : &quot;¥&quot; + item.price;
+        root.querySelector(&quot;#detail-content&quot;).innerHTML = &#x27;&lt;div class=&quot;uc-detail&quot;&gt;&lt;span class=&quot;uc-verified&quot;&gt;✓ 西浦学生邮箱已验证&lt;/span&gt;&lt;div class=&quot;uc-detail-visual &#x27; + item.tone + &#x27;&quot;&gt;&#x27; + item.icon + &#x27;&lt;/div&gt;&lt;h2&gt;&#x27; + item.title + &#x27;&lt;/h2&gt;&lt;div class=&quot;uc-detail-price&quot;&gt;&#x27; + price + &#x27;&lt;/div&gt;&lt;div class=&quot;uc-line&quot;&gt;&lt;b&gt;位置&lt;/b&gt;&lt;span&gt;&#x27; + campusName(item.campus) + &quot; 校区 · &quot; + item.spot + &#x27;&lt;br&gt;&lt;small style=&quot;color:var(--u-green)&quot;&gt;&#x27; + (cross ? &quot;跨校区，建议约固定校车点&quot; : item.km + &quot; km，适合当面验货&quot;) + &#x27;&lt;/small&gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;uc-line&quot;&gt;&lt;b&gt;成色&lt;/b&gt;&lt;span&gt;&#x27; + item.text + &#x27;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;uc-line&quot;&gt;&lt;b&gt;说明&lt;/b&gt;&lt;span&gt;支持现场验货，不提前付款，不点击陌生链接。&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;uc-actions&quot;&gt;&lt;button class=&quot;uc-secondary&quot; id=&quot;favorite&quot;&gt;收藏&lt;/button&gt;&lt;button class=&quot;uc-primary&quot; id=&quot;contact&quot;&gt;联系卖家&lt;/button&gt;&lt;/div&gt;&lt;button class=&quot;uc-danger&quot; id=&quot;report&quot; style=&quot;width:100%;margin-top:8px&quot;&gt;举报商品&lt;/button&gt;&lt;/div&gt;&#x27;;
+        showPanel(&quot;detail&quot;);
+        root.querySelector(&quot;#favorite&quot;).onclick = function () { say(&quot;已加入收藏&quot;); };
+        root.querySelector(&quot;#contact&quot;).onclick = function () { root.querySelector(&quot;#booking-copy&quot;).textContent = &quot;商品：&quot; + item.title + &quot; · &quot; + (cross ? &quot;跨校区请优先选择校车点&quot; : &quot;本校区公共区域交付&quot;); root.querySelector(&quot;#booking-campus&quot;).value = item.campus === &quot;TAICANG&quot; ? &quot;太仓校区&quot; : &quot;SIP 校区&quot;; showPanel(&quot;booking&quot;); };
+        root.querySelector(&quot;#report&quot;).onclick = function () { root.querySelector(&quot;#report-target&quot;).textContent = item.title; showPanel(&quot;report&quot;); };
+      }
+      Array.prototype.forEach.call(root.querySelectorAll(&quot;[data-nav]&quot;), function (button) { button.onclick = function () { showPanel(button.getAttribute(&quot;data-nav&quot;)); }; });
+      Array.prototype.forEach.call(root.querySelectorAll(&quot;[data-scope]&quot;), function (button) { button.onclick = function () { state.scope = button.getAttribute(&quot;data-scope&quot;); Array.prototype.forEach.call(root.querySelectorAll(&quot;[data-scope]&quot;), function (tab) { tab.classList.toggle(&quot;active&quot;, tab === button); }); renderList(); }; });
+      Array.prototype.forEach.call(root.querySelectorAll(&quot;[data-category]&quot;), function (button) { button.onclick = function () { state.category = button.getAttribute(&quot;data-category&quot;); Array.prototype.forEach.call(root.querySelectorAll(&quot;[data-category]&quot;), function (tab) { tab.classList.toggle(&quot;active&quot;, tab === button); }); renderList(); }; });
+      Array.prototype.forEach.call(root.querySelectorAll(&quot;[data-pin]&quot;), function (pin) { pin.onclick = function () { var result = rows(); var item = result[Math.min(Number(pin.getAttribute(&quot;data-pin&quot;)) - 1, result.length - 1)]; if (item) openDetail(item); else say(&quot;当前筛选下没有商品点位&quot;); }; });
+      root.querySelector(&quot;#campus-switch&quot;).onclick = function () { state.campus = state.campus === &quot;SIP&quot; ? &quot;TAICANG&quot; : &quot;SIP&quot;; state.scope = &quot;local&quot;; state.selected = null; Array.prototype.forEach.call(root.querySelectorAll(&quot;[data-scope]&quot;), function (tab) { tab.classList.toggle(&quot;active&quot;, tab.getAttribute(&quot;data-scope&quot;) === &quot;local&quot;); }); say(&quot;已切换到&quot; + campusName(state.campus) + &quot;校区&quot;); renderList(); };
+      root.querySelector(&quot;#locate&quot;).onclick = function () { state.located = !state.located; root.querySelector(&quot;#locate&quot;).classList.toggle(&quot;on&quot;, state.located); root.querySelector(&quot;#locate&quot;).textContent = state.located ? &quot;已定位到&quot; + campusName(state.campus) : &quot;开启定位&quot;; say(state.located ? &quot;已定位到&quot; + campusName(state.campus) + &quot;校区&quot; : &quot;已关闭定位&quot;); renderList(); };
+      search.oninput = renderList; sort.onchange = function () { if (sort.value === &quot;near&quot; &amp;&amp; !state.located) say(&quot;开启定位后推荐更准确&quot;); renderList(); };
+      root.querySelector(&quot;#publish-form&quot;).onsubmit = function (event) { event.preventDefault(); event.target.reset(); say(&quot;已提交，等待管理员审核&quot;); showPanel(&quot;home&quot;); };
+      root.querySelector(&quot;#open-chat&quot;).onclick = function () { root.querySelector(&quot;#chat-box&quot;).style.display = &quot;grid&quot;; };
+      root.querySelector(&quot;#confirm-cross&quot;).onclick = function () { showPanel(&quot;booking&quot;); say(&quot;已打开跨校区预约&quot;); };
+      root.querySelector(&quot;#complete-trade&quot;).onclick = function () { say(&quot;交易已完成，可以互相评价&quot;); };
+      root.querySelector(&quot;#report-chat&quot;).onclick = function () { root.querySelector(&quot;#report-target&quot;).textContent = &quot;聊天记录&quot;; showPanel(&quot;report&quot;); };
+      root.querySelector(&quot;#booking-form&quot;).onsubmit = function (event) { event.preventDefault(); say(&quot;预约已发送，等待对方确认&quot;); showPanel(&quot;messages&quot;); };
+      root.querySelector(&quot;#report-form&quot;).onsubmit = function (event) { event.preventDefault(); event.target.reset(); say(&quot;举报已提交，平台会尽快处理&quot;); showPanel(&quot;home&quot;); };
+      root.querySelector(&quot;#admin-entry&quot;).onclick = function () { showPanel(&quot;admin&quot;); }; root.querySelector(&quot;#admin-back&quot;).onclick = function () { showPanel(&quot;profile&quot;); }; root.querySelector(&quot;#admin-process&quot;).onclick = function () { say(&quot;已进入审核详情&quot;); };
+      root.querySelector(&quot;#my-items&quot;).onclick = function () { say(&quot;我的发布：3 件商品&quot;); }; root.querySelector(&quot;#my-bookings&quot;).onclick = function () { showPanel(&quot;messages&quot;); }; root.querySelector(&quot;#my-favorites&quot;).onclick = function () { say(&quot;我的收藏：12 件商品&quot;); };
+      renderList();
+    })();
+  &lt;/script&gt;
+&lt;/div&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerdown&quot;, handlePointer);
+    document.removeEventListener(&quot;pointercancel&quot;, handlePointer);
+    document.removeEventListener(&quot;click&quot;, handleTouchClick);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerdown&quot;, handlePointer);
+  document.addEventListener(&quot;pointercancel&quot;, handlePointer);
+  document.addEventListener(&quot;click&quot;, handleTouchClick);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-tabs&quot;&gt;
+(() =&gt; {
+  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
+  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
+  const selectTab = (selected) =&gt; {
+    const panelId = selected.getAttribute(&quot;aria-controls&quot;);
+    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
+      const active = tab === selected;
+      tab.classList.toggle(&quot;active&quot;, active);
+      tab.setAttribute(&quot;aria-selected&quot;, String(active));
+      const id = tab.getAttribute(&quot;aria-controls&quot;);
+      const panel = id &amp;&amp; document.getElementById(id);
+      if (panel != null) {
+        panel.hidden = id !== panelId;
+        if (!panel.hidden &amp;&amp; selected.id) {
+          panel.setAttribute(&quot;aria-labelledby&quot;, selected.id);
+        }
+      }
+    }
+  };
+  const interact = (event) =&gt; {
+    const tab = event.target?.closest?.(selector);
+    if (event.defaultPrevented || tab == null || tab.matches(disabled)) {
+      return;
+    }
+    if (event.type === &quot;click&quot;) {
+      selectTab(tab);
+      return;
+    }
+    const tabs = Array.from(
+      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
+    ).filter((candidate) =&gt; !candidate.matches(disabled));
+    const current = tabs.indexOf(tab);
+    let next;
+    if (event.key === &quot;ArrowRight&quot; || event.key === &quot;ArrowDown&quot;) {
+      next = (current + 1) % tabs.length;
+    } else if (event.key === &quot;ArrowLeft&quot; || event.key === &quot;ArrowUp&quot;) {
+      next = (current + tabs.length - 1) % tabs.length;
+    } else if (event.key === &quot;Home&quot;) {
+      next = 0;
+    } else if (event.key === &quot;End&quot;) {
+      next = tabs.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    tabs[next].focus();
+    selectTab(tabs[next]);
+  };
+
+  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
+    const selected =
+      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
+    if (selected != null) {
+      selectTab(selected);
+    }
+  }
+  document.addEventListener(&quot;click&quot;, interact);
+  document.addEventListener(&quot;keydown&quot;, interact);
+  window.addEventListener(&quot;pagehide&quot;, () =&gt; {
+    document.removeEventListener(&quot;click&quot;, interact);
+    document.removeEventListener(&quot;keydown&quot;, interact);
+  }, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>

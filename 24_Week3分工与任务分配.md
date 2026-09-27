@@ -1,0 +1,285 @@
+# Week 3 责任到人分工表（U Use｜7 人组）
+
+每人照着做的详细步骤见 `28_组员操作手册.md`；必须交的东西见 `26_必须提交清单.md`；正式交付物放在 `Evidence_Hub/Week_3/`。
+
+## 0. 本周事实（先对齐，别做错方向）
+
+- **Week 3 = 2026-09-21（周一）至 09-27（周日）**，session 在**周二 / 周三 / 周四**之间（周二 Ziyu Jia、周三 Nan Wang、周四上午 Yingrong Ye、周四下午 Chaojie Ma）。
+- Session 要做的事：展示 Market Sizing + Competitor Table + USP v1；supervisor 会**现场重算你一个市场数字**，并质询 Year-1 reachable market 和渠道。
+- **周六 09-26 前**必须更新在线 Weekly Log。
+- 三件产出要放进 Evidence Hub 的 Week 3 文件夹，命名带版本，每个数字旁写来源和证据 ID。
+- 硬截止不变：A1 = 2026-11-06 23:59，A2 = 2026-12-18。
+
+> **时间压缩规则：** 下面时间线按「session = 周四 09-24」写。如果你们是**周二**，把 09-22 之后的所有动作整体前移到 09-21 当天完成；如果是**周三**，前移一天。
+
+## 1. 角色总表（每个人一个主责，不重叠）
+
+| 姓名 | 性别 | 主责 | 一句话交付 | 备份人 |
+|---|---|---|---|---|
+| Rita | 女 | 代码/原型 + 数字复核 + 统筹 | 原型能跑、数字对得上账、session 当天调度 | 汪r |
+| 黄yx | 男 | 代码 + 文件治理（Weekly Log + Evidence Hub） | 在线 Weekly Log 和 Evidence Hub 权限可用 | Rita |
+| 汪r | 男 | 代码 + 现场 Pre 主讲 | 5 分钟讲稿 + demo 流程不卡 | 毛xy |
+| 汤yq | 女 | Market Sizing | TAM/SAM/SOM 已算好，待换真实渠道数据 | Rita |
+| 李yl | 男 | Competitor Intelligence | 6 家点名在运营竞品已填 + 4 张截图 | 毛xy |
+| 毛xy | 女 | USP + A1 Slide 3 叙事 | USP 定稿 + Slide 3 成品文案 + 30 秒口头版 | 李yl |
+| 黄jj | 男 | 用户证据（访谈 + 问卷） | 2 份访谈记录 + 问卷回收（成品包已就绪） | 黄yx |
+
+分工原则：
+
+- 代码 3 人（Rita / 黄yx / 汪r）不再兼其他主责外的重活，只保留各自明确的那一项（数字复核 / 文件治理 / 现场 pre）。
+- 汤yq 和李yl 承担本周最关键、最耗脑力的两个产出（市场测算、竞品情报）—— 这两块正是 supervisor 会现场挑战的部分，所以由相对能干的同学主责。
+- 其余两人各一个主责，避免「人人有份、人人不负责」。
+- **关键路径依赖：** 汤yq 和 李yl 本周任何一天掉线都会影响 session。汤yq 的备份是 Rita（她本来就要独立重算一遍），李yl 的备份是 毛xy（她做的 USP 依赖竞品事实，本来就要对接）。
+
+---
+
+## 2. 任务卡
+
+### 汤yq（Market Sizing 主责）
+
+**交付物**
+
+- `Evidence_Hub/Week_3/W3_Market_Sizing_Workbook_v1.xlsx`（**公式已建好，只改橙色格**，渠道表换成真实数据）
+- `Evidence_Hub/Week_3/W3_Market_Sizing_v1.md`（**已全部填好**，你只需把渠道表的群数/人数换成真实数据，再把结论同步回来）
+- `Evidence_Hub/Week_3/W3_Evidence_Sources.csv` 里 E01、E07、E08 三行（**已代填**，你只需确认）
+
+**已经替你做好的部分（不用重做）**
+
+E01 已按 2026-09-22 访问 XJTLU 官网确认 26,000 人；I3-I7 已填为 50% / 3 次 / 35 元 / 20% / 15% 并全部标成「本组假设」；I8 已填教育部公报的 4,763 万人；渠道表默认值已算出 I2 = 2,150；三情景和敏感性表都已算好，结论也写进了 `W3_Market_Sizing_v1.md`。
+
+**你只剩一件事（约 15 分钟）**
+
+1. 打开 workbook「渠道表」页，把 5 行渠道的**群数**和**平均人数**换成你们真实的数字（比如你自己在几个课程群、每个群多少人）。D 列和 F 列是公式，不要动。
+2. 看一眼第 11 行的全局去重系数 0.8，如果你们觉得重复度高，可以改成 0.5-0.7，但要能在 session 上解释为什么。
+3. 改完之后，把「计算」页的 SAM 和 SOM 三个数字抄回 `W3_Market_Sizing_v1.md` 的第 3 节。
+4. 顺手确认一下 I8 的数字和教育部官网最新一期公报一致（这一步可以不做，但做了更稳）。
+
+**完成标准（Rita 会独立重算一遍对账）**
+
+- 每个数字旁边都有来源或「本组假设」标记 + 证据 ID。
+- 单位统一：人 / 次每人每年 / 元每次 / 元每年，不混用。
+- 公式留在文件里，不是只写结果。
+- 三情景用同一套公式，只改输入值。
+
+**配合**：黄jj 给的问卷/访谈数据一到手就替换假设值；Rita 复核。
+
+---
+
+### 李yl（Competitor Intelligence 主责）
+
+**交付物**
+
+- `Evidence_Hub/Week_3/W3_Competitor_Table_v1.xlsx`（**主文件，4 个页签：填写说明 / 竞品总表 / 截图清单 / Session 话术**）
+- `Evidence_Hub/Week_3/W3_Competitor_Table_v1.csv`（同内容 CSV，方便复制到文档）
+- `Evidence_Hub/Week_3/Competitor_Screenshots/` 里 ≥3 张**带日期**的截图
+- `W3_Evidence_Sources.csv` 的 E10-E15
+
+**已经替你做好的部分（不用重做）**
+
+C01-C06 六行都已经**点名**为真实在运营的平台：闲鱼 goofish.com、XJTLU 学生微信二手/拼单群、人人租 rrzuji.com、爱回收 aihuishou.com、转转 zhuanzhuan.com、线下向同学借用。每行都写了定位、价格/商业模式、优势、劣势/缺口、对 U Use 的含义、来源链接、来源日期、证据 ID，闲鱼/人人租/爱回收/转转 四家官网已于 2026-09-22 打开确认。
+
+**你只剩三件事（约 40 分钟）**
+
+1. 打开 `W3_Competitor_Table_v1.xlsx` 的「截图清单」页，按提示截 **4 张**图（手机截图就行），另存到 `Evidence_Hub/Week_3/Competitor_Screenshots/`，文件名照表里给的名字写。
+2. 在「竞品总表」把 C02 学生微信群的**具体群名**补上，并把 K 列来源、L 列来源日期补全。
+3. 把 P 列「核实状态」从「待补截图」改成「已核实」，在「截图清单」E 列选「已截图」。
+
+**完成标准**
+
+- ≥3 个点名且确认在运营，每条都有可点开的来源链接。
+- 截图带日期，个人信息已打码（微信群截图必须打码头像和昵称）。
+- 劣势写的是**观察到的事实**（例如「以买断为主，交付靠私聊」），不是主观评价。
+
+**完成标准**
+
+- ≥3 个点名且确认在运营，每条都有可点开的来源链接。
+- 截图带日期，个人信息已打码。
+- 劣势写的是**观察到的事实**（例如「以买断为主，交付靠私聊」），不是主观评价。
+
+**配合**：毛xy 的 USP 要点名竞品，事实由你提供。
+
+---
+
+### 毛xy（USP + A1 Slide 3 叙事主责）
+
+**交付物**
+
+- `Evidence_Hub/Week_3/W3_USP_Hypothesis_v1.md` 里选定 A/B/C 其中一个版本并标记为 v1 定稿
+- `02_A1_六页PitchDeck_可直接改.md` 的 Slide 3 文案（市场结论 + 竞品表 + USP）
+- 一段 30 秒口头版 USP（session 上要讲）
+
+**具体步骤**
+
+1. 组织组内投票选 USP 版本（A 以闲鱼为对手，B 以微信群为对手，C 以商业租赁为对手），记录票数。
+2. 确认点名的那家竞品在竞品表里有对应行和来源。
+3. 把 Market Sizing 的结论（不要放公式）写进 Slide 3，数字必须和 `W3_Market_Sizing_v1.md` 完全一致。
+4. 找一位**非组员**读一遍 Slide 3，让他复述「这个产品和闲鱼有什么不同」，能说出来才算过关。
+
+**完成标准**
+
+- USP 六要素齐全（target user / pain / venture / category / core benefit / named competitor / limitation）。
+- 没有「better」「leading」这类不可测试的形容词。
+- Slide 3 上的数字与 Market Sizing 文件一致（supervisor 会交叉检查）。
+
+**配合**：李yl 提供竞品事实；汤yq 提供数字。
+
+---
+
+### 黄jj（用户证据主责）
+
+**交付物**
+
+- ≥2 份访谈记录：`Evidence_Hub/Week_5/W05_UserInterview_U01_2026-09-25.md` 等
+- 问卷投放 + 回收结果（目标 20 份，session 前先拿到 ≥10 份更好）
+- `03_假设与证据登记表.csv` 里 H01-H07 的状态与证据 ID 更新
+
+**已经替你写好的成品包（不用自己想题）**
+
+- `Evidence_Hub/Week_5/W05_访谈执行包_v1.md`：同意话术 + 8 个问题 + U01/U02 记录表
+- `Evidence_Hub/Week_5/W05_问卷成品_v1.md`：15 题终版，可直接复制进问卷星/腾讯问卷
+
+**具体步骤**
+
+1. 打开 `W05_访谈执行包_v1.md`，找 2 名同学（SIP、太仓各一人），**拉上毛xy 一起去**，一人提问、一人记录。
+2. 照第 1 节念同意话术；填 U01/U02 时只用匿名编号，不出现姓名/学号/宿舍。
+3. 问卷照 `W05_问卷成品_v1.md` 逐题录入并投放（课程群、社团群、宿舍群、二手群），目标 20 份。
+4. 回收后立刻导出，存 `Evidence_Hub/Week_5/`，按 `W05_Survey_Results_模板.md` 算好关键比例。
+5. 把 Q3/Q5 的比例发给汤yq（更新 I3/I4），挑 3-5 句可引用原话（匿名）交给毛xy 和汪r。
+
+**完成标准**
+
+- 至少 2 份访谈记录有匿名编号和同意说明。
+- 问卷份数如实记录（没到 20 份就写实际份数，不许凑数）。
+- 每份证据都有证据 ID。
+
+> **优先级**：时间不够时先做 2 次访谈 —— 这是 Week 2 遗留的硬要求，比问卷更急。
+
+---
+
+### 黄yx（代码 + 文件治理）
+
+**交付物**
+
+- 可运行的学生端 + 管理端原型
+- 在线共享 Weekly Log（Week 1-3 entry 齐全）
+- Evidence Hub 上传到在线位置 + supervisor 权限可用
+- 会议记录、AI 使用声明
+
+**具体步骤**
+
+1. 跑一遍 `cd xjtlu-market-app && npm run dev`，确认学生端 `/` 和管理端 `/admin` 都能打开。
+2. 把 `Evidence_Hub/` 上传到在线共享位置（OneDrive / SharePoint / Google Drive 任一），按 Week 文件夹结构保留。
+3. 给 supervisor 开权限，然后用**无痕窗口**打开一次确认真的能访问，截图存 `Evidence_Hub/Week_1/`。
+4. 把 `Evidence_Hub/01_Weekly_Log/Weekly_Log_UUse.md` 的内容贴进在线文档，共享给 supervisor。
+5. **09-26（周六）前**更新 Week 3 entry（产出与版本、变化、证据、决策、action、问题、三项声明）。
+6. 确认以前是否用 Excel 交过 Weekly Log；如果是，按邮件模板发邮件给对应 session 的 TA，主题：`ENT303TC – Weekly Log Link Update – [Session] – Group [number]`。
+7. 填 `Evidence_Hub/00_Team_Admin/05_AI使用声明与记录.md`。
+
+**完成标准**
+
+- 无痕窗口能打开 Evidence Hub 和 Weekly Log。
+- Weekly Log 有 Week 1/2/3 三节，不是空表。
+- 三项 team declarations 都打勾。
+
+**配合**：写会议记录时向各负责人收集进度。
+
+---
+
+### 汪r（代码 + 现场 Pre 主讲）
+
+**交付物**
+
+- Session 讲稿（按 6 页 deck 排，5 分钟）
+- Demo 操作流程（谁点哪里、点什么）
+- 预判问题清单 + 答案
+
+**具体步骤**
+
+1. 按 `02_A1_六页PitchDeck_可直接改.md` 排讲稿：Slide 2 Problem（60s）→ Slide 3 市场/竞品/USP（60s）→ Slide 4 Solution + Demo（90s）→ Slide 5 BMC（30s）→ Slide 6 验证（30s）。
+2. 每页指定讲的人（见第 4 节），你自己负责串场和收尾。
+3. Demo 走一遍：确认「搜索计算器 → 筛选可借 → 打开详情 → 预约」在一分钟内完成，且本地能跑不掉链子。
+4. 准备预判问题：
+   - 你们凭什么认为有需求？（答：H01 + 待补问卷数据，如实说明）
+   - SOM 为什么可触达？（答：渠道表逐行加总 + 去重）
+   - 和闲鱼/回收项目的区别？（答：USP 口头版）
+5. 主动讲清原型限制（本地数据、无真实支付、无真实邮箱验证），比被问到更好。
+
+**完成标准**
+
+- 能一个人从头到尾讲完不卡壳。
+- Demo 无网络依赖、不报错。
+- 每个数字都能指到 `W3_Evidence_Sources.csv` 里的证据 ID。
+
+---
+
+### Rita（代码 + 数字复核 + 统筹）
+
+**交付物**
+
+- Demo 页面就绪（学生端 + 管理端截图/录屏备用）
+- 独立重算记录（和汤yq 对账）
+- Session 当天文件打开清单
+
+**具体步骤**
+
+1. **独立**按公式把 TAM/SAM/SOM 重算一遍，和汤yq 的结果对账；不一致就一起找原因。
+2. 准备「数字减半」的答案（敏感性）。
+3. Session 前把要展示的文件散开在桌面/浏览器标签上：Market Sizing、Competitor Table、USP、Weekly Log、Evidence Hub。
+4. 指定一人记录 session 上 supervisor 的重算结果、质疑点和指定的 market-validation action。
+5. 确认 4 位同学的姓名填进本文件和 `Evidence_Hub/00_Team_Admin/03_分工表.md`。
+
+**完成标准**
+
+- 两人独立算出的数字一致。
+- Session 现场 30 秒内能调出任何一份文件。
+
+---
+
+## 3. 本周时间线
+
+| 日期 | 要做完的事 | 负责人 |
+|---|---|---|
+| **09-21（今天，周一）** | 确认 session 是周二/周三/周四与组号；把 Evidence Hub 传到在线位置并开权限；汤yq 开始填 Market Sizing；李yl 开始点名竞品 | 全员 / Rita / 黄yx |
+| **09-22（周二）** | 竞品表 ≥3 条点名 + 来源链接填完；USP 版本投票；访谈排期 | 李yl / 毛xy / 黄jj |
+| **09-23（周三）** | Market Sizing 三情景算完 + 渠道表完成；收集 ≥2 张竞品截图；Slide 3 文案初稿 | 汤yq / 李yl / 毛xy |
+| **09-24（周四 = 假设 session 日）** | 全员过一遍数字；汪r 讲稿 + demo 走一遍；文件放进 Evidence Hub/Week_3 | 全员 |
+| **09-25（周五）** | Session 后：改动的数字另存 `_v2`；记录 supervisor 的 market-validation action | 汤yq / Rita |
+| **09-26（周六）** | **更新在线 Weekly Log**（写清改了什么、为什么、action） | 黄yx |
+| **09-27（周日）** | 补齐 Week 2 遗留证据；确认 Week 4 的访谈提纲和问卷就绪 | 黄jj |
+
+## 4. Session 当天分工
+
+| 环节 | 谁做 | 要求 |
+|---|---|---|
+| 开场 + 串场 | 汪r | 30 秒讲清项目定位 |
+| Slide 2 Problem | 汪r（黄jj 可选择代讲） | 讲可真验证的问题陈述 |
+| Slide 3 市场数字 | 汤yq | supervisor 会现场重算，必须能当场解释公式和来源 |
+| Slide 3 竞品对比 | 李yl | 点名竞品并说出它的局限，数据是自己查的所以能接追问 |
+| Slide 3 USP | 毛xy | 念课程句式版本，并解释为什么选这家竞品当对手 |
+| Slide 4 Demo 操作 | Rita | 一边操作一边讲 |
+| Slide 5 BMC | 汪r | 30 秒 |
+| Slide 6 验证计划 | 黄jj | 讲 clear next steps |
+| 记录 action 与质疑 | 黄yx | 记下原话，session 后写进 Weekly Log |
+| 文件调取 | Rita | 需要哪份文件 30 秒内打开 |
+
+## 5. Session 后 24 小时内
+
+1. 汤yq：把改过的数字另存 `W3_Market_Sizing_v2.md`，标明改了哪几个输入、为什么改。
+2. 黄yx：把 supervisor 的 market-validation action 和改动记录写进 Weekly Log。
+3. Rita：把 v2 放进同一个 `Evidence_Hub/Week_3/`，确认旧版本没被覆盖。
+4. 全员：确认 Week 4 session 开场能汇报这个 action 的进展。
+
+## 6. 不能进 session 的红线
+
+- Market Sizing 里还有写死的默认渠道数据没换成真实群数据（没数据的要写成「本组假设 + 验证计划」）。
+- 竞品表里还是没有点名、没有来源的在运营竞品。
+- USP 不是课程句式，或者点名的竞品在竞品表里找不到。
+- Evidence Hub 还没上传到在线位置，或 supervisor 没有权限。
+- 有人讲不出自己负责的那部分数字。
+
+## 7. 提交与汇报口径（避免被扣分）
+
+- 所有材料统一用 U Use 定位，不讲校园二手、回收或课程任务包。
+- 没验证的内容说 "we hypothesise" 或 "early validation suggests"，不说成事实。
+- 被问到不会的：答「这个数字的来源是 X，还没验证的部分我们会在 Week 4-5 用问卷替换」，不要现场编。
+- 每个负责人都要能回答三件事：这个数字的单位是什么、来自哪里（证据 ID）、如果减半结果变成多少。

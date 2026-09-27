@@ -1,0 +1,120 @@
+════════════════════════════════════════════
+U Use｜Weekly Log（ENT303TC）
+共享链接：____________（填入在线文档链接后，把这一段也发给 supervisor）
+Group number：______    Session：______（周二 Ziyu Jia / 周三 Nan Wang / 周四上午 Yingrong Ye / 周四下午 Chaojie Ma）
+固定更新规则：每周六前更新本文件的当周 Entry，只用一个文档，不要新建第二个。
+════════════════════════════════════════════
+
+
+──────────────── Week 3 Entry ────────────────
+更新日期：2026-09-26 前
+本次更新负责人：黄yx
+本周 named output 与版本：W3_Market_Sizing_v1 + W3_Competitor_Table_v1 + W3_USP_Hypothesis_v1
+
+【1. 本周产出与版本】
+· Market Sizing v1 —— Evidence_Hub/Week_3/W3_Market_Sizing_v1.md（配套 W3_Market_Sizing_Workbook_v1.xlsx，公式全部保留在表内）
+· Competitor Table v1 —— Evidence_Hub/Week_3/W3_Competitor_Table_v1.xlsx（同内容 CSV 备份）
+· USP Hypothesis v1 —— Evidence_Hub/Week_3/W3_USP_Hypothesis_v1.md
+· Evidence Sources v1 —— Evidence_Hub/Week_3/W3_Evidence_Sources.csv
+·（补充产出）A1 Slide 3 成品文案 —— Evidence_Hub/Week_3/W3_A1_Slide3_文案_v1.md
+
+【2. 相比上次 checkpoint 改变了什么】
+· 问题陈述从「需要一个校园二手平台」改为可证伪的「学生存在短期使用需求但不想专门购买」，见 Week_2/W2_Problem_Statement_v1.md。
+· 市场测算从「只写结论数字」改为「公式可见 + 每个输入有来源和证据 ID + 单位统一」，并新增敏感性分析（每个输入减半的结果都算好了）。
+· 竞品表从类别描述（「商业租赁平台」「校园回收项目」）改为 6 个点名且当前在运营的竞品/替代方案，并标注哪几个是本次新增。
+· USP 从描述式段落改为课程要求的可测试句式（For [target user] … unlike [named competitor], which …）。
+· 三个产出按课程命名规范统一为 W3_*_v1，集中放入 Evidence Hub 的 Week 3 文件夹。
+
+【3. 最强证据 / 反面证据】
+· 最强证据：4 家在运营竞品（闲鱼、人人租、爱回收、转转）的定位、价格模式与缺口，全部来自官网公开信息，可当场打开核对。证据 ID：E10 / E12 / E13 / E14，来源：各平台官网，2026-09-22 访问。
+· 最强证据（二手）：XJTLU 官网 About/Overview 标注「26,000+ Students（updated in May 2026）」。证据 ID：E01，2026-09-22 访问。
+· 反面 / 负面证据：目前没有任何一手用户证据——访谈 0 场、问卷 0 份，H01-H07 全部仍为 To do；市场测算中 I3（需求比例 50%）、I4（年 3 次）、I6（注册 20%）、I7（首单 15%）均为本组假设，尚未验证。
+· 竞品观察截图：4 张待补（见 W3_Competitor_Table_v1.xlsx 的「截图清单」页）。
+
+【4. 团队决策与理由】
+· 决策：继续 U Use 方向（物品使用权流转：买断 / 借用 / 短租 / 交换），不改回普通二手或回收方向。
+· 理由：竞品对比显示闲鱼解决买卖、回收类解决处置，都没有覆盖「1-7 天短期使用」这一层；同时避免与做回收/可持续方向的小组重复。
+· 主要 blocker / 风险：
+  - 尚未完成任何一手用户证据（≥2 次访谈、20 份问卷），H01-H07 全部为 To do；
+  - 渠道表的可触达人数目前用的是本组估算的默认值，尚未换成真实群数据；
+  - 竞品截图尚未补齐。
+
+【5. Supervisor 指定的 market-validation action】
+· 内容：待 session 后填写（现场记录老师原话）
+· 负责人：待 session 后指定
+· 截止与汇报方式：Week 4 session 开场汇报进展
+
+【6. 给 supervisor 的问题（最多 3 个）】
+1. 首年可达市场用「校内渠道去重人数 × 转化率」推算，这样的渠道口径是否可接受？
+2. 在只有二手数据和原型数据的情况下，需求比例与转化率按假设区间处理是否足够？
+3. USP 里点名的竞品，选闲鱼还是微信群更合适？
+
+【7. 三项 Team Declarations】
+□ 本轮材料全组一起看过（pack reviewed as a team）
+□ 证据可追溯、获取方式符合伦理（evidence is traceable and ethically obtained）
+□ AI 使用已记录且经人工核实（AI use is recorded and human-verified）
+AI 使用记录见：Evidence_Hub/00_Team_Admin/05_AI使用声明与记录.md
+
+
+──────────────── Week 2 Entry ────────────────
+更新日期：2026-09-26 前（补完）
+Named output 与版本：Problem Statement v1 + 竞品/替代方案清单 v1 + Assumption Register v1
+
+【1. 本周产出与版本】
+· Problem Statement v1 —— Evidence_Hub/Week_2/W2_Problem_Statement_v1.md
+· 竞品/替代方案清单 v1 —— Evidence_Hub/Week_3/W3_Competitor_Table_v1.xlsx
+· Assumption Register v1 —— 03_假设与证据登记表.csv（H01-H07）
+
+【2. 相比上次 checkpoint 改变了什么】
+· 问题从「需要一个校园二手平台」改为「学生存在短期使用需求但不想购买」这一可证伪表述。
+· 主方向确定避开回收 / 环保叙事，改讲「使用权」而不是「所有权」。
+
+【3. 最强证据 / 反面证据】
+· 最强证据：闲鱼、人人租、爱回收、转转四家官网公开信息（E10、E12、E13、E14，2026-09-22 访问），确认它们都不覆盖 1-7 天短期使用场景。
+· 反面 / 负面证据：Week 2 要求的「≥3 个二手来源 或 ≥2 次一手访谈」目前只完成了二手来源一侧；一手访谈尚未开始。
+
+【4. 团队决策与理由】
+· 决策：方向从「校园二手 / 回收」pivot 到「物品使用权流转」。理由见 14_迭代日志_Pivot记录.md。
+· Blocker：一手访谈尚未开始；部分二手来源当时缺链接和日期（现已在 Week 3 补齐并标注访问日期）。
+
+【5. Supervisor 指定的 action】
+· 待补（如当时有指定，请按记忆或邮件补上）
+
+【6. 问题（≤3）】
+1. 短期使用需求这一类需求，体量（TAM）用「全国高校在校生 × 需求比例」口径是否合适？
+2. 是否必须在本学期内完成真实用户访谈，还是竞品公开数据可以部分替代？
+3. 双校区交付点写进产品设计是否过早？
+
+【7. 三项 Team Declarations】
+□ 材料全组看过
+□ 证据可追溯、伦理合规
+□ AI 使用已记录并人工核实
+
+
+──────────────── Week 1 Entry ────────────────
+Named output：Team Charter + Baseline Declaration + Assumption Register v1 + Evidence Hub
+
+【1. 产出与位置】
+· Team Charter —— Evidence_Hub/00_Team_Admin/01_Team_Charter_模板.md（待签署）
+· Baseline Declaration —— Evidence_Hub/00_Team_Admin/02_Baseline_Declaration_记录.md（已建记录）
+· Assumption Register —— 03_假设与证据登记表.csv（初稿，H01-H07）
+· Evidence Hub —— Evidence_Hub/（结构已建，权限待配置）
+· 分工与会议记录 —— Evidence_Hub/00_Team_Admin/03_分工表.md
+
+【2. 相比上次 checkpoint 改变了什么】
+· 项目从校园闲鱼 → 交易效率 → 课程任务包 → U Use 物品使用平台，共 4 次迭代，记录见 14_迭代日志_Pivot记录.md。
+
+【3. 三项 Team Declarations】
+□ 材料全组看过
+□ 证据可追溯、伦理合规
+□ AI 使用已记录并人工核实
+
+
+════════════════════════════════════════════
+提交注意（课程邮件原文要求）
+1. Weekly Log 不接受 Excel 提交，必须是共享在线文档；如以前交过 Excel，需发邮件给 session 对应 TA 换链接。
+   邮件主题：ENT303TC – Weekly Log Link Update – [Session] – Group [number]
+   周二 Ziyu Jia / 周三 Nan Wang / 周四上午 Yingrong Ye / 周四下午 Chaojie Ma
+2. 每周六前更新；supervisor 会在下次 session 前查看。
+3. 文档必须是共享的，supervisor 要有访问权限（用无痕窗口验证一次）。
+════════════════════════════════════════════
