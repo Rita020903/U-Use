@@ -177,7 +177,7 @@ function PublishPanel({ onDone }: { onDone: (message: string) => void }) {
     const data = new FormData(event.currentTarget);
     try {
       const response = await fetch("/api/products", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ title: data.get("title"), category: data.get("category"), price: Number(data.get("price") || 0), rentPrice: Number(data.get("rentPrice") || 0), deposit: Number(data.get("deposit") || 0), campus: data.get("campus"), spot: data.get("spot"), condition: data.get("condition"), accessMode: data.get("accessMode"), availableFrom: data.get("availableFrom"), availableTo: data.get("availableTo"), availabilityLabel: data.get("availabilityLabel"), returnRule: data.get("returnRule"), crossCampus: data.get("crossCampus") === "on" }) });
-      onDone(response.ok ? "已提交，等待管理员审核" : "提交失败，请检查填写内容");
+      onDone(response.ok ? "已提交审核，通过后会出现在可用物品列表" : "提交失败，请检查填写内容");
     } catch {
       onDone("网络异常，请稍后重试");
     } finally {
@@ -201,7 +201,7 @@ function BookingModal({ product, campus, onClose, onDone }: { product: Product |
     event.preventDefault(); const data = new FormData(event.currentTarget);
     setBusy(true);
     try {
-      const response = await fetch("/api/bookings", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ productId: product?.id ?? "manual-booking", campus: data.get("campus"), spot: data.get("spot"), time: data.get("time"), note: data.get("note") }) });
+      const response = await fetch("/api/bookings", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ productId: product?.id ?? "manual-booking", campus: data.get("campus"), spot: data.get("spot"), time: data.get("time"), returnTime: data.get("returnTime"), note: data.get("note"), requester: "林同学" }) });
       onDone(response.ok ? "预约已发送，等待对方确认" : "预约失败，请检查信息");
     } catch {
       onDone("网络异常，请稍后重试");
@@ -209,7 +209,7 @@ function BookingModal({ product, campus, onClose, onDone }: { product: Product |
       setBusy(false);
     }
   }
-  return <div className="modal-backdrop"><div className="modal"><button className="modal-close" onClick={onClose} aria-label="关闭">×</button><p className="eyebrow">USE BOOKING</p><h2>确认使用预约</h2><p className="muted">{product ? product.title : "借还单"} · 请确认借出、归还和公共交付点。</p><form className="form" onSubmit={submit}><label>交付校区<select name="campus" defaultValue={product?.campus ?? campus}><option value="SIP">SIP 校区</option><option value="TAICANG">太仓校区</option></select></label><label>交付地点<input required name="spot" defaultValue="图书馆门口" /></label><label>借出时间<input required name="time" defaultValue="今晚 19:00" /></label><label>归还说明<textarea name="note" placeholder="例如：周五 18:00 前归还，归还时双方确认物品状态" /></label><button className="primary full" disabled={busy}>{busy ? "发送中..." : "发送使用预约"}</button></form></div></div>;
+  return <div className="modal-backdrop"><div className="modal"><button className="modal-close" onClick={onClose} aria-label="关闭">×</button><p className="eyebrow">USE BOOKING</p><h2>确认使用预约</h2><p className="muted">{product ? product.title : "借还单"} · 请确认借出、归还和公共交付点。</p><form className="form" onSubmit={submit}><label>交付校区<select name="campus" defaultValue={product?.campus ?? campus}><option value="SIP">SIP 校区</option><option value="TAICANG">太仓校区</option></select></label><label>交付地点<input required name="spot" defaultValue="图书馆门口" /></label><label>借出时间<input required name="time" defaultValue="今晚 19:00" /></label><label>归还时间<input required name="returnTime" defaultValue="周五 18:00 前" /></label><label>归还说明<textarea name="note" placeholder="例如：归还时双方确认物品状态；若延期，提前一天协商" /></label><button className="primary full" disabled={busy}>{busy ? "发送中..." : "发送使用预约"}</button></form></div></div>;
 }
 
 function ReportModal({ onClose, onDone }: { onClose: () => void; onDone: (message: string) => void }) {

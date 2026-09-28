@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { addProduct, getProducts } from "../../../lib/data";
-import { AccessMode, Campus } from "../../../lib/types";
+import { addProduct, getProducts, updateProductStatus } from "../../../lib/data";
+import { AccessMode, Campus, ProductStatus } from "../../../lib/types";
 
 const campuses: Campus[] = ["SIP", "TAICANG"];
 const accessModes: AccessMode[] = ["buy", "borrow", "rent", "swap"];
+const productStatuses: ProductStatus[] = ["草稿", "审核中", "可用", "已预约", "使用中", "待归还", "已归还", "已下架", "审核拒绝"];
 
 function isCampus(value: unknown): value is Campus {
   return typeof value === "string" && campuses.includes(value as Campus);
@@ -49,12 +50,14 @@ export async function GET(request: NextRequest) {
   const search = query.get("search")?.toLowerCase() ?? "";
   const accessMode = query.get("accessMode");
   const sort = query.get("sort") ?? "near";
+  const admin = query.get("admin") === "1";
 
   if (campus && !isCampus(campus)) return NextResponse.json({ error: "校区参数无效" }, { status: 400 });
   if (scope !== "local" && scope !== "cross") return NextResponse.json({ error: "浏览范围参数无效" }, { status: 400 });
   if (accessMode && accessMode !== "all" && !isAccessMode(accessMode)) return NextResponse.json({ error: "使用方式参数无效" }, { status: 400 });
 
-  let products = (await getProducts()).filter((item) => item.status === "可用");
+  let products = await getProducts();
+  if (!admin) products = products.filter((item) => item.status === "可用");
   if (campus) products = products.filter((item) => scope === "cross" ? item.campus !== campus && item.crossCampus : item.campus === campus);
   if (category && category !== "全部") products = products.filter((item) => item.category === category);
   if (accessMode && accessMode !== "all") products = products.filter((item) => item.accessMode === accessMode);
@@ -116,4 +119,23 @@ export async function POST(request: NextRequest) {
     agreement: ["借出前确认状态", "公共地点交付", "按约归还"],
   });
   return NextResponse.json(product, { status: 201 });
+}
+
+export async function PATCH(request: NextRequest) {
+  let body: Record<string, unknown>;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "请求格式无效" }, { status: 400 });
+  }
+
+  const id = cleanText(body.id);
+  const status = cleanText(body.status) as ProductStatus;
+  if (!id || !productStatuses.includes(status)) {
+    return NextResponse.json({ error: "请提供有效的物品 ID 和状态" }, { status: 400 });
+  }
+
+  const product = await updateProductStatus(id, status);
+  if (!product) return NextResponse.json({ error: "未找到物品" }, { status: 404 });
+  return NextResponse.json(product);
 }

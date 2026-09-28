@@ -1,0 +1,32 @@
+[
+  {
+    "id": "b-demo-1",
+    "productId": "p1",
+    "productTitle": "考试用 Casio 计算器",
+    "campus": "SIP",
+    "spot": "图书馆门口",
+    "time": "2026-09-30 19:00",
+    "returnTime": "2026-10-04 18:00",
+    "note": "考试结束后归还，交付前双方拍照确认状态。",
+    "requester": "林同学",
+    "owner": "王同学",
+    "depositSnapshot": 50,
+    "status": "待确认",
+    "createdAt": "2026-09-28T10:00:00.000Z"
+  },
+  {
+    "id": "b-demo-2",
+    "productId": "p8",
+    "productTitle": "太仓通勤自行车",
+    "campus": "TAICANG",
+    "spot": "太仓校车点",
+    "time": "2026-09-29 09:00",
+    "returnTime": "2026-09-29 18:00",
+    "note": "当日往返使用，归还时确认车锁和刹车。",
+    "requester": "陈同学",
+    "owner": "赵同学",
+    "depositSnapshot": 100,
+    "status": "待归还",
+    "createdAt": "2026-09-27T12:00:00.000Z"
+  }
+]
