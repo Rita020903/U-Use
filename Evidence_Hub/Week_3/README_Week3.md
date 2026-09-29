@@ -10,7 +10,7 @@
 | `W3_Market_Sizing_v1.md` | TAM/SAM/SOM，公式可见、单位统一、来源表 | v1 已完成，无 `待填` |
 | `W3_Competitor_Table_v1.xlsx` | **主文件**：填写说明 / 竞品总表 / 截图清单 / Session 话术（4 页签） | 6 个点名在运营竞品已填，待补 4 张截图与 C02 群名 |
 | `W3_Competitor_Table_v1.csv` | 同上内容的 CSV 版（方便贴进文档） | v1，与 xlsx 同步 |
-| `W3_A1_Slide3_文案_v1.md` | A1 第 3 页可直接粘贴的成品文案（市场 + 竞品 + USP + 30 秒口头版） | v1 完成（毛xy 主责） |
+| `W3_A1_Slide3_文案_v1.md` | A1 第 3 页可直接粘贴的成品文案（市场 + 竞品 + USP + 30 秒口头版） | v1 完成（毛相宜 主责） |
 | `W3_USP_Hypothesis_v1.md` | 符合课程句式的 USP + 可测试性设计 | v1 完成 |
 | `W3_Evidence_Sources.csv` | 证据登记表，E01 起的证据 ID | 框架已建 |
 | `Competitor_Screenshots/` | 竞品截图（截图必须带日期） | 待补 4 张 |

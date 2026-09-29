@@ -1,6 +1,6 @@
 # W7 Ideation, Option Comparison & Storyboard v1（成品）
 
-主责：汪r（方案比较）＋ 毛xy（storyboard）　｜　复核：Rita　｜　版本：v1（2026-09-22）
+主责：汪睿（方案比较）＋ 毛相宜（storyboard）　｜　复核：郭宇璇（Rita）　｜　版本：v1（2026-09-22）
 参考日期：**Week 7 = 2026-10-26 至 11-01**（下周就是 A1 提交周）
 
 课程要求（handbook Week 7）：develop ≥3 materially different concepts；complete weighted comparison matrix；build six-slide deck storyboard。
@@ -40,12 +40,12 @@
 
 | 页 | 标题 | 一句话 | 证据 | 谁讲 |
 |---|---|---|---|---|
-| 1 | U Use｜西浦学生物品使用平台 | 让西浦学生安全地买、借、短租或交换暂时需要的物品 | — | 汪r |
-| 2 | Students need things for days, not forever | 学生短期要用但不想买，现有渠道解决不了 | E02/E03 | 汪r |
-| 3 | A narrow, testable beachhead | SAM 136.5 万/年、Year-1 SOM 129 单；6 家竞品都缺「短期使用」这一层 | E01/E07/E10-E15 | 汤yq + 李yl + 毛xy |
-| 4 | From owning to using | 可用时间 + 押金 + 归还确认 + 公共交付点 | E05/E06 | Rita（demo）+ 汪r |
-| 5 | Who pays, and what it takes to run | 课程阶段不收费；长期靠服务费与押金托管 | — | 汪r |
-| 6 | What we have proved, and what we test next | 已完成竞品与市场；待验证需求与押金机制 | E02/E03/E07 | 黄jj |
+| 1 | U Use｜西浦学生物品使用平台 | 让西浦学生安全地买、借、短租或交换暂时需要的物品 | — | 汪睿 |
+| 2 | Students need things for days, not forever | 学生短期要用但不想买，现有渠道解决不了 | E02/E03 | 汪睿 |
+| 3 | A narrow, testable beachhead | SAM 136.5 万/年、Year-1 SOM 129 单；6 家竞品都缺「短期使用」这一层 | E01/E07/E10-E15 | 汤鋆秋 + 李元龙 + 毛相宜 |
+| 4 | From owning to using | 可用时间 + 押金 + 归还确认 + 公共交付点 | E05/E06 | 郭宇璇（Rita）（demo）+ 汪睿 |
+| 5 | Who pays, and what it takes to run | 课程阶段不收费；长期靠服务费与押金托管 | — | 汪睿 |
+| 6 | What we have proved, and what we test next | 已完成竞品与市场；待验证需求与押金机制 | E02/E03/E07 | 黄俊杰 |
 
 严格 6 页，**不加 appendix**。任何新增内容都要先在 storyboard 里替换掉一页，而不是加一页。
 
@@ -53,11 +53,11 @@
 
 | 动作 | 谁 | 完成标准 | 时间 |
 |---|---|---|---|
-| 用新证据复核评分矩阵并记录改动原因 | 汪r | 改动处写明理由 | 10-29 前 |
-| 把 W6 洞察并进 Slide 2/4 | 毛xy | 每页都有证据 ID | 10-29 前 |
-| 写清三方案「materially different」的判断依据 | 汪r | 第 1 节的对调测试 | 10-29 前 |
-| deck 收敛到正好 6 页 | Rita | 页数 = 6，无 appendix | 10-31 前 |
-| Weekly Log Week 7 entry | 黄yx | 周六前更新 | 10-31 前 |
+| 用新证据复核评分矩阵并记录改动原因 | 汪睿 | 改动处写明理由 | 10-29 前 |
+| 把 W6 洞察并进 Slide 2/4 | 毛相宜 | 每页都有证据 ID | 10-29 前 |
+| 写清三方案「materially different」的判断依据 | 汪睿 | 第 1 节的对调测试 | 10-29 前 |
+| deck 收敛到正好 6 页 | 郭宇璇（Rita） | 页数 = 6，无 appendix | 10-31 前 |
+| Weekly Log Week 7 entry | 黄禹轩 | 周六前更新 | 10-31 前 |
 
 ## 5. 红线
 

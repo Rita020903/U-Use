@@ -1,6 +1,6 @@
 # W8 Business Model & A1 提交 v1（成品）
 
-主责：Rita（deck 定稿与提交）＋ 毛xy（文案）＋ 黄yx（claim-evidence map 与回执）＋ 汪r（现场讲）
+主责：郭宇璇（Rita）（deck 定稿与提交）＋ 毛相宜（文案）＋ 黄禹轩（claim-evidence map 与回执）＋ 汪睿（现场讲）
 版本：v1（2026-09-22）　｜　参考日期：**Week 8 = 2026-11-02 至 11-08**
 
 课程要求（handbook Week 8）：finalise value proposition and 9-block BMC；complete claim-evidence map；submit final 6-slide deck via LMO；verify both submission receipts。
@@ -64,13 +64,13 @@
 
 | 动作 | 谁 | 完成标准 | 时间 |
 |---|---|---|---|
-| BMC 定稿并与证据对齐 | 汪r + Rita | 九宫格无自相矛盾 | 11-03 前 |
-| claim-evidence map 补齐 | 黄yx | 每条 claim 有证据 ID | 11-04 前 |
-| deck 文案与页序定稿 | 毛xy | 严格 6 页 | 11-04 前 |
-| demo 彩排（一遍过，不依赖网络） | Rita | `npm run build` 通过 + `npm run reset` 可复现 | 11-05 前 |
-| 全组过一遍 deck，每人能讲自己那页 | 汪r | 抽问不掉链子 | 11-05 前 |
-| LMO 提交 + 两个回执 | Rita | 回执存 Week_8 | **11-06 23:59 前** |
-| Weekly Log Week 8 entry | 黄yx | 周六前更新 | 11-07 前 |
+| BMC 定稿并与证据对齐 | 汪睿 + 郭宇璇（Rita） | 九宫格无自相矛盾 | 11-03 前 |
+| claim-evidence map 补齐 | 黄禹轩 | 每条 claim 有证据 ID | 11-04 前 |
+| deck 文案与页序定稿 | 毛相宜 | 严格 6 页 | 11-04 前 |
+| demo 彩排（一遍过，不依赖网络） | 郭宇璇（Rita） | `npm run build` 通过 + `npm run reset` 可复现 | 11-05 前 |
+| 全组过一遍 deck，每人能讲自己那页 | 汪睿 | 抽问不掉链子 | 11-05 前 |
+| LMO 提交 + 两个回执 | 郭宇璇（Rita） | 回执存 Week_8 | **11-06 23:59 前** |
+| Weekly Log Week 8 entry | 黄禹轩 | 周六前更新 | 11-07 前 |
 
 ## 6. 红线
 

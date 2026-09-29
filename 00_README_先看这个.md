@@ -8,6 +8,7 @@
 
 ## 三个最重要的入口
 
+0. **`TEAM_ROSTER_AND_DATA_POLICY.md`** —— 组员姓名统一写法 + 哪些数据可以 demo、哪些必须真实收集。
 1. **`26_必须提交清单.md`** —— 必须交什么、什么时候交、要留什么证据。
 2. **`28_组员操作手册.md`** —— 每个人照着做的详细步骤（含卡住了找谁）。
 3. **`29_邮件要点与本周动作.md`** —— 教学团队 Week 3 邮件逐条拆解 + 我们对应的文件状态。
@@ -48,7 +49,7 @@ ENT303TC/
 
 | 文件 | 用途 |
 |---|---|
-| `Evidence_Hub/Week_3/W3_Market_Sizing_Workbook_v1.xlsx` | **可填数自动出结果的 workbook**（汤yq 主责，只改橙色格） |
+| `Evidence_Hub/Week_3/W3_Market_Sizing_Workbook_v1.xlsx` | **可填数自动出结果的 workbook**（汤鋆秋 主责，只改橙色格） |
 | `Evidence_Hub/Week_3/W3_Market_Sizing_v1.md` | TAM/SAM/SOM，公式可见、单位统一、来源可追溯 |
 | `Evidence_Hub/Week_3/W3_Competitor_Table_v1.xlsx` | **竞品主文件**（4 页签：填写说明/竞品总表/截图清单/Session 话术），6 个点名在运营竞品 |
 | `Evidence_Hub/Week_3/W3_Competitor_Table_v1.csv` | 竞品表 CSV 版，同上内容 |
@@ -59,8 +60,8 @@ ENT303TC/
 | `Evidence_Hub/01_Weekly_Log/Weekly_Log_UUse.md` | Weekly Log 的 md 版（内容相同） |
 | `Evidence_Hub/00_Team_Admin/05_AI使用声明_可直接粘贴.txt` | **AI 使用声明成品，直接粘贴** |
 | `Evidence_Hub/00_Team_Admin/03_分工表.md` | 分工与贡献记录 |
-| `Evidence_Hub/Week_5/W05_访谈执行包_v1.md` | **访谈成品包**：同意话术 + 提问卡 + U01/U02 记录表（黄jj 照着做） |
-| `Evidence_Hub/Week_5/W05_问卷成品_v1.md` | 问卷终版，逐题带选项，可直接导入问卷星/腾讯问卷（黄jj） |
+| `Evidence_Hub/Week_5/W05_访谈执行包_v1.md` | **访谈成品包**：同意话术 + 提问卡 + U01/U02 记录表（黄俊杰 照着做） |
+| `Evidence_Hub/Week_5/W05_问卷成品_v1.md` | 问卷终版，逐题带选项，可直接导入问卷星/腾讯问卷（黄俊杰） |
 | `Evidence_Hub/Week_5/W05_UserInterview_U01_模板.md` | 访谈记录模板（备用） |
 
 ## Week 4-14 每周成品文件（本周之后的路线）
@@ -78,7 +79,7 @@ ENT303TC/
 | Week 10 | `Week_10/W10_Semester1_CloseOut_v1.md` | 13 项归档 + A2 目标 + 导师签核 |
 | Week 11-14 | `Week_11-14/W11-14_A2_构建与视频_v1.md` | 构建 + 分镜 + **A2 提交（12-18）** |
 | Semester 2 | `Semester_2/S2_A3_A4_计划_v1.md` | A3（03-21 + 现场）与 A4 个人报告（04-16） |
-| 每周 | `01_Weekly_Log/Weekly_Log_Week4-14_骨架_可直接粘贴.txt` | 黄yx 每周填空即可 |
+| 每周 | `01_Weekly_Log/Weekly_Log_Week4-14_骨架_可直接粘贴.txt` | 黄禹轩 每周填空即可 |
 
 ## 课程证据文件（工作稿）
 

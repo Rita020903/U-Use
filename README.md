@@ -45,6 +45,7 @@ Data model:
 ```text
 ENT303TC/
 ├── README.md
+├── TEAM_ROSTER_AND_DATA_POLICY.md
 ├── 00_README_先看这个.md
 ├── PRD_V0.5_UUse物品使用平台版.md
 ├── Evidence_Hub/
@@ -57,6 +58,7 @@ Important folders:
 - `xjtlu-market-app/`: Next.js MVP app.
 - `Evidence_Hub/`: formal course evidence, weekly outputs, logs, and validation records.
 - `PRD_V0.5_UUse物品使用平台版.md`: product requirements and MVP roadmap.
+- `TEAM_ROSTER_AND_DATA_POLICY.md`: team roster, naming convention, and rules for demo data vs. real evidence.
 - `00_README_先看这个.md`: course-facing navigation and submission guide.
 
 ## Run Locally

@@ -15,7 +15,7 @@
 **Session（日期 + 时间 + supervisor）：** 待填（周二 Ziyu Jia / 周三 Nan Wang / 周四上午 Yingrong Ye / 周四下午 Chaojie Ma，填你们实际那一场）
 **本周 named output 与版本：** `W3_Market_Sizing_v1` + `W3_Competitor_Table_v1` + `W3_USP_Hypothesis_v1`
 **更新日期：** 2026-09-26 前（每周六前固定）
-**本次更新负责人：** 黄yx
+**本次更新负责人：** 黄禹轩
 
 ## 1. 本周产出与版本
 

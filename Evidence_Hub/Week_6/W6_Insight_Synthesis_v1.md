@@ -1,6 +1,6 @@
 # W6 Insight Synthesis & Direction Decision v1（成品）
 
-主责：汤yq（聚类）＋ 毛xy（persona/journey）　｜　决策记录：黄yx　｜　复核：Rita　｜　版本：v1（2026-09-22）
+主责：汤鋆秋（聚类）＋ 毛相宜（persona/journey）　｜　决策记录：黄禹轩　｜　复核：郭宇璇（Rita）　｜　版本：v1（2026-09-22）
 参考日期：**Week 6 = 2026-10-19 至 10-25**
 
 课程要求（handbook Week 6）：cluster evidence into ≥3 insights；update persona/journey map；revise problem statement；record pivot/persevere decision。
@@ -70,12 +70,12 @@ Journey 要标出**摩擦点**：搜索 → 看到可用时间 → 看押金 →
 
 | 动作 | 谁 | 完成标准 | 时间 |
 |---|---|---|---|
-| 把 5 条证据做成洞察表（≥3 条） | 汤yq | 每条都能追到证据 ID | 10-23 前 |
-| 更新 persona / journey map | 毛xy | 每条人设都有证据支撑 | 10-23 前 |
-| 修订 problem statement 到 v2 | 毛xy | 引用具体数据 | 10-23 前 |
-| 组织 pivot/persevere 决策会并记录 | 黄yx | 出席 + 决策 + 理由写进会议记录 | 10-24 前 |
-| 更新 `14_迭代日志_Pivot记录.md` | 黄yx | 写清改了什么、为什么 | 10-24 前 |
-| Weekly Log Week 6 entry | 黄yx | 周六前更新 | 10-24 前 |
+| 把 5 条证据做成洞察表（≥3 条） | 汤鋆秋 | 每条都能追到证据 ID | 10-23 前 |
+| 更新 persona / journey map | 毛相宜 | 每条人设都有证据支撑 | 10-23 前 |
+| 修订 problem statement 到 v2 | 毛相宜 | 引用具体数据 | 10-23 前 |
+| 组织 pivot/persevere 决策会并记录 | 黄禹轩 | 出席 + 决策 + 理由写进会议记录 | 10-24 前 |
+| 更新 `14_迭代日志_Pivot记录.md` | 黄禹轩 | 写清改了什么、为什么 | 10-24 前 |
+| Weekly Log Week 6 entry | 黄禹轩 | 周六前更新 | 10-24 前 |
 
 ## 7. 红线
 
