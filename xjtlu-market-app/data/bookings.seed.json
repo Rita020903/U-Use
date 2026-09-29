@@ -28,5 +28,35 @@
     "depositSnapshot": 100,
     "status": "待归还",
     "createdAt": "2026-09-27T12:00:00.000Z"
+  },
+  {
+    "id": "b-demo-3",
+    "productId": "p2",
+    "productTitle": "正装外套 + 衬衫",
+    "campus": "SIP",
+    "spot": "学生中心",
+    "time": "2026-10-01 15:30",
+    "returnTime": "2026-10-03 20:00",
+    "note": "用于 presentation 拍摄，归还前确认无污渍。",
+    "requester": "刘同学",
+    "owner": "周同学",
+    "depositSnapshot": 120,
+    "status": "已确认",
+    "createdAt": "2026-09-28T15:10:00.000Z"
+  },
+  {
+    "id": "b-demo-4",
+    "productId": "p5",
+    "productTitle": "英标转国标转换插头",
+    "campus": "SIP",
+    "spot": "图书馆门口",
+    "time": "2026-09-30 12:00",
+    "returnTime": "2026-10-07 12:00",
+    "note": "短期借用一周，归还时确认外观和插孔。",
+    "requester": "孙同学",
+    "owner": "林同学",
+    "depositSnapshot": 20,
+    "status": "已归还",
+    "createdAt": "2026-09-26T08:00:00.000Z"
   }
 ]

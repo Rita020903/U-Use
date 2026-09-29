@@ -75,3 +75,13 @@
 - 不要只收支持自己的证据；反面证据必须写进 Weekly Log。
 - 不要删除问卷里不符合预期的答卷。
 
+## 7. 本周可直接使用的文件
+
+| 文件 | 用途 |
+|---|---|
+| `W05_Data_Collection_Tracker_v1.md` | 追踪 U01-U03 / T01-T02 是否真实完成 |
+| `W05_UserInterview_U01_模板.md` | 访谈记录模板，复制后改编号 |
+| `W05_PrototypeTest_T01_模板.md` | 原型测试记录模板，复制后改编号 |
+| `W05_Survey_Results_模板.md` | 问卷结果汇总模板 |
+
+原型 app 里的 booking/report/product demo 数据只用于测试产品流程，不作为用户证据。

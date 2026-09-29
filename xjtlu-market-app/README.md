@@ -50,6 +50,7 @@ U Use 的核心洞察是：学生很多时候并不想拥有一件物品，只�
 - Framework: Next.js 14 App Router
 - UI: React + CSS + lucide-react
 - 数据：本地 JSON 文件模拟数据库，包括 `products.json`、`bookings.json`、`reports.json`
+- `data/*.json` 中的 booking/report 是 demo data，只用于原型流程演示，不作为课程用户证据。
 - 当前版本不接入真实支付、实名系统、短信、地图 SDK 或服务器。适合课程展示、交互原型和后续 vibe coding 迭代。
 
 ## Week 4 测试建议
