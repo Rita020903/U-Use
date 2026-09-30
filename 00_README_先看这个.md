@@ -14,6 +14,7 @@
 3. **`29_邮件要点与本周动作.md`** —— 教学团队 Week 3 邮件逐条拆解 + 我们对应的文件状态。
 4. **`Evidence_Hub/README_Evidence_Hub.md`** —— supervisor 会直接看的地方，包含目录结构、命名规范和权限设置步骤。
 5. **`24_Week3分工与任务分配.md`** —— 本周任务拆解与分工依据。
+6. **`25_保守营销与试点计划.md`** —— marketing 口径、试点范围和可编假设的边界。
 
 ## 目录分工（很重要，别混）
 
@@ -25,7 +26,7 @@ ENT303TC/
 ├── 13_课程交付矩阵_按Handbook对齐.md
 ├── 01_每周推进计划_ENT303TC匹配版.md
 ├── 11_提交节点与日期日历.md
-├── 03_-23_*.md / *.csv          ← 工作稿与模板（不是提交版本）
+├── 03_-25_*.md / *.csv          ← 工作稿与模板（不是提交版本）
 ├── PRD_V0.5_UUse物品使用平台版.md
 ├── xjtlu-market-app/            ← Next.js 可点击原型
 └── Evidence_Hub/                ← supervisor 看的正式材料（需上传到在线共享位置）
@@ -44,6 +45,7 @@ ENT303TC/
 7. `14_迭代日志_Pivot记录.md`
 8. `02_A1_六页PitchDeck_可直接改.md`
 9. `09_A2_3到6分钟PitchVideo脚本.md`
+10. `25_保守营销与试点计划.md`
 
 ## Week 3 关键文件（本周重点）
 
@@ -63,6 +65,7 @@ ENT303TC/
 | `Evidence_Hub/Week_5/W05_访谈执行包_v1.md` | **访谈成品包**：同意话术 + 提问卡 + U01/U02 记录表（黄俊杰 照着做） |
 | `Evidence_Hub/Week_5/W05_问卷成品_v1.md` | 问卷终版，逐题带选项，可直接导入问卷星/腾讯问卷（黄俊杰） |
 | `Evidence_Hub/Week_5/W05_UserInterview_U01_模板.md` | 访谈记录模板（备用） |
+| `Evidence_Hub/Week_5/W05_Demo_Assumptions_Not_Evidence.md` | 可编的 demo 假设数据，仅用于演练和建模，不能当真实证据 |
 
 ## Week 4-14 每周成品文件（本周之后的路线）
 
@@ -94,6 +97,7 @@ ENT303TC/
 - 研究设计：`19_研究设计与数据计划.md`
 - 三方案比较：`21_三方案加权比较矩阵.md`
 - A2 路线图：`23_A2路线图与构建目标.md`
+- 保守 marketing 与试点计划：`25_保守营销与试点计划.md`
 - 已被取代的文件：`Evidence_Hub/Archive/`
 
 ## 原型运行

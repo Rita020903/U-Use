@@ -16,7 +16,7 @@ Typical use cases include calculators for exams, formal clothes for presentation
 
 ## Current MVP
 
-The current version is a testable MVP built for ENT303TC validation and product iteration. It is still a local prototype, but it now models the key operational flows of a real product.
+The current version is a testable MVP built for ENT303TC validation and product iteration. It is still a local prototype, but it now models the key operational flows of a real product. The commercial story is intentionally conservative: U Use should first be tested as a small campus pilot, not presented as a proven high-growth marketplace.
 
 Student side:
 
@@ -119,7 +119,7 @@ The product is built around five operational objects:
 - Report: target, reason, note, handling status.
 - Admin queue: review and dispute handling.
 
-## Week 4 Validation Focus
+## Validation Focus
 
 The next validation step is not to ask users whether the app is "good." The goal is to observe whether students can complete realistic tasks.
 
@@ -138,6 +138,8 @@ Success signals:
 - A user can explain how U Use differs from Xianyu or WeChat groups.
 - A user understands that public handoff points reduce trust and safety problems.
 
+Marketing and rollout should stay small until these signals are observed. The recommended first audience is 20-30 survey respondents, 3-5 prototype testers, and a small seed inventory of low-risk items such as calculators, formal wear, luggage, adapters, and activity tools.
+
 ## Roadmap To A Real Product
 
 Near term:
@@ -155,6 +157,10 @@ Before real operation:
 - Add moderation rules for prohibited items.
 - Add privacy and data retention policy.
 - Test with a small campus group before wider launch.
+
+## Data Policy
+
+The app contains demo products, bookings, and reports for testing flows. These records are synthetic and can be edited freely. Course evidence is different: interviews, survey results, competitor screenshots, and user testing notes must be collected from real activity or clearly labelled as assumptions.
 
 ## Current Limitations
 
