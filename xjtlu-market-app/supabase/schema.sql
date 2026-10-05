@@ -1,5 +1,5 @@
 -- 未来接 Supabase 时使用的基础表结构草稿。
--- 当前 demo 仍使用 data/products.json 和内存数组，方便本地快速修改。
+-- 当前 demo 使用本地 JSON 文件持久化。此草稿尚未接入，也尚未配置 RLS。
 
 create table if not exists profiles (
   id uuid primary key references auth.users(id) on delete cascade,
@@ -47,7 +47,7 @@ create table if not exists bookings (
   deposit_amount numeric(10,2) not null default 0,
   rent_amount numeric(10,2) not null default 0,
   note text,
-  status text not null default '待确认' check (status in ('待确认', '已确认', '已交付', '使用中', '待归还', '已归还', '已取消', '争议处理中')),
+  status text not null default '待确认' check (status in ('待确认', '已确认', '已交付', '使用中', '待归还', '已归还', '已完成', '已取消', '有争议')),
   created_at timestamptz not null default now()
 );
 

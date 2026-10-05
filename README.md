@@ -22,6 +22,8 @@ Student side:
 
 - Browse available items by campus, category, access mode, and keyword.
 - Switch between SIP and Taicang campus contexts.
+- View official campus maps with zoom and external navigation.
+- Save and remove favorites in the current browser.
 - View item details, deposit, availability, return rule, and handoff point.
 - Publish an item for review.
 - Send a booking request with handoff and return information.
@@ -65,8 +67,9 @@ Important folders:
 
 ```bash
 cd xjtlu-market-app
-npm install
-npm run reset
+npm ci
+cp .env.example .env.local
+# Set ADMIN_PASSWORD in .env.local before opening the admin page.
 npm run dev
 ```
 
@@ -80,7 +83,9 @@ Admin app:   http://localhost:3000/admin
 Build check:
 
 ```bash
+npm test
 npm run build
+npm run lint
 ```
 
 Reset demo data:
@@ -93,7 +98,7 @@ This restores seed data for products, bookings, and reports.
 
 ## Tech Stack
 
-- Next.js 14 App Router
+- Next.js 15 App Router
 - React
 - TypeScript
 - CSS
@@ -101,6 +106,8 @@ This restores seed data for products, bookings, and reports.
 - Local JSON files as a mock database
 
 The MVP intentionally avoids adding a heavy backend too early. The current goal is to validate user behavior, trust concerns, and item-access demand before committing to a production architecture.
+
+The admin username is `admin`; its password comes from `ADMIN_PASSWORD`. Development mode uses a shared demo identity. Production write access is locked by default; `DEMO_MODE=true` is only for local demonstrations. Real student authentication, per-user data isolation, persistent database deployment, image storage and payments are not connected. See the app README for runtime boundaries and official map sources.
 
 ## Product Logic
 
