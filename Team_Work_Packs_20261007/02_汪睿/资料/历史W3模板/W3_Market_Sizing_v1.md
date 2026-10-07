@@ -1,3 +1,5 @@
+> 历史资料：不作为当前分工、校历、提交规范或已完成证据。当前任务以[个人任务入口](../../README.md)为准；正文中的原路径、负责人和数字保留作历史参考。
+
 # W3_Market Sizing v1：U Use
 
 课程依据：ENT303TC Week 3 —— build TAM/SAM/SOM workbook with sourced assumptions。

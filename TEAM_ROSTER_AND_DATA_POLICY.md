@@ -1,6 +1,6 @@
 # Team Roster & Data Policy
 
-本文件用于统一组员姓名、分工称呼和数据使用边界。2026-10-07根据Rita在聊天中明确提供的分工更新；职责安排不证明任务已完成。当前任务以 [七人工作包](Team_Work_Packs_20261007/README.md) 为准，旧Week 3分工保留为历史。
+本文件用于统一组员姓名、分工称呼和数据使用边界。2026-10-07根据Rita在聊天中明确提供的分工更新；职责安排不证明任务已完成。当前任务以 [七人工作包](Team_Work_Packs_20261007/README.md) 为准，旧Week 3分工、旧周计划和旧日志已集中至 [历史归档](Evidence_Hub/Archive/README_Archive.md)，不再与当前任务混排。
 
 ## 1. Team Roster
 

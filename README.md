@@ -2,6 +2,17 @@
 
 U Use is a campus item-access application for XJTLU students across SIP and XEC (Taicang). Students can buy, borrow, rent, or permanently swap items. The application implements student-email verification, private accounts and bilateral transactions; deploying the actual database and email service remains a separate operational step.
 
+## 组员先看这里
+
+| 要做什么 | 唯一当前入口 |
+| --- | --- |
+| 找自己的分工、每周任务、模板和个人 ZIP | [七人任务包](Team_Work_Packs_20261007/README.md) |
+| 修改正式作业草稿、slides、脚本、模型和 A4 支持 | [当前作业资料](Final_Submission_20261006/START_HERE.md) |
+| 开发产品、运行检查或看部署配置 | [产品代码](xjtlu-market-app/README.md) |
+| 学习访谈与统计记录方法 | [AI 合成练习](Team_Examples_SYNTHETIC_20261007/README.md)，不能当真实研究 |
+
+更详细的交接说明见 [组员入口](00_README_先看这个.md)。旧分工、旧周计划和旧 PRD 已集中到 [历史归档](Evidence_Hub/Archive/README_Archive.md)，不再作为当前规范。独立分发包保留必要资料副本，不是无用途的重复文件。
+
 ## Current Coursework Package
 
 [Seven individual work packs / 七人任务包](Team_Work_Packs_20261007/README.md) contains the roles confirmed on 7 October, calendar-aligned weekly task cards, independent personal folders and the assessment/submission tracker. It distinguishes plans, real evidence and synthetic training examples; none of its checklists claim that a portal submission has happened.
@@ -62,14 +73,12 @@ ENT303TC/
 ├── ARCHITECTURE.md
 ├── TEAM_ROSTER_AND_DATA_POLICY.md
 ├── 00_README_先看这个.md
-├── PRD_V0.5_UUse物品使用平台版.md
 ├── Team_Work_Packs_20261007/
 ├── Final_Submission_20261006/
 ├── Team_Examples_SYNTHETIC_20261007/
-├── Evidence_Hub/
+├── Evidence_Hub/                # Current team records and labelled historical archive
 ├── xjtlu-market-app/
-├── .github/workflows/verify.yml
-└── 01_-29_*.md / *.csv
+└── .github/workflows/verify.yml
 ```
 
 Important folders:
@@ -80,8 +89,7 @@ Important folders:
 - `Final_Submission_20261006/`: current assessment drafts and supporting materials; not proof of submission.
 - `Team_Examples_SYNTHETIC_20261007/`: labelled fictional interview and test examples for practice, never real research evidence.
 - `.github/workflows/verify.yml`: automated checks using an isolated PostgreSQL service, not the production database.
-- `Evidence_Hub/`: formal course evidence, weekly outputs, logs, and validation records.
-- `PRD_V0.5_UUse物品使用平台版.md`: product requirements and MVP roadmap.
+- `Evidence_Hub/`: current record templates and instructions for private evidence; historical planning documents are isolated under `Archive/`, not presented as completed research.
 - `TEAM_ROSTER_AND_DATA_POLICY.md`: team roster, naming convention, and rules for demo data vs. real evidence.
 - `00_README_先看这个.md`: course-facing navigation and submission guide.
 
@@ -214,4 +222,4 @@ For the ENT303TC project, the current positioning is:
 
 This repository also contains ENT303TC course materials, including weekly planning, evidence logs, market sizing, competitor analysis, research design, and assessment preparation.
 
-Formal course evidence should be stored in `Evidence_Hub/` with versioned filenames. Working drafts and internal planning files live at the repository root.
+Formal evidence uses dated, versioned filenames and a private shared location when it contains personal information or submission receipts. Safe templates and status instructions live in `Evidence_Hub/`. Superseded working drafts, old week plans and old PRDs are explicitly labelled under `Evidence_Hub/Archive/`; the root no longer mixes them with current instructions.

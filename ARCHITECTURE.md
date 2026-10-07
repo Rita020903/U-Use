@@ -1,6 +1,6 @@
 # U Use Architecture
 
-The repository contains the application in `xjtlu-market-app/` and course evidence in `Evidence_Hub/`. Course documents, working drafts and archives are not runtime product data. Synthetic application fixtures must never be treated as real interviews or usage evidence.
+The repository contains the application in `xjtlu-market-app/`, current personal task packs in `Team_Work_Packs_20261007/`, and assessment drafts in `Final_Submission_20261006/`. `Evidence_Hub/` contains current record guidance and a labelled historical archive, not an assertion that all research or submissions are complete. Course documents, working drafts and archives are not runtime product data. Synthetic application fixtures must never be treated as real interviews or usage evidence.
 
 ## Application Layers
 
@@ -54,7 +54,7 @@ Runtime uses `uuse_records(kind,id,payload)` with a composite primary key. The a
 
 Record kinds include people, email account indices, hashed sessions, OTP challenges, products, photos, bookings, needs, need-offers, submissions, messages, notifications, outbox, reports, audit and ephemeral limits/presence. Submission records map an account-scoped request key and normalized input hash to the original listing/request, inside the same transaction as creation. Photos are transformed WebP records. OTPs are HMAC-hashed; raw session tokens live only in HttpOnly cookies. Private data is never committed.
 
-`MIGRATE_LEGACY=true` imports existing JSON and private timetables exactly once. `SEED_DEMO=true` imports labelled fictional fixtures. Otherwise an empty database is used. Existing availability dates do not move. `supabase/schema.sql` is a historical, disconnected draft and is not the current migration.
+`MIGRATE_LEGACY=true` imports existing JSON and private timetables exactly once. `SEED_DEMO=true` imports labelled fictional fixtures. Otherwise an empty database is used. Existing availability dates do not move. The active schema and migration are implemented in `lib/database.ts`; the disconnected Supabase draft has been removed to prevent accidental use.
 
 ## Workflows
 
