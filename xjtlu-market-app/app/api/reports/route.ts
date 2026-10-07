@@ -1,9 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
-
-export const dynamic = "force-dynamic";
+import { NextResponse } from "next/server";
 import { addReport, getReports, updateReportStatus } from "../../../lib/data";
 import { ReportStatus } from "../../../lib/types";
-
+import { requirePerson } from "../../../lib/people";
+import { api, ApiError, jsonBody, text, isAdmin } from "../../../lib/http";
+import { rateLimit } from "../../../lib/database";
+export const dynamic = "force-dynamic";
 const reasons = [
   "疑似诈骗",
   "商品与描述不符",
@@ -11,64 +12,41 @@ const reasons = [
   "骚扰或辱骂",
   "诱导站外交易",
 ];
-const statuses: ReportStatus[] = ["待处理", "处理中", "已处理"];
-
-function text(value: unknown) {
-  return typeof value === "string" ? value.trim() : "";
-}
-
-export async function POST(request: NextRequest) {
-  let body: Record<string, unknown>;
-  try {
-    body = await request.json();
-    if (!body || typeof body !== "object" || Array.isArray(body))
-      throw new Error("Invalid body");
-  } catch {
-    return NextResponse.json({ error: "请求格式无效" }, { status: 400 });
-  }
-  const target = text(body.target);
-  const reason = text(body.reason);
-  const note = text(body.note);
-
-  if (!target || !reasons.includes(reason) || !note) {
-    return NextResponse.json(
-      { error: "请填写举报对象和原因" },
-      { status: 400 },
-    );
-  }
-  if (target.length > 120 || note.length > 2000)
-    return NextResponse.json({ error: "举报内容过长" }, { status: 400 });
-  const report = await addReport({
-    target,
-    reason,
-    note,
+export const POST = api(async (request) => {
+  const person = await requirePerson(request),
+    body = await jsonBody(request);
+  if (!(await rateLimit("reports:" + person.id, 10, 3600000)))
+    throw new ApiError("举报过于频繁，请稍后重试", 429);
+  const target = text(body.target),
+    reason = text(body.reason),
+    note = text(body.note);
+  if (
+    !target ||
+    !reasons.includes(reason) ||
+    !note ||
+    target.length > 120 ||
+    note.length > 2000
+  )
+    throw new ApiError("请填写有效的举报对象、原因和说明");
+  return NextResponse.json(
+    await addReport({ target, reason, note, reporterId: person.id }),
+    { status: 201 },
+  );
+});
+export const GET = api(async (request) => {
+  if (!isAdmin(request)) throw new ApiError("仅管理员可查看举报", 403);
+  return NextResponse.json(await getReports(), {
+    headers: { "Cache-Control": "no-store" },
   });
-  return NextResponse.json(report, { status: 201 });
-}
-
-export async function GET() {
-  return NextResponse.json(await getReports());
-}
-
-export async function PATCH(request: NextRequest) {
-  let body: Record<string, unknown>;
-  try {
-    body = await request.json();
-    if (!body || typeof body !== "object" || Array.isArray(body))
-      throw new Error("Invalid body");
-  } catch {
-    return NextResponse.json({ error: "请求格式无效" }, { status: 400 });
-  }
-  const id = text(body.id);
-  const status = text(body.status) as ReportStatus;
-  if (!id || !statuses.includes(status)) {
-    return NextResponse.json(
-      { error: "请提供有效的举报 ID 和状态" },
-      { status: 400 },
-    );
-  }
+});
+export const PATCH = api(async (request) => {
+  if (!isAdmin(request)) throw new ApiError("仅管理员可处理举报", 403);
+  const body = await jsonBody(request),
+    id = text(body.id),
+    status = text(body.status) as ReportStatus;
+  if (!id || !["待处理", "处理中", "已处理"].includes(status))
+    throw new ApiError("举报 ID 或状态无效");
   const report = await updateReportStatus(id, status);
-  if (!report)
-    return NextResponse.json({ error: "未找到举报" }, { status: 404 });
+  if (!report) throw new ApiError("未找到举报", 404);
   return NextResponse.json(report);
-}
+});

@@ -9,7 +9,7 @@ export const campuses = {
     query: "西交利物浦大学 苏州工业园区 仁爱路111号",
   },
   TAICANG: {
-    label: "太仓校区",
+    label: "XEC 校区",
     map: "https://www.xjtlu.edu.cn/wp-content/uploads/2025/03/campus-map.jpg",
     download:
       "https://www.xjtlu.edu.cn/wp-content/uploads/2025/03/campus-map.jpg",

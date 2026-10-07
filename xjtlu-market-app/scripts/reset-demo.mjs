@@ -1,30 +1,48 @@
-/**
- * 一键恢复演示数据。
- *
- * 演示或测试时发布过的物品会写进 data/products.json。
- * 录制视频或 session 之前跑一次，把数据恢复成干净的 14 件种子物品。
- *
- * 用法：npm run reset
- */
-import { copyFile, readFile } from "node:fs/promises";
+import { DatabaseSync } from "node:sqlite";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
-
-const root = process.cwd();
-const files = [
-  ["products.seed.json", "products.json"],
-  ["bookings.seed.json", "bookings.json"],
-  ["reports.seed.json", "reports.json"]
-];
-
-for (const [seedName, targetName] of files) {
-  await copyFile(path.join(root, "data", seedName), path.join(root, "data", targetName));
+const file = process.env.SQLITE_PATH;
+if (
+  process.env.NODE_ENV === "production" ||
+  process.env.DATABASE_URL ||
+  process.env.RESET_DEMO_CONFIRM !== "RESET_DEMO_ONLY" ||
+  !file
+)
+  throw new Error(
+    "Reset disabled. Use an isolated SQLITE_PATH and RESET_DEMO_CONFIRM=RESET_DEMO_ONLY. Production and PostgreSQL resets are forbidden.",
+  );
+const db = new DatabaseSync(file);
+try {
+  db.exec(
+    "BEGIN IMMEDIATE;CREATE TABLE IF NOT EXISTS uuse_records(kind TEXT NOT NULL,id TEXT NOT NULL,payload TEXT NOT NULL,PRIMARY KEY(kind,id))",
+  );
+  const people = db
+    .prepare("SELECT payload FROM uuse_records WHERE kind='people'")
+    .all();
+  if (people.some((row) => JSON.parse(row.payload).verified))
+    throw new Error(
+      "Verified accounts found. Refusing to erase a real or authenticated workspace.",
+    );
+  for (const kind of ["products", "bookings", "reports"]) {
+    db.prepare("DELETE FROM uuse_records WHERE kind=?").run(kind);
+    for (const item of JSON.parse(
+      await readFile(path.join("data", kind + ".seed.json"), "utf8"),
+    )) {
+      if (kind === "products") item.isDemo = true;
+      db.prepare("INSERT INTO uuse_records VALUES(?,?,?)").run(
+        kind,
+        item.id,
+        JSON.stringify(item),
+      );
+    }
+  }
+  db.exec("COMMIT");
+  console.log(
+    "Isolated demo records restored. Timetables and sessions were not deleted.",
+  );
+} catch (error) {
+  db.exec("ROLLBACK");
+  throw error;
+} finally {
+  db.close();
 }
-
-const products = JSON.parse(await readFile(path.join(root, "data", "products.json"), "utf8"));
-const bookings = JSON.parse(await readFile(path.join(root, "data", "bookings.json"), "utf8"));
-const reports = JSON.parse(await readFile(path.join(root, "data", "reports.json"), "utf8"));
-
-console.log(`已恢复演示数据：${products.length} 件物品 -> data/products.json`);
-console.log(`已恢复借还记录：${bookings.length} 条 -> data/bookings.json`);
-console.log(`已恢复举报记录：${reports.length} 条 -> data/reports.json`);
-console.log("学生端 http://localhost:3000　管理端 http://localhost:3000/admin");

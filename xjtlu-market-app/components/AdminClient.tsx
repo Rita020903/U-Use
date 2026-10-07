@@ -1,6 +1,8 @@
 "use client";
+import { clientFetch } from "../lib/client-fetch";
 
 import { useEffect, useState } from "react";
+import { useConfirmation } from "./ConfirmationProvider";
 import {
   ArrowLeft,
   Check,
@@ -28,9 +30,9 @@ export default function AdminClient() {
     setError("");
     try {
       const responses = await Promise.all([
-        fetch("/api/products?admin=1"),
-        fetch("/api/bookings"),
-        fetch("/api/reports"),
+        clientFetch("/api/products?admin=1"),
+        clientFetch("/api/bookings"),
+        clientFetch("/api/reports"),
       ]);
       if (responses.some((response) => !response.ok))
         throw new Error("加载失败，请刷新或重新登录");
@@ -53,7 +55,7 @@ export default function AdminClient() {
     if (busy) return;
     setBusy(true);
     try {
-      const response = await fetch(`/api/${kind}`, {
+      const response = await clientFetch(`/api/${kind}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id, status }),
@@ -142,7 +144,27 @@ export default function AdminClient() {
               <AdminCase
                 key={item.id}
                 title={item.title}
-                meta={`${item.campus === "SIP" ? "SIP 校区" : "太仓校区"} · ${item.category} · 押金 ¥${item.deposit}`}
+                detail={
+                  <>
+                    <p>{item.condition}</p>
+                    <p>
+                      {item.spot} · {item.returnRule} {item.swapRule}
+                    </p>
+                    <div className="detail-photo-strip">
+                      {item.photos?.map((url) => (
+                        <a
+                          href={url}
+                          key={url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <img src={url} alt={item.title} />
+                        </a>
+                      ))}
+                    </div>
+                  </>
+                }
+                meta={`${item.campus === "SIP" ? "SIP 校区" : "XEC 校区"} · ${item.category} · 押金 ¥${item.deposit}`}
                 actionLabel="通过"
                 onClick={() => updateProduct(item.id, "可用")}
                 extra={
@@ -162,33 +184,35 @@ export default function AdminClient() {
         <div className="admin-card">
           <div className="split">
             <div>
-              <h2>借还预约</h2>
-              <p className="muted">从待确认到已归还，保留押金和交付点记录</p>
+              <h2>交易与仲裁</h2>
+              <p className="muted">真实交易由双方确认；管理员仅处理争议</p>
             </div>
             <ClipboardList size={22} />
           </div>
-          {activeBookings.map((item) => (
-            <AdminCase
-              key={item.id}
-              title={item.productTitle}
-              meta={`${item.requester} -> ${item.owner} · ${item.spot} · ${item.time} / ${item.returnTime} · ${item.status}`}
-              actionLabel={transitionsFor(item)[0] || "已完成"}
-              onClick={() => {
-                const status = transitionsFor(item)[0];
-                if (status) updateBooking(item.id, status);
-              }}
-              extra={
-                transitionsFor(item).includes("已取消") && (
-                  <button
-                    className="danger"
-                    onClick={() => updateBooking(item.id, "已取消")}
-                  >
-                    取消
-                  </button>
-                )
-              }
-            />
-          ))}
+          {activeBookings
+            .filter((item) => !item.ownerId || item.status === "有争议")
+            .map((item) => (
+              <AdminCase
+                key={item.id}
+                title={item.productTitle}
+                meta={`${item.requester} -> ${item.owner} · ${item.spot} · ${item.time} / ${item.returnTime} · ${item.status}`}
+                actionLabel={transitionsFor(item)[0] || "已完成"}
+                onClick={() => {
+                  const status = transitionsFor(item)[0];
+                  if (status) updateBooking(item.id, status);
+                }}
+                extra={
+                  transitionsFor(item).includes("已取消") && (
+                    <button
+                      className="danger"
+                      onClick={() => updateBooking(item.id, "已取消")}
+                    >
+                      取消
+                    </button>
+                  )
+                }
+              />
+            ))}
         </div>
         <div className="admin-card">
           <div className="split">
@@ -206,6 +230,11 @@ export default function AdminClient() {
                 meta={`${item.target} · ${item.note}`}
                 actionLabel="处理"
                 onClick={() => updateReport(item.id, "已处理")}
+                detail={
+                  item.target.startsWith("need:") ? (
+                    <NeedReview id={item.target.slice(5)} />
+                  ) : undefined
+                }
               />
             ))
           ) : (
@@ -227,7 +256,7 @@ export default function AdminClient() {
               <span>
                 <strong>{item.title}</strong>
                 <small>
-                  {item.campus === "SIP" ? "SIP 校区" : "太仓校区"} ·{" "}
+                  {item.campus === "SIP" ? "SIP 校区" : "XEC 校区"} ·{" "}
                   {item.accessMode}
                 </small>
               </span>
@@ -238,6 +267,73 @@ export default function AdminClient() {
       </fieldset>
       {message && <div className="toast">{message}</div>}
     </main>
+  );
+}
+
+function NeedReview({ id }: { id: string }) {
+  const confirm = useConfirmation();
+  const [details, setDetails] = useState<{
+      title: string;
+      note: string;
+      status: string;
+    } | null>(null),
+    [error, setError] = useState(""),
+    [busy, setBusy] = useState(false);
+  useEffect(() => {
+    let active = true;
+    clientFetch("/api/needs?reviewId=" + encodeURIComponent(id))
+      .then(async (r) => {
+        const data = await r.json();
+        if (!r.ok) throw new Error(data.error);
+        if (active) setDetails(data);
+      })
+      .catch((e) => {
+        if (active) setError(e instanceof Error ? e.message : "加载失败");
+      });
+    return () => {
+      active = false;
+    };
+  }, [id]);
+  async function hide() {
+    if (!(await confirm("隐藏这条求物？记录会保留，发布者将收到通知。")))
+      return;
+    setBusy(true);
+    setError("");
+    try {
+      const r = await clientFetch("/api/needs", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, action: "hide" }),
+      });
+      const data = await r.json();
+      if (!r.ok) throw new Error(data.error);
+      setDetails((n) => n && { ...n, status: "withdrawn" });
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "隐藏失败");
+    } finally {
+      setBusy(false);
+    }
+  }
+  return (
+    <div>
+      {error && <p role="alert">{error}</p>}
+      {details ? (
+        <>
+          <strong>{details.title}</strong>
+          <p>{details.note}</p>
+          <button
+            type="button"
+            className="danger"
+            disabled={busy || details.status === "withdrawn"}
+            onClick={() => void hide()}
+          >
+            {details.status === "withdrawn" ? "已隐藏" : "隐藏求物"}
+          </button>
+        </>
+      ) : (
+        !error && <p>正在读取求物内容…</p>
+      )}
+    </div>
   );
 }
 
@@ -267,18 +363,21 @@ function AdminCase({
   actionLabel,
   onClick,
   extra,
+  detail,
 }: {
   title: string;
   meta: string;
   actionLabel: string;
   onClick: () => void;
   extra?: React.ReactNode;
+  detail?: React.ReactNode;
 }) {
   return (
     <div className="admin-case">
       <div>
         <strong>{title}</strong>
         <small>{meta}</small>
+        {detail}
       </div>
       <button
         className="icon-button"

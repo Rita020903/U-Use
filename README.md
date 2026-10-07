@@ -1,6 +1,6 @@
 # U Use
 
-U Use is a campus item-access platform for XJTLU students. It helps students buy, borrow, rent, or swap items inside a verified student community across the SIP and Taicang campuses.
+U Use is a campus item-access application for XJTLU students across SIP and XEC (Taicang). Students can buy, borrow, rent, or permanently swap items. The application implements student-email verification, private accounts and bilateral transactions; deploying the actual database and email service remains a separate operational step.
 
 ## Current Coursework Package
 
@@ -12,7 +12,7 @@ The project is not a generic second-hand marketplace. Its core idea is that stud
 
 ## Product Vision
 
-Students currently solve short-term item needs through WeChat groups, friends, or second-hand platforms. These channels are fast but messy: posts disappear, trust is unclear, deposits are informal, return responsibility is vague, and cross-campus handoff is hard to coordinate.
+Our working hypothesis is that students using friends, WeChat groups or second-hand platforms may face coordination friction around dates, return responsibility and meeting places. The existence and importance of that friction require authentic incident interviews and task tests; no completed participant study is claimed by the current package.
 
 U Use focuses on one sharper job:
 
@@ -20,50 +20,66 @@ U Use focuses on one sharper job:
 
 Typical use cases include calculators for exams, formal clothes for presentations, luggage for short trips, bicycles for campus travel, projectors for events, adapters, cameras, and activity equipment.
 
-## Current MVP
+## Current Product
 
-The current version is a testable MVP built for ENT303TC validation and product iteration. It is still a local prototype, but it now models the key operational flows of a real product. The commercial story is intentionally conservative: U Use should first be tested as a small campus pilot, not presented as a proven high-growth marketplace.
+The current version implements the full transaction workflow, not a shared anonymous demonstration. Timetable imports are personal and format-tolerant, with mandatory review rather than a preset major, year or sample schedule. Engineering scope is not limited to a small pilot; marketing still must not claim proven demand, user numbers or high growth without evidence.
 
 Student side:
 
 - Browse available items by campus, category, access mode, and keyword.
-- Switch between SIP and Taicang campus contexts.
-- View official campus maps with zoom and external navigation.
+- Switch between SIP and XEC campus contexts.
+- See their current browser location, opt in to approximate location sharing, and view nearby opt-in users on an interactive map.
+- Switch to official campus diagrams and navigate to structured public handoff points.
+- Import timetable screenshots or PDFs locally, review teaching weeks and room codes, and obtain date-specific handoff suggestions.
 - Save and remove favorites in the current browser.
 - View item details, deposit, availability, return rule, and handoff point.
 - Publish an item for review.
 - Send a booking request with handoff and return information.
 - Submit a safety report.
+- Sign in with a student-email code, manage personal listings and fees, and exchange transaction-only messages.
+- Accept, reject or cancel requests; independently confirm physical handoff and return, and open a dispute.
+- Review each imported class and set individual term dates, odd/even weeks, cancelled dates and makeup dates.
 
 Admin side:
 
 - Review newly published items before they appear to students.
-- Track active bookings and update booking status.
+- Track transactions and arbitrate disputes; real handoffs are confirmed by participants, not the admin.
 - Handle reports and disputes.
-- See item status, booking records, and report queues from local data.
+- Review actual item photos, status, transactions and reports from the configured database.
 
 Data model:
 
-- `products.json`: item listings and review status.
-- `bookings.json`: booking records and use/return status.
-- `reports.json`: safety reports and dispute handling status.
+- Runtime: transactional SQLite on persistent local disk, or PostgreSQL for multiple instances.
+- Private records: accounts, hashed sessions, personal timetables, photos, bookings, messages and notifications.
+- Approximate opt-in location: server-side range filtering and independent page leases, expires within two minutes.
+- JSON fixtures: explicit one-time legacy/demo imports only; no automatic availability-date changes.
 
 ## Repository Structure
 
 ```text
 ENT303TC/
 ├── README.md
+├── ARCHITECTURE.md
 ├── TEAM_ROSTER_AND_DATA_POLICY.md
 ├── 00_README_先看这个.md
 ├── PRD_V0.5_UUse物品使用平台版.md
+├── Team_Work_Packs_20261007/
+├── Final_Submission_20261006/
+├── Team_Examples_SYNTHETIC_20261007/
 ├── Evidence_Hub/
 ├── xjtlu-market-app/
+├── .github/workflows/verify.yml
 └── 01_-29_*.md / *.csv
 ```
 
 Important folders:
 
-- `xjtlu-market-app/`: Next.js MVP app.
+- `xjtlu-market-app/`: the actual Next.js application; deployment details are in its README and DEPLOYMENT.md.
+- `ARCHITECTURE.md`: current application layers, ownership, storage, privacy and verification boundaries.
+- `Team_Work_Packs_20261007/`: seven personal work packs and downloadable ZIPs, weekly tasks and submission tracking.
+- `Final_Submission_20261006/`: current assessment drafts and supporting materials; not proof of submission.
+- `Team_Examples_SYNTHETIC_20261007/`: labelled fictional interview and test examples for practice, never real research evidence.
+- `.github/workflows/verify.yml`: automated checks using an isolated PostgreSQL service, not the production database.
 - `Evidence_Hub/`: formal course evidence, weekly outputs, logs, and validation records.
 - `PRD_V0.5_UUse物品使用平台版.md`: product requirements and MVP roadmap.
 - `TEAM_ROSTER_AND_DATA_POLICY.md`: team roster, naming convention, and rules for demo data vs. real evidence.
@@ -94,13 +110,15 @@ npm run build
 npm run lint
 ```
 
-Reset demo data:
+Release checks on 7 October 2026 passed all five business regression groups, TypeScript checking, an isolated production build, production-mode API tests with temporary SQLite and simulated local SMTP, and the original npm lockfile audit (zero known vulnerabilities). The seven work packs also passed link, archive-content, calendar and submission-coverage checks. PostgreSQL CI, real mail delivery and deployed-device acceptance still require separate verification; these results do not establish zero defects or completed course submissions.
+
+Optional isolated demo reset:
 
 ```bash
-npm run reset
+SQLITE_PATH=/private/path/demo.sqlite RESET_DEMO_CONFIRM=RESET_DEMO_ONLY npm run reset
 ```
 
-This restores seed data for products, bookings, and reports.
+This is disabled in production, with PostgreSQL, or when verified accounts are present. Never reset the working application to prepare a presentation.
 
 ## Tech Stack
 
@@ -109,11 +127,14 @@ This restores seed data for products, bookings, and reports.
 - TypeScript
 - CSS
 - lucide-react icons
-- Local JSON files as a mock database
+- PostgreSQL / SQLite with transactional domain operations
+- Student-email OTP, Nodemailer, Sharp photo processing and a durable notification outbox
+- Leaflet / OpenStreetMap for interactive maps
+- Tesseract.js / PDF.js for browser-local timetable imports
 
-The MVP intentionally avoids adding a heavy backend too early. The current goal is to validate user behavior, trust concerns, and item-access demand before committing to a production architecture.
+The backend now implements identity, ownership, persistent storage and transaction consistency. Product validation and adoption remain open research questions, independent of whether these features exist.
 
-The admin username is `admin`; its password comes from `ADMIN_PASSWORD`. Development mode uses a shared demo identity. Production write access is locked by default; `DEMO_MODE=true` is only for local demonstrations. Real student authentication, per-user data isolation, persistent database deployment, image storage and payments are not connected. See the app README for runtime boundaries and official map sources.
+The admin username is `admin`; its password comes from `ADMIN_PASSWORD`. Guests can prepare private timetables, but only verified student accounts can transact. `AUTH_DELIVERY=local` is explicitly developer-only and is ignored in production. Real mail delivery requires SMTP credentials; production requires PostgreSQL or explicitly opted-in persistent single-machine SQLite. Payments and deposit escrow are not connected: all monetary confirmations record offline agreements. See the app README for privacy, maps and timetable boundaries.
 
 ## Product Logic
 
@@ -122,11 +143,11 @@ U Use has four access modes:
 - Buy: transfer ownership.
 - Borrow: use temporarily without daily rent.
 - Rent: short-term paid access.
-- Swap: exchange access to another item.
+- Swap: permanently exchange ownership of two approved items.
 
 The product is built around five operational objects:
 
-- Student identity: currently simulated as verified XJTLU email.
+- Student identity: a student-email verified account; anonymous visitors cannot transact.
 - Item: availability, campus, handoff point, deposit, return rule.
 - Booking: requester, owner, time, return time, status.
 - Report: target, reason, note, handling status.
@@ -151,16 +172,16 @@ Success signals:
 - A user can explain how U Use differs from Xianyu or WeChat groups.
 - A user understands that public handoff points reduce trust and safety problems.
 
-Marketing and rollout should stay small until these signals are observed. The recommended first audience is 20-30 survey respondents, 3-5 prototype testers, and a small seed inventory of low-risk items such as calculators, formal wear, luggage, adapters, and activity tools.
+Marketing claims must remain cautious until these signals are observed. Do not infer audience size, demand, conversion or revenue from synthetic inventory or working code. This does not restrict the application's functionality to a small test group.
 
 ## Roadmap To A Real Product
 
 Near term:
 
-- Replace local JSON with Supabase/Postgres.
-- Add XJTLU email verification or SSO.
-- Add image upload for item photos and handoff evidence.
-- Add booking status notifications.
+- Configure and externally verify the PostgreSQL deployment and student-email SMTP delivery.
+- Consider school-approved SSO if available; the current login uses verified student email.
+- Test real-device map access and GPS in both campuses.
+- Monitor photo storage, email retry health and transaction response times.
 - Add clearer owner/requester profiles and rating signals.
 
 Before real operation:
@@ -169,7 +190,7 @@ Before real operation:
 - Decide whether deposits are platform-held or handled offline first.
 - Add moderation rules for prohibited items.
 - Add privacy and data retention policy.
-- Test with a small campus group before wider launch.
+- Complete independent security, usability and real-device acceptance testing before opening to users.
 
 ## Data Policy
 
@@ -179,16 +200,15 @@ The app contains demo products, bookings, and reports for testing flows. These r
 
 This is not yet a production service:
 
-- No real authentication.
-- No cloud database.
+- Cloud database and SMTP credentials still need to be provisioned and validated.
 - No real payment or deposit escrow.
-- No real messaging service.
-- No image upload.
+- Messages and notifications currently poll; no external push-notification provider or video chat.
+- Timetable OCR requires review and cannot promise perfect recognition of every layout.
 - No legal/compliance review.
 
 For the ENT303TC project, the current positioning is:
 
-> testable MVP + product evidence hub + validation workflow.
+> implemented campus product + product evidence hub + validation workflow, with explicit deployment and operational prerequisites.
 
 ## Course Context
 

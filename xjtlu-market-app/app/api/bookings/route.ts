@@ -1,117 +1,112 @@
-import { NextRequest, NextResponse } from "next/server";
-
-export const dynamic = "force-dynamic";
+import { NextResponse, after } from "next/server";
 import {
   addBooking,
-  BookingError,
   getBookings,
   getProducts,
+  actOnBooking,
   updateBookingStatus,
 } from "../../../lib/data";
+import { requirePerson } from "../../../lib/people";
+import { api, jsonBody, text, isAdmin, ApiError } from "../../../lib/http";
 import { BookingStatus, Campus } from "../../../lib/types";
-
-const campuses: Campus[] = ["SIP", "TAICANG"];
-const statuses: BookingStatus[] = [
-  "待确认",
-  "已确认",
-  "已交付",
-  "使用中",
-  "待归还",
-  "已归还",
-  "有争议",
-  "已取消",
-  "已完成",
-];
-
-function text(value: unknown) {
-  return typeof value === "string" ? value.trim() : "";
-}
-
-export async function POST(request: NextRequest) {
-  let body: Record<string, unknown>;
-  try {
-    body = await request.json();
-    if (!body || typeof body !== "object" || Array.isArray(body))
-      throw new Error("Invalid body");
-  } catch {
-    return NextResponse.json({ error: "请求格式无效" }, { status: 400 });
-  }
-  const productId = text(body.productId);
-  const campus = text(body.campus);
-  const spot = text(body.spot);
-  const time = text(body.time);
-  const returnTime = text(body.returnTime);
-  const note = text(body.note);
-
-  if (!productId || !campuses.includes(campus as Campus) || !spot || !time) {
-    return NextResponse.json(
-      { error: "请填写商品、校区、地点、借出时间和归还时间" },
-      { status: 400 },
-    );
-  }
-  const product = (await getProducts()).find((item) => item.id === productId);
-  if (!product)
-    return NextResponse.json({ error: "物品不存在" }, { status: 404 });
-  if (product.returnRequired && !returnTime)
-    return NextResponse.json({ error: "请填写归还时间" }, { status: 400 });
-  if (spot.length > 120 || note.length > 2000)
-    return NextResponse.json({ error: "地点或备注过长" }, { status: 400 });
-  try {
-    const booking = await addBooking({
-      productId,
-      productTitle: product?.title ?? "手动借还单",
-      campus: campus as Campus,
+import { BookingAction } from "../../../lib/booking-rules";
+import { placeFor } from "../../../lib/places";
+import { deliverNotifications } from "../../../lib/notifications";
+import { rateLimit } from "../../../lib/database";
+export const dynamic = "force-dynamic";
+export const GET = api(async (request) => {
+  const admin = isAdmin(request),
+    person = admin ? undefined : await requirePerson(request);
+  return NextResponse.json(await getBookings(person?.id, admin), {
+    headers: { "Cache-Control": "no-store" },
+  });
+});
+export const POST = api(async (request) => {
+  const person = await requirePerson(request),
+    body = await jsonBody(request);
+  if (!(await rateLimit("booking:" + person.id, 10, 600000)))
+    throw new ApiError("预约过于频繁，请稍后重试", 429);
+  const product = (await getProducts()).find(
+    (p) => p.id === text(body.productId),
+  );
+  if (!product) throw new ApiError("物品不存在", 404);
+  const campus = text(body.campus) as Campus,
+    spot = text(body.spot),
+    time = text(body.time),
+    returnTime = product.returnRequired ? text(body.returnTime) : time,
+    note = text(body.note),
+    locationId = text(body.locationId);
+  if (
+    !["SIP", "TAICANG"].includes(campus) ||
+    !spot ||
+    spot.length > 120 ||
+    note.length > 2000 ||
+    !time ||
+    !returnTime
+  )
+    throw new ApiError("请填写有效的校区、地点、交付及归还时间");
+  const place = placeFor(locationId);
+  if (locationId && (!place || place.campus !== campus || place.label !== spot))
+    throw new ApiError("交付校区与地点不一致");
+  if (
+    typeof body.expectedFee !== "number" ||
+    typeof body.expectedDeposit !== "number" ||
+    !Number.isFinite(body.expectedFee) ||
+    !Number.isFinite(body.expectedDeposit) ||
+    typeof body.expectedMode !== "string"
+  )
+    throw new ApiError("请先确认交易费用");
+  const booking = await addBooking(
+    {
+      productId: product.id,
+      productTitle: product.title,
+      campus,
       spot,
       time,
-      returnTime: product.returnRequired ? returnTime : time,
+      returnTime,
       note,
-      requester: "试用用户",
-      owner: "物品发布者",
-      depositSnapshot: product?.deposit ?? 0,
-    });
-    return NextResponse.json(booking, { status: 201 });
-  } catch (error) {
-    if (error instanceof BookingError)
-      return NextResponse.json(
-        { error: error.message },
-        { status: error.status },
-      );
-    return NextResponse.json({ error: "保存失败，请重试" }, { status: 500 });
+      locationId,
+      requesterId: person.id,
+      requester: person.name || "学生",
+      owner: "",
+      depositSnapshot: 0,
+      offeredProductId: text(body.offeredProductId) || undefined,
+      expectedFee: body.expectedFee,
+      expectedDeposit: body.expectedDeposit,
+      expectedMode: body.expectedMode,
+    },
+    body.requestId,
+  );
+  after(deliverNotifications);
+  return NextResponse.json(booking, { status: 201 });
+});
+export const PATCH = api(async (request) => {
+  const body = await jsonBody(request),
+    id = text(body.id);
+  if (!id) throw new ApiError("缺少预约 ID");
+  if (body.status !== undefined) {
+    if (!isAdmin(request))
+      throw new ApiError("只有管理员可以进行仲裁状态操作", 403);
+    const statuses: BookingStatus[] = [
+      "待确认",
+      "已确认",
+      "已交付",
+      "使用中",
+      "待归还",
+      "已归还",
+      "有争议",
+      "已取消",
+      "已完成",
+    ];
+    if (!statuses.includes(body.status as BookingStatus))
+      throw new ApiError("预约状态无效");
+    const result = await updateBookingStatus(id, body.status as BookingStatus);
+    if (!result) throw new ApiError("预约不存在", 404);
+    return NextResponse.json(result);
   }
-}
-
-export async function GET() {
-  return NextResponse.json(await getBookings());
-}
-
-export async function PATCH(request: NextRequest) {
-  let body: Record<string, unknown>;
-  try {
-    body = await request.json();
-    if (!body || typeof body !== "object" || Array.isArray(body))
-      throw new Error("Invalid body");
-  } catch {
-    return NextResponse.json({ error: "请求格式无效" }, { status: 400 });
-  }
-  const id = text(body.id);
-  const status = text(body.status) as BookingStatus;
-  if (!id || !statuses.includes(status)) {
-    return NextResponse.json(
-      { error: "请提供有效的预约 ID 和状态" },
-      { status: 400 },
-    );
-  }
-  try {
-    const booking = await updateBookingStatus(id, status);
-    if (!booking)
-      return NextResponse.json({ error: "未找到预约" }, { status: 404 });
-    return NextResponse.json(booking);
-  } catch (error) {
-    if (error instanceof BookingError)
-      return NextResponse.json(
-        { error: error.message },
-        { status: error.status },
-      );
-    return NextResponse.json({ error: "保存失败，请重试" }, { status: 500 });
-  }
-}
+  const person = await requirePerson(request),
+    action = text(body.action) as BookingAction;
+  const result = await actOnBooking(id, person.id, action, text(body.reason));
+  after(deliverNotifications);
+  return NextResponse.json(result);
+});

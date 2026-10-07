@@ -1,6 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true
+  reactStrictMode: true,
+  distDir:process.env.NEXT_DIST_DIR || ".next",
+  serverExternalPackages: ["pg", "nodemailer", "sharp"],
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Permissions-Policy",
+            value: "geolocation=(self), camera=(), microphone=()",
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
