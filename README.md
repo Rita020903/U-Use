@@ -2,6 +2,12 @@
 
 U Use is a campus item-access platform for XJTLU students. It helps students buy, borrow, rent, or swap items inside a verified student community across the SIP and Taicang campuses.
 
+## Current Coursework Package
+
+[Seven individual work packs / 七人任务包](Team_Work_Packs_20261007/README.md) contains the roles confirmed on 7 October, calendar-aligned weekly task cards, independent personal folders and the assessment/submission tracker. It distinguishes plans, real evidence and synthetic training examples; none of its checklists claim that a portal submission has happened.
+
+[Start here: 6 October 2026 package](Final_Submission_20261006/START_HERE.md) is the current course-facing entry point, reconciled with the supplied ENT303TC 2026/27 handbook. It contains the exact six-slide A1, twelve-slide A3, A2 recording script, venture dossier, editable cost model and seven individual A4 writing guides. Earlier pitches and numbered drafts remain historical; they are not the current submission specification. Real research, the recorded video, personal reflections and submission receipts remain team responsibilities.
+
 The project is not a generic second-hand marketplace. Its core idea is that students often need temporary access to an item without wanting to own it permanently. U Use turns that temporary use case into a structured product flow: verified identity, available time window, deposit rule, public handoff point, booking confirmation, return confirmation, and admin review.
 
 ## Product Vision

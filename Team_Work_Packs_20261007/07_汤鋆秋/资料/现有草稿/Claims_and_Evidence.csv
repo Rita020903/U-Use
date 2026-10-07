@@ -1,0 +1,11 @@
+claim_id,claim,evidence_type,source,limitation,next_evidence
+C01,"26,000+ institutional students",Verified secondary source,S1,Not a measured SIP/XEC reachable population,Refresh before March 2027
+C02,Date-aware discovery and needs board implemented,Technical evidence,E1 and Release_Review,"Local synthetic fixtures, no demand inference",Real-device task test
+C03,Students experience coordination friction,Hypothesis,Product planning,No completed participant study,3-5 consented interactions
+C04,"120 invites, 15% activation, 40% completion",Planning assumption,Market_and_Costs.xlsx,Not observed or statistically derived,Replace with unique real counts
+C05,Optional map reduces privacy pressure,Design rationale,Product scope decision,Approximation still permits inference,Consent-based usability and privacy review
+C06,Independent timetable import works across formats,Technical evidence,E1 timetable tests,OCR can misread cells; own-file pilot pending,Redacted formats from multiple programmes/years
+C07,Seven role allocations,Proposal,User names and team planning,Not signed or proof of work,Team agreement and personal contribution records
+C08,Production readiness,Unverified,DEPLOYMENT.md,External SMTP/HTTPS/PG/restore not accepted,Complete real deployment checks
+C09,"Customer satisfaction, income and partnerships",No claim,None,No authentic evidence available,Do not fabricate
+C10,Assessment formats and dates,Verified source,H1 pp.5-6,Detailed brief takes precedence; A4 length absent,Obtain separate brief

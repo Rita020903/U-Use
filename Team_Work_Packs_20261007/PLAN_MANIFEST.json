@@ -1,0 +1,479 @@
+{
+  "version": "2026-10-07",
+  "state": "planning-not-submitted",
+  "roles": [
+    {
+      "person": "郭宇璇（Rita）",
+      "directory": "01_郭宇璇_Rita",
+      "role": "代码与产品统筹",
+      "reviewer": "汤鋆秋",
+      "materials": [
+        "02_Support/Release_Review.md",
+        "02_Support/Product_Preview.png",
+        "01_Assessments/A1_UUse_6_Slides.pptx",
+        "01_Assessments/A3_UUse_12_Slides.pptx"
+      ],
+      "syntheticPriority": []
+    },
+    {
+      "person": "汪睿",
+      "directory": "02_汪睿",
+      "role": "分析与presentation",
+      "reviewer": "李元龙",
+      "materials": [
+        "01_Assessments/A1_UUse_6_Slides.pptx",
+        "01_Assessments/A3_UUse_12_Slides.pptx",
+        "01_Assessments/A2_Recording_Script.md",
+        "02_Support/UUse_Venture_Dossier.docx",
+        "02_Support/Market_and_Costs.xlsx",
+        "02_Support/Claims_and_Evidence.csv",
+        "02_Support/Sources.csv"
+      ],
+      "syntheticPriority": [
+        "SYNTHETIC_15_Interviews.md",
+        "SYNTHETIC_100_User_Test_Examples.xlsx"
+      ]
+    },
+    {
+      "person": "毛相宜",
+      "directory": "03_毛相宜",
+      "role": "访谈与用户需求",
+      "reviewer": "黄俊杰",
+      "materials": [
+        "02_Support/Research_Record_Form.md",
+        "02_Support/Claims_and_Evidence.csv"
+      ],
+      "syntheticPriority": [
+        "SYNTHETIC_15_Interviews.md"
+      ]
+    },
+    {
+      "person": "黄俊杰",
+      "directory": "04_黄俊杰",
+      "role": "筛选画像与样本",
+      "reviewer": "毛相宜",
+      "materials": [
+        "02_Support/Research_Record_Form.md",
+        "02_Support/Sources.csv"
+      ],
+      "syntheticPriority": [
+        "SYNTHETIC_100_Users.csv",
+        "SYNTHETIC_15_Interviews.md"
+      ]
+    },
+    {
+      "person": "李元龙",
+      "directory": "05_李元龙",
+      "role": "用户测试与统计",
+      "reviewer": "黄禹轩",
+      "materials": [
+        "02_Support/Research_Record_Form.md",
+        "02_Support/Release_Review.md",
+        "02_Support/Market_and_Costs.xlsx"
+      ],
+      "syntheticPriority": [
+        "SYNTHETIC_100_User_Test_Examples.xlsx",
+        "SYNTHETIC_500_Task_Records.csv",
+        "SYNTHETIC_100_Users.csv"
+      ]
+    },
+    {
+      "person": "黄禹轩",
+      "directory": "06_黄禹轩",
+      "role": "数据处理与Weekly Log提交",
+      "reviewer": "郭宇璇（Rita）",
+      "materials": [
+        "02_Support/Claims_and_Evidence.csv",
+        "02_Support/Sources.csv",
+        "02_Support/Weekly_Log_20261006.md",
+        "02_Support/Team_Confirmation.md",
+        "01_Assessments/A1_UUse_6_Slides.pptx",
+        "01_Assessments/A3_UUse_12_Slides.pptx",
+        "01_Assessments/A2_Recording_Script.md"
+      ],
+      "syntheticPriority": [
+        "SYNTHETIC_100_Users.csv",
+        "SYNTHETIC_500_Task_Records.csv"
+      ]
+    },
+    {
+      "person": "汤鋆秋",
+      "directory": "07_汤鋆秋",
+      "role": "迭代决策与验收",
+      "reviewer": "李元龙",
+      "materials": [
+        "02_Support/Release_Review.md",
+        "02_Support/Claims_and_Evidence.csv",
+        "01_Assessments/A1_UUse_6_Slides.pptx",
+        "01_Assessments/A3_UUse_12_Slides.pptx"
+      ],
+      "syntheticPriority": [
+        "SYNTHETIC_15_Interviews.md"
+      ]
+    }
+  ],
+  "stages": [
+    {
+      "key": "补核_W1_W3",
+      "title": "核对Week 1至Week 3遗留事项",
+      "start": "2026-09-07",
+      "end": "2026-09-27",
+      "note": "历史周，建议2026-10-11前补核；不倒填访谈、签字或提交时间。",
+      "req": "W1签署章程、继续项目的baseline、假设与证据库；W2可证伪问题及≥3二手来源或≥2新用户对话；W3市场模型、≥3竞品/替代方案和USP。",
+      "a": "A1"
+    },
+    {
+      "key": "S1_W04",
+      "title": "研究设计与证据计划",
+      "start": "2026-10-05",
+      "end": "2026-10-11",
+      "req": "研究问题对应假设登记；准备工具、consent/data plan；可行时pilot。",
+      "a": "A1"
+    },
+    {
+      "key": "S1_W05",
+      "title": "真实初步数据收集",
+      "start": "2026-10-12",
+      "end": "2026-10-18",
+      "req": "完成3-5次真实用户互动/测试；匿名存原始证据；谨慎中间小结。3-5是全组要求，不是每人3-5。",
+      "a": "A1"
+    },
+    {
+      "key": "S1_W06",
+      "title": "洞察与方向决定",
+      "start": "2026-10-19",
+      "end": "2026-10-25",
+      "req": "聚类≥3条洞察；更新persona/journey；修订问题；记录pivot/persevere。",
+      "a": "A1"
+    },
+    {
+      "key": "S1_W07",
+      "title": "三方案比较与六页storyboard",
+      "start": "2026-10-26",
+      "end": "2026-11-01",
+      "req": "≥3个实质不同的概念；加权比较矩阵；六页deck storyboard。",
+      "a": "A1"
+    },
+    {
+      "key": "S1_W08",
+      "title": "BMC与A1正式提交",
+      "start": "2026-11-02",
+      "end": "2026-11-08",
+      "req": "九格BMC、价值主张、claim-evidence map；A1恰好六页无appendix；11-06 23:59经LMO提交并检查回执。",
+      "a": "A1",
+      "deadline": "2026-11-06 23:59",
+      "internal": "11-04冻结内容，11-05完成批准并上传；均为团队内部目标。"
+    },
+    {
+      "key": "S1_W09",
+      "title": "提交后原型验证",
+      "start": "2026-11-09",
+      "end": "2026-11-15",
+      "req": "至少3名真实用户测试lo-fi原型/服务mock-up；记录迭代；A1反馈发布后自查。",
+      "a": "A2/A4"
+    },
+    {
+      "key": "S1_W10",
+      "title": "第一学期证据归档与A2路线图",
+      "start": "2026-11-16",
+      "end": "2026-11-22",
+      "req": "归档deck/回执/证据map；A2 roadmap与Week 11-14目标；向导师呈现checkpoint。",
+      "a": "A2/A4"
+    },
+    {
+      "key": "S1_W11",
+      "title": "A2核心流程与素材",
+      "start": "2026-11-23",
+      "end": "2026-11-29",
+      "req": "内部A2构建安排，不是额外独立评分项。",
+      "a": "A2"
+    },
+    {
+      "key": "S1_W12",
+      "title": "A2隐私与个性化课表验证",
+      "start": "2026-11-30",
+      "end": "2026-12-06",
+      "req": "内部安排：脚本和演示路径定稿；不使用统一课表代替个人输入。",
+      "a": "A2"
+    },
+    {
+      "key": "S1_W13",
+      "title": "A2录制与全片审查",
+      "start": "2026-12-07",
+      "end": "2026-12-13",
+      "req": "内部目标：12-13形成可完整播放的视频初版，时长须实际测量。",
+      "a": "A2"
+    },
+    {
+      "key": "S1_A2_ReadingWeek",
+      "title": "A2视频正式提交",
+      "start": "2026-12-14",
+      "end": "2026-12-20",
+      "note": "校历为Reading Week；课程手册称A2 Week 14。截止12-18不变。",
+      "req": "团队一份3-6分钟实际视频，12-18通过课程门户提交；具体时刻以最新brief/LMO为准。",
+      "a": "A2",
+      "deadline": "2026-12-18，具体时刻待brief/LMO确认",
+      "internal": "12-16冻结成片，12-17完成批准和上传；内部目标，不冒充官方时刻。"
+    },
+    {
+      "key": "假期衔接",
+      "title": "考试与寒假交接",
+      "start": "2026-12-21",
+      "end": "2027-02-21",
+      "note": "不是新增每周评分配额；假期工作量由全组同意，优先考试与休息。",
+      "req": "保持资料、贡献记录和版本可恢复；A3准备不要等到第二学期Week 7。",
+      "a": "A3/A4"
+    },
+    {
+      "key": "S2_W01",
+      "title": "A3启动与第一版",
+      "start": "2027-02-22",
+      "end": "2027-02-28",
+      "req": "内部倒排：A3在第二学期Week 4截止，本周必须启动初稿。",
+      "a": "A3/A4"
+    },
+    {
+      "key": "S2_W02",
+      "title": "A3增量真实验证",
+      "start": "2027-03-01",
+      "end": "2027-03-07",
+      "req": "内部安排：关闭关键证据缺口；没有官方新增100人要求。",
+      "a": "A3/A4"
+    },
+    {
+      "key": "S2_W03",
+      "title": "A3数字互审与全员彩排",
+      "start": "2027-03-08",
+      "end": "2027-03-14",
+      "req": "内部目标：形成可提交的10-12页deck，全员能解释证据、假设和决策。",
+      "a": "A3/A4"
+    },
+    {
+      "key": "S2_W04",
+      "title": "A3正式提交与现场准备",
+      "start": "2027-03-15",
+      "end": "2027-03-21",
+      "req": "A3团队一份10-12页deck；03-21 23:59北京时间截止；下周现场展示。",
+      "a": "A3",
+      "deadline": "2027-03-21 23:59 北京时间",
+      "internal": "03-18冻结内容，03-19完成批准和上传，03-20复核；内部目标。"
+    },
+    {
+      "key": "S2_W05",
+      "title": "A3现场展示与A4事件整理",
+      "start": "2027-03-22",
+      "end": "2027-03-28",
+      "req": "A3现场展示官方窗口03-22至03-26，具体时间由课程安排；不是Week 7。",
+      "a": "A3/A4"
+    },
+    {
+      "key": "S2_W06",
+      "title": "A4独立初稿",
+      "start": "2027-03-29",
+      "end": "2027-04-04",
+      "req": "内部目标：每人独立写初稿；用本人真实贡献和课程概念，不共享成稿。",
+      "a": "A4"
+    },
+    {
+      "key": "S2_W07",
+      "title": "A4个人证据与格式自查",
+      "start": "2027-04-05",
+      "end": "2027-04-11",
+      "note": "04-05清明节，团队内部工作自行调整，不假设当天课堂。",
+      "req": "内部安排：依据最新A4 brief核对字数、结构、参考文献、AI与提交要求。",
+      "a": "A4"
+    },
+    {
+      "key": "S2_W08",
+      "title": "七人A4各自独立提交",
+      "start": "2027-04-12",
+      "end": "2027-04-18",
+      "req": "A4每人一份，04-16截止；具体时刻与字数待独立brief确认。",
+      "a": "A4",
+      "deadline": "2027-04-16，具体时刻待brief/LMO确认",
+      "internal": "04-14各自冻结报告，04-15各自上传；内部目标，不是官方时刻。"
+    }
+  ],
+  "officialRequirements": [
+    [
+      "W1",
+      "签署Team Charter；继续项目baseline；初始假设与Evidence Hub",
+      "黄禹轩",
+      "Rita",
+      "手册p.3",
+      "待真实签署/适用性及权限核验"
+    ],
+    [
+      "W2",
+      "可证伪问题；≥3二手来源或≥2新用户对话；更新假设",
+      "毛相宜",
+      "汪睿",
+      "手册p.4",
+      "待来源或真实对话核验"
+    ],
+    [
+      "W3",
+      "带来源的TAM/SAM/SOM；≥3竞品/替代方案；USP假设",
+      "汪睿",
+      "李元龙；黄俊杰协助来源",
+      "手册p.4",
+      "有旧草稿，待重新核实与重算"
+    ],
+    [
+      "W4",
+      "问题关联假设；工具、同意/数据计划；可行时pilot",
+      "毛相宜",
+      "李元龙、黄俊杰",
+      "手册p.4",
+      "待真实执行/计划复核"
+    ],
+    [
+      "W5",
+      "3-5次真实互动/测试；匿名原始证据；谨慎中间小结",
+      "毛相宜、李元龙",
+      "黄禹轩；汪睿综合",
+      "手册p.4",
+      "真实记录未在本包提供，不能用合成表替代"
+    ],
+    [
+      "W6",
+      "≥3洞察；persona/journey；问题修订与pivot/persevere",
+      "汪睿",
+      "毛相宜、黄俊杰、汤鋆秋",
+      "手册p.4",
+      "待真实证据与决策记录"
+    ],
+    [
+      "W7",
+      "≥3实质不同概念；加权矩阵；六页storyboard",
+      "汤鋆秋",
+      "汪睿、Rita；李元龙重算",
+      "手册p.5",
+      "旧方案仅作背景，待真实复核"
+    ],
+    [
+      "W8",
+      "value proposition、九格BMC、claim-evidence map、A1提交与回执",
+      "汪睿",
+      "黄禹轩上传，Rita批准",
+      "手册p.5",
+      "草稿存在；未提交核验"
+    ],
+    [
+      "W9",
+      "≥3名真实用户测试lo-fi/服务mock-up；迭代；反馈发布后自查",
+      "李元龙",
+      "黄俊杰、汤鋆秋、汪睿",
+      "手册p.5",
+      "未来任务，待执行"
+    ],
+    [
+      "W10",
+      "归档deck/回执/证据map；A2 roadmap与11-14目标；导师checkpoint",
+      "黄禹轩",
+      "Rita、汪睿、汤鋆秋",
+      "手册p.5",
+      "未来任务，待真实归档及导师反馈"
+    ],
+    [
+      "A1",
+      "团队一份恰好6页deck，无appendix；20%；11-06 23:59",
+      "汪睿内容 / 黄禹轩上传",
+      "Rita批准与备份",
+      "手册p.5-6",
+      "六页草稿有，未提交核验"
+    ],
+    [
+      "A2",
+      "团队一份实际3-6分钟视频；20%；12-18（时刻待确认）",
+      "汪睿内容 / 黄禹轩上传",
+      "Rita批准与备份；李元龙复核时长",
+      "手册p.6",
+      "只有脚本，视频未录制/未提交核验"
+    ],
+    [
+      "A3",
+      "团队一份10-12页deck + 03-22至03-26现场；30%；03-21 23:59北京时间",
+      "汪睿内容 / 黄禹轩上传",
+      "Rita批准与备份；全员准备答辩",
+      "手册p.6",
+      "十二页旧草稿需更新；未提交/未展示核验"
+    ],
+    [
+      "A4",
+      "每人独立reflection；30%；04-16（时刻/字数待确认）",
+      "七人各自",
+      "黄禹轩只管状态；不代写代交",
+      "手册p.6",
+      "仅有支持材料；七份均待独立完成与提交"
+    ]
+  ],
+  "groupAssessmentWeights": [
+    20,
+    20,
+    30
+  ],
+  "individualWeight": 30,
+  "submissionUnits": [
+    {
+      "id": "A1",
+      "owner": "黄禹轩；Rita备份",
+      "deadline": "2026-11-06 23:59",
+      "status": "未提交/待回执核验"
+    },
+    {
+      "id": "A2",
+      "owner": "黄禹轩；Rita备份",
+      "deadline": "2026-12-18（时刻待核）",
+      "status": "未录制/未提交核验"
+    },
+    {
+      "id": "A3",
+      "owner": "黄禹轩；Rita备份",
+      "deadline": "2027-03-21 23:59北京时间",
+      "status": "未提交/待回执核验"
+    },
+    {
+      "id": "A4-01",
+      "owner": "郭宇璇（Rita）",
+      "deadline": "2027-04-16（时刻待核）",
+      "status": "未完成/未提交核验"
+    },
+    {
+      "id": "A4-02",
+      "owner": "汪睿",
+      "deadline": "2027-04-16（时刻待核）",
+      "status": "未完成/未提交核验"
+    },
+    {
+      "id": "A4-03",
+      "owner": "毛相宜",
+      "deadline": "2027-04-16（时刻待核）",
+      "status": "未完成/未提交核验"
+    },
+    {
+      "id": "A4-04",
+      "owner": "黄俊杰",
+      "deadline": "2027-04-16（时刻待核）",
+      "status": "未完成/未提交核验"
+    },
+    {
+      "id": "A4-05",
+      "owner": "李元龙",
+      "deadline": "2027-04-16（时刻待核）",
+      "status": "未完成/未提交核验"
+    },
+    {
+      "id": "A4-06",
+      "owner": "黄禹轩",
+      "deadline": "2027-04-16（时刻待核）",
+      "status": "未完成/未提交核验"
+    },
+    {
+      "id": "A4-07",
+      "owner": "汤鋆秋",
+      "deadline": "2027-04-16（时刻待核）",
+      "status": "未完成/未提交核验"
+    }
+  ]
+}

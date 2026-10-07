@@ -1,0 +1,7 @@
+source_id,title,location,supported_scope
+H1,ENT303TC 2026/27 Module Handbook,"User-supplied PDF, pages 3-6","Assessment format, dates and weekly checkpoints. Separate assessment brief takes precedence."
+S1,XJTLU Overview,https://www.xjtlu.edu.cn/en/overview,"26,000+ students, updated May 2026. Institution-wide context, not a verified campus-reachable count."
+S2,Goofish official homepage,https://www.goofish.com/,General second-hand marketplace. Homepage review cannot establish absence of particular features.
+S3,Renrenzu official marketplace,https://www.rrzu.com/home/index,Rental listings and commercial rental service. Terms vary by item.
+S4,Aihuishou official homepage,https://www.aihuishou.com/,Recycling and second-hand retail. Do not describe it as recycling only.
+E1,Local code and automated checks,xjtlu-market-app/scripts,"Engineering evidence from isolated synthetic fixtures, not user-research or production evidence."
