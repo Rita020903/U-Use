@@ -110,7 +110,7 @@ npm run build
 npm run lint
 ```
 
-Release checks on 7 October 2026 passed all five business regression groups, TypeScript checking, an isolated production build, production-mode API tests with temporary SQLite and simulated local SMTP, and the original npm lockfile audit (zero known vulnerabilities). The seven work packs also passed link, archive-content, calendar and submission-coverage checks. PostgreSQL CI, real mail delivery and deployed-device acceptance still require separate verification; these results do not establish zero defects or completed course submissions.
+Release checks on 7 October 2026 passed all five business regression groups, TypeScript checking, an isolated production build, production-mode API tests with temporary SQLite and simulated local SMTP, and the original npm lockfile audit (zero known vulnerabilities). [GitHub verification for product commit 232abe0](https://github.com/Rita020903/U-Use/actions/runs/37595952467) also passed a clean install and PostgreSQL integration tests. The seven work packs passed link, archive-content, calendar and submission-coverage checks. Real mail delivery, production database operation and deployed-device acceptance still require separate verification; these results do not establish zero defects or completed course submissions.
 
 Optional isolated demo reset:
 

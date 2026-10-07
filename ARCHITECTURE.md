@@ -84,7 +84,7 @@ Precise GPS is not sent to the U Use backend. Maps default to collapsed/unmounte
 
 ## Verification And Operations
 
-`npm test` covers pure/domain behavior and multi-process SQLite locking; `test:api` uses three private accounts, production mode and local SMTP transport. `test:postgres` requires a dedicated empty database; GitHub Actions provides a separate PostgreSQL service. The local sandbox prevents PostgreSQL shared-memory startup, so external PostgreSQL acceptance remains explicitly unverified until that workflow runs.
+`npm test` covers pure/domain behavior and multi-process SQLite locking; `test:api` uses three private accounts, production mode and local SMTP transport. `test:postgres` requires a dedicated empty database; GitHub Actions provides a separate PostgreSQL service. The local sandbox prevents PostgreSQL shared-memory startup, but [GitHub verification on 7 October 2026](https://github.com/Rita020903/U-Use/actions/runs/37595952467) passed PostgreSQL integration tests and all other workflow checks for product commit `232abe0`. This is an isolated integration result, not acceptance of a configured production database or real email delivery.
 
 Recovery tests include stale identities, cross-tab invalidation without rebroadcast loops, body timeout, cancellation, corrupted drafts, scoped cleanup, concurrent publish deduplication, live need eligibility and flexible buy delivery windows. Isolated browser QA uses `127.0.0.1`, not `localhost`, to protect the user's cookie; 360/390-pixel layouts, draft recovery, publishing, keyboard cancellation and two-tab logout have been exercised. These checks do not prove permanent absence of bugs or actual campus adoption.
 

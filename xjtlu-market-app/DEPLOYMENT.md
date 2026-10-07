@@ -42,4 +42,4 @@ BACKUP_DIRECTORY=/private/path/outside-git npm run backup
 
 ## 测试边界
 
-本机业务与 API 测试使用 SQLite 和本地 SMTP 模拟器，验证权限及交付路径，不证明邮件能送到真实学校邮箱。PostgreSQL 集成测试脚本和 CI 服务已提供，但本机共享内存限制使其无法完成，需运行 CI 或专用外部数据库测试。依赖审计为执行时结果，不代表未来没有新的安全漏洞。
+本机业务与 API 测试使用 SQLite 和本地 SMTP 模拟器，验证权限及交付路径，不证明邮件能送到真实学校邮箱。本机共享内存限制使 PostgreSQL 无法启动，但 [2026-10-07 GitHub 自动测试](https://github.com/Rita020903/U-Use/actions/runs/37595952467) 已在独立 PostgreSQL 服务中通过产品代码提交 `232abe0` 的集成测试及其余全部检查。正式上线仍需验证项目自己的数据库、备份恢复、HTTPS 和学校邮箱投递。依赖审计为执行时结果，不代表未来没有新的安全漏洞。
