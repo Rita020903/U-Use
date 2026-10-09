@@ -12,6 +12,8 @@ export class ApiError extends Error {
 export function isAdmin(request: NextRequest) {
   if (
     !process.env.ADMIN_PASSWORD ||
+    (process.env.NODE_ENV === "production" &&
+      process.env.ADMIN_PASSWORD.length < 24) ||
     process.env.ADMIN_PASSWORD.startsWith("replace-")
   )
     return false;

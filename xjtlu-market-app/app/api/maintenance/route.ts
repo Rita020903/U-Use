@@ -22,7 +22,13 @@ export const POST = api(async (request) => {
   const removed = await database(async (tx) => {
     let count = 0;
     const now = Date.now();
-    for (const kind of ["sessions", "otp", "limits", "presence"])
+    for (const kind of [
+      "sessions",
+      "otp",
+      "account-deletion",
+      "limits",
+      "presence",
+    ])
       for (const { id, value } of await tx.entries<Record<string, unknown>>(
         kind,
       )) {
@@ -57,6 +63,10 @@ export const POST = api(async (request) => {
         await tx.remove("notifications", id);
         count++;
       }
+    await tx.put("meta", "last-maintenance", {
+      at: new Date().toISOString(),
+      removed: count,
+    });
     return count;
   });
   return NextResponse.json({ ok: true, removed });

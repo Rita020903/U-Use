@@ -730,7 +730,10 @@ try {
     200,
   );
   assert.deepEqual(marked.ids, [notices[0].id]);
-  assert.equal(marked.unread, notices.filter((n) => !n.read && n.id !== notices[0].id).length);
+  assert.equal(
+    marked.unread,
+    notices.filter((n) => !n.read && n.id !== notices[0].id).length,
+  );
   const afterRead = await json(
     await fetch(url + "/api/notifications", { headers: owner.headers }),
   );
@@ -910,8 +913,84 @@ try {
   );
   await expect(await fetch(url + "/api/products?sort=invalid"), 400);
   await expect(await post("/api/maintenance", {}), 403);
+  await expect(await fetch(url + "/api/account"), 401);
+  await expect(await fetch(url + "/api/admin/operations"), 401);
+  await expect(await fetch(url + "/privacy"), 200);
+  await expect(await fetch(url + "/terms"), 200);
   await json(
     await post("/api/maintenance", {}, { Authorization: "Bearer " + cron }),
+  );
+  assert(
+    (await json(await fetch(url + "/api/admin/operations", { headers: admin })))
+      .maintenance.at,
+  );
+  for (let i = 0; i < 30; i++)
+    await expect(
+      await fetch(url + "/admin", {
+        headers: {
+          Authorization:
+            "Basic " + Buffer.from("admin:wrong").toString("base64"),
+        },
+      }),
+      401,
+    );
+  await expect(
+    await fetch(url + "/admin", {
+      headers: {
+        Authorization: "Basic " + Buffer.from("admin:wrong").toString("base64"),
+      },
+    }),
+    429,
+  );
+  await expect(
+    await fetch(url + "/api/admin/operations", { headers: admin }),
+    200,
+  );
+  const deletable = await login("delete-qa");
+  const accountExport = await json(
+    await fetch(url + "/api/account", { headers: deletable.headers }),
+  );
+  assert.equal(accountExport.account.id, deletable.person.id);
+  assert(!JSON.stringify(accountExport).includes(owner.person.email));
+  await json(
+    await post(
+      "/api/account",
+      { action: "clear-timetable" },
+      deletable.headers,
+    ),
+  );
+  const deletionMail = await json(
+    await post(
+      "/api/account",
+      { action: "send-delete-code" },
+      deletable.headers,
+    ),
+  );
+  assert.equal(
+    deletionMail.localCode,
+    undefined,
+    "production deletion never returns OTP",
+  );
+  await expect(
+    await post(
+      "/api/account",
+      { code: "000000", confirmation: "删除我的账号" },
+      deletable.headers,
+      "DELETE",
+    ),
+    401,
+  );
+  await json(
+    await post(
+      "/api/account",
+      { code: codes.get(deletable.person.email), confirmation: "删除我的账号" },
+      deletable.headers,
+      "DELETE",
+    ),
+  );
+  await expect(
+    await fetch(url + "/api/account", { headers: deletable.headers }),
+    401,
   );
   await stop();
   await start();
@@ -941,7 +1020,7 @@ try {
     false,
   );
   console.log(
-    "PASS: production SMTP login, disabled local bypass, ownership and private data isolation, photo validation, review, booking lifecycle, messaging, notifications, nearby privacy and leases, expiry, CSRF/body limits, maintenance, restart durability",
+    "PASS: production SMTP login, disabled local bypass, ownership and private data isolation, photo validation, review, booking lifecycle, messaging, notifications, nearby privacy and leases, expiry, CSRF/body limits, maintenance, restart durability, admin brute-force limit, operations status, policy pages, private export and emailed account deletion",
   );
 } finally {
   await stop();

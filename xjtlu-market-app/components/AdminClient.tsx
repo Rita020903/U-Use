@@ -11,9 +11,17 @@ import {
   PackageCheck,
   ShieldAlert,
   Users,
+  MailWarning,
+  RotateCw,
 } from "lucide-react";
 import { Booking, Product, Report } from "../lib/types";
 import { transitionsFor } from "../lib/booking-state";
+import type { MailTask } from "../lib/notifications";
+type Operations = {
+  mailConfigured: boolean;
+  maintenance: { at: string; removed: number } | null;
+  queue: MailTask[];
+};
 
 export default function AdminClient() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -22,6 +30,7 @@ export default function AdminClient() {
   const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [operations, setOperations] = useState<Operations | null>(null);
   useEffect(() => {
     loadQueues();
   }, []);
@@ -33,17 +42,40 @@ export default function AdminClient() {
         clientFetch("/api/products?admin=1"),
         clientFetch("/api/bookings"),
         clientFetch("/api/reports"),
+        clientFetch("/api/admin/operations"),
       ]);
       if (responses.some((response) => !response.ok))
         throw new Error("加载失败，请刷新或重新登录");
-      const [items, reservations, flags] = await Promise.all(
+      const [items, reservations, flags, status] = await Promise.all(
         responses.map((response) => response.json()),
       );
       setProducts(items);
       setBookings(reservations);
       setReports(flags);
+      setOperations(status);
     } catch (error) {
       setError(error instanceof Error ? error.message : "网络异常，请重试");
+    }
+  }
+
+  async function retryNotification(id: string) {
+    if (busy) return;
+    setBusy(true);
+    setError("");
+    try {
+      const response = await clientFetch("/api/admin/operations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "重试失败");
+      action("邮件已重新进入投递队列");
+      await loadQueues();
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "网络异常，请重试");
+    } finally {
+      setBusy(false);
     }
   }
 
@@ -93,7 +125,7 @@ export default function AdminClient() {
         <div>
           <p className="eyebrow">U USE / ADMIN</p>
           <h1>运营管理</h1>
-          <p className="muted">审核物品、确认借还、处理举报</p>
+          <p className="muted">SIP / XEC</p>
         </div>
         <a className="secondary link-button" href="/">
           <ArrowLeft size={15} />
@@ -123,6 +155,81 @@ export default function AdminClient() {
           value={String(activeBookings.length)}
         />
       </section>
+      <section className="operations-section">
+        <div className="split">
+          <h2>
+            <MailWarning size={18} /> 运行与邮件
+          </h2>
+          <button
+            type="button"
+            className="icon-button"
+            disabled={busy}
+            title="刷新运行状态"
+            aria-label="刷新运行状态"
+            onClick={() => void loadQueues()}
+          >
+            <RotateCw size={16} />
+          </button>
+        </div>
+        {operations ? (
+          <>
+            <p role="status">
+              邮件配置：
+              {operations.mailConfigured
+                ? "已配置（投递状态见队列）"
+                : "未配置"}{" "}
+              · 最近维护：
+              {operations.maintenance
+                ? new Date(operations.maintenance.at).toLocaleString("zh-CN")
+                : "暂无执行记录"}
+            </p>
+            {operations.maintenance &&
+              Date.now() - Date.parse(operations.maintenance.at) >
+                5 * 60000 && (
+                <p className="form-error">
+                  维护任务超过5分钟未执行，请检查定时任务。
+                </p>
+              )}
+            {!operations.maintenance && (
+              <p className="form-error">尚未检测到定时维护，请配置后核验。</p>
+            )}
+            <div className="mail-queue">
+              {operations.queue.length ? (
+                operations.queue.map((task) => (
+                  <div className="mail-queue-row" key={task.id}>
+                    <div>
+                      <strong>{task.title}</strong>
+                      <small>{task.to}</small>
+                      <small>
+                        {task.attempts >= 5
+                          ? "投递失败，需人工处理"
+                          : (task.leaseUntil || 0) > Date.now()
+                            ? "正在投递"
+                            : "等待重试"}{" "}
+                        · 失败次数 {task.attempts}
+                      </small>
+                    </div>
+                    {task.attempts >= 5 && (
+                      <button
+                        type="button"
+                        className="secondary"
+                        disabled={busy}
+                        onClick={() => void retryNotification(task.id)}
+                      >
+                        <RotateCw size={16} /> 重试
+                      </button>
+                    )}
+                  </div>
+                ))
+              ) : (
+                <p className="empty-mini">暂无待处理邮件</p>
+              )}
+            </div>
+          </>
+        ) : (
+          <p>运行状态尚未加载</p>
+        )}
+      </section>
       {error && (
         <p className="form-error" role="alert">
           {error} <button onClick={loadQueues}>重试</button>
@@ -133,9 +240,7 @@ export default function AdminClient() {
           <div className="split">
             <div>
               <h2>物品审核</h2>
-              <p className="muted">
-                新发布物品默认进入审核，通过后才展示给学生
-              </p>
+              <p className="muted">{pendingProducts.length} 条待审核</p>
             </div>
             <PackageCheck size={22} />
           </div>
@@ -185,7 +290,7 @@ export default function AdminClient() {
           <div className="split">
             <div>
               <h2>交易与仲裁</h2>
-              <p className="muted">真实交易由双方确认；管理员仅处理争议</p>
+              <p className="muted">{activeBookings.length} 笔进行中</p>
             </div>
             <ClipboardList size={22} />
           </div>
@@ -218,7 +323,7 @@ export default function AdminClient() {
           <div className="split">
             <div>
               <h2>举报与争议</h2>
-              <p className="muted">记录原因、说明和处理状态，避免私聊扯皮</p>
+              <p className="muted">{openReports.length} 条待处理</p>
             </div>
             <ShieldAlert size={22} />
           </div>
@@ -245,9 +350,7 @@ export default function AdminClient() {
           <div className="split">
             <div>
               <h2>最近开放物品</h2>
-              <p className="muted">
-                展示真实商品状态，便于 session 说明落地流程
-              </p>
+              <p className="muted">{activeProducts.length} 件可用</p>
             </div>
             <PackageCheck size={22} />
           </div>

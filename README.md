@@ -37,6 +37,7 @@ The current version implements the full transaction workflow, not a shared anony
 
 Student side:
 
+- Find items available across the requested dates and post a time-bounded need with private matching offers, without GPS or timetable requirements.
 - Browse available items by campus, category, access mode, and keyword.
 - Switch between SIP and XEC campus contexts.
 - See their current browser location, opt in to approximate location sharing, and view nearby opt-in users on an interactive map.
@@ -50,6 +51,7 @@ Student side:
 - Sign in with a student-email code, manage personal listings and fees, and exchange transaction-only messages.
 - Accept, reject or cancel requests; independently confirm physical handoff and return, and open a dispute.
 - Review each imported class and set individual term dates, odd/even weeks, cancelled dates and makeup dates.
+- Export personal records, clear the timetable, and close an account using a dedicated email code after resolving active transactions; read the visible privacy and transaction rules.
 
 Admin side:
 
@@ -57,6 +59,7 @@ Admin side:
 - Track transactions and arbitrate disputes; real handoffs are confirmed by participants, not the admin.
 - Handle reports and disputes.
 - Review actual item photos, status, transactions and reports from the configured database.
+- Inspect scheduled-maintenance freshness and failed notification delivery, manually retry failed emails with an audit trail, and enforce durable failed-login limits.
 
 Data model:
 

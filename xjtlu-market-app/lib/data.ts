@@ -23,6 +23,7 @@ import { timetableConflict } from "./timetable";
 import { placeFor } from "./places";
 import { notify } from "./notifications";
 import { availableInRange, DateRange } from "./availability";
+import { ApiError } from "./http";
 export class BookingError extends Error {
   constructor(
     message: string,
@@ -96,6 +97,12 @@ export async function updateProductStatus(id: string, status: ProductStatus) {
   return database(async (tx) => {
     const item = await tx.get<Product>("products", id);
     if (!item) return null;
+    if (
+      item.ownerId &&
+      (await tx.get("deleted-accounts", item.ownerId)) &&
+      status !== "已下架"
+    )
+      throw new ApiError("已注销账号的物品不能重新上架", 409);
     const updated = { ...item, status };
     await tx.put("products", id, updated);
     await notify(
@@ -509,7 +516,14 @@ export async function addReport(
     status: "待处理",
     createdAt: new Date().toISOString(),
   };
-  await database((tx) => tx.put("reports", report.id, report));
+  await database(async (tx) => {
+    if (
+      input.reporterId &&
+      (await tx.get("deleted-accounts", input.reporterId))
+    )
+      throw new ApiError("账号已注销", 401);
+    await tx.put("reports", report.id, report);
+  });
   return report;
 }
 export async function updateReportStatus(id: string, status: ReportStatus) {

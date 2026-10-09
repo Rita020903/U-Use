@@ -4,6 +4,7 @@ import sharp from "sharp";
 import { requirePerson } from "../../../lib/people";
 import { api, ApiError } from "../../../lib/http";
 import { database, rateLimit } from "../../../lib/database";
+import { assertNotDeleted } from "../../../lib/account-status";
 export const dynamic = "force-dynamic";
 export const POST = api(async (request) => {
   const person = await requirePerson(request);
@@ -60,13 +61,14 @@ export const POST = api(async (request) => {
   if (image.length > 2 * 1024 * 1024)
     throw new ApiError("照片内容过大，请压缩后上传");
   const id = randomUUID();
-  await database((tx) =>
-    tx.put("photos", id, {
+  await database(async (tx) => {
+    await assertNotDeleted(tx, person.id);
+    await tx.put("photos", id, {
       id,
       ownerId: person.id,
       data: image.toString("base64"),
       createdAt: Date.now(),
-    }),
-  );
+    });
+  });
   return NextResponse.json({ url: "/api/photos/" + id }, { status: 201 });
 });

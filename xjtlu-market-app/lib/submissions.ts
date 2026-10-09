@@ -1,6 +1,7 @@
 import { createHash } from "node:crypto";
 import type { Transaction } from "./database";
 import { ApiError } from "./http";
+import { assertNotDeleted } from "./account-status";
 export async function createOnce<T extends { id: string }>(
   tx: Transaction,
   kind: string,
@@ -9,6 +10,7 @@ export async function createOnce<T extends { id: string }>(
   input: unknown,
   create: () => Promise<T>,
 ): Promise<T> {
+  await assertNotDeleted(tx, ownerId);
   if (requestId === undefined) return create();
   if (!ownerId) throw new ApiError("缺少提交账号", 401);
   if (

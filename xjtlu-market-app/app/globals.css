@@ -1748,3 +1748,92 @@ button {
   overflow-wrap: anywhere;
   margin-bottom: 20px;
 }
+.account-data-actions {
+  margin-top: 24px;
+  border-top: 1px solid #d9e0df;
+  padding-top: 20px;
+}
+.account-data-actions h3 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.account-data-actions .form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.account-deletion {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #d9e0df;
+}
+.account-deletion summary {
+  cursor: pointer;
+  color: #a22e39;
+}
+.account-deletion p {
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.account-policy-links {
+  font-size: 13px;
+}
+.danger-button {
+  background: #a22e39;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.operations-section {
+  padding: 24px 0;
+  border-top: 1px solid #d9e0df;
+  border-bottom: 1px solid #d9e0df;
+  margin-bottom: 24px;
+}
+.operations-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+}
+.operations-section p {
+  overflow-wrap: anywhere;
+}
+.mail-queue-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid #d9e0df;
+}
+.mail-queue-row div {
+  min-width: 0;
+}
+.mail-queue-row strong,
+.mail-queue-row small {
+  display: block;
+  overflow-wrap: anywhere;
+}
+.mail-queue-row button {
+  flex-shrink: 0;
+}
+.policy-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 20px 64px;
+  overflow-wrap: anywhere;
+}
+.policy-page h1 {
+  font-size: 26px;
+  margin: 24px 0 10px;
+}
+.policy-page h2 {
+  font-size: 18px;
+  margin: 28px 0 12px;
+}
+.policy-page p {
+  line-height: 1.8;
+}

@@ -5,7 +5,9 @@ import { Booking, BookingMessage, Person } from "./types";
 import { createOnce } from "./submissions";
 import { notify } from "./notifications";
 import { compareMessages } from "./message-order";
+import { assertNotDeleted } from "./account-status";
 async function participant(tx: Transaction, bookingId: string, person: Person) {
+  await assertNotDeleted(tx, person.id);
   if (
     !person.verified ||
     (process.env.NODE_ENV === "production" &&

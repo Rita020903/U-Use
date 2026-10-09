@@ -5,6 +5,7 @@ import { database, rateLimit } from "../../../lib/database";
 import { Presence, coarsePosition, PRESENCE_TTL } from "../../../lib/presence";
 import { distanceKm } from "../../../lib/places";
 import { Person } from "../../../lib/types";
+import { assertNotDeleted } from "../../../lib/account-status";
 export const dynamic = "force-dynamic";
 const centers = {
   SIP: { lat: 31.27558, lng: 120.73584 },
@@ -79,14 +80,15 @@ export const POST = api(async (request) => {
     throw new ApiError("当前位置不在所选校区周边，不能分享为该校区用户");
   if (!(await rateLimit("presence:" + person.id, 10, 60000)))
     throw new ApiError("位置更新过于频繁", 429);
-  await database((tx) =>
-    tx.put("presence", person.id + ":" + leaseId, {
+  await database(async (tx) => {
+    await assertNotDeleted(tx, person.id);
+    await tx.put("presence", person.id + ":" + leaseId, {
       ...p,
       personId: person.id,
       leaseId,
       updatedAt: Date.now(),
-    }),
-  );
+    });
+  });
   return NextResponse.json({ ok: true });
 });
 export const DELETE = api(async (request) => {
