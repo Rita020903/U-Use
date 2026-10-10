@@ -1,7 +1,21 @@
 import { Product, Person } from "./types";
 import { ApiError, text } from "./http";
 import { places, placeFor, distanceKm } from "./places";
-import { database } from "./database";
+import type { Transaction } from "./database";
+export async function assertPhotoOwnership(
+  tx: Transaction,
+  ownerId: string,
+  photos: Product["photos"],
+) {
+  for (const url of photos || []) {
+    const photo = await tx.get<{ ownerId: string }>(
+      "photos",
+      url.split("/").pop()!,
+    );
+    if (!photo) throw new ApiError("照片已失效，请重新上传", 409);
+    if (photo.ownerId !== ownerId) throw new ApiError("照片不属于当前账号");
+  }
+}
 export async function productInput(
   body: Record<string, unknown>,
   person: Person,
@@ -99,16 +113,6 @@ export async function productInput(
     )
   )
     throw new ApiError("请上传 1 至 5 张实物照片");
-  await database(async (tx) => {
-    for (const url of photos) {
-      const photo = await tx.get<{ ownerId: string }>(
-        "photos",
-        url.split("/").pop()!,
-      );
-      if (photo?.ownerId !== person.id)
-        throw new ApiError("照片不属于当前账号");
-    }
-  });
   const rentPrice = Number(body.rentPrice || 0),
     price = Number(body.price || 0),
     deposit = Number(body.deposit || 0);

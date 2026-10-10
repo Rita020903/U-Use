@@ -217,6 +217,30 @@ try {
   await json(
     await post("/api/session", table, { ...buyer.headers, Origin: url }),
   );
+  const pausedWeek = new Date(monday.getTime() + 7 * 86400000)
+    .toISOString()
+    .slice(0, 10);
+  await json(
+    await post(
+      "/api/session",
+      { ...table, pausedWeeks: [pausedWeek] },
+      buyer.headers,
+    ),
+  );
+  assert.deepEqual(
+    (await json(await fetch(url + "/api/session", { headers: buyer.headers })))
+      .timetable.pausedWeeks,
+    [pausedWeek],
+  );
+  await expect(
+    await post(
+      "/api/session",
+      { ...table, pausedWeeks: [table.weekOne] },
+      buyer.headers,
+    ),
+    400,
+  );
+  await json(await post("/api/session", table, buyer.headers));
   assert.equal(
     (
       await json(
@@ -286,6 +310,14 @@ try {
     photos: [photo.url],
   };
   await expect(await post("/api/products", listing, buyer.headers), 400);
+  await expect(
+    await post(
+      "/api/products",
+      { ...listing, photos: ["/api/photos/" + randomUUID()] },
+      owner.headers,
+    ),
+    409,
+  );
   await expect(
     await post(
       "/api/products",

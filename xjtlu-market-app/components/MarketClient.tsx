@@ -935,6 +935,7 @@ export default function MarketClient() {
       )}
       {showBooking && (
         <BookingModal
+          key={`${person?.id || ""}:${bookingProduct?.id || ""}`}
           accountId={person?.id || ""}
           product={bookingProduct}
           campus={campus}
@@ -957,6 +958,7 @@ export default function MarketClient() {
       )}
       {showReport && (
         <ReportModal
+          key={`${person?.id || ""}:${reportTarget}`}
           accountId={person?.id || ""}
           target={reportTarget}
           onClose={() => setShowReport(false)}
@@ -1561,12 +1563,21 @@ function ReportModal({
   onClose: () => void;
   onDone: (message: string) => void;
 }) {
+  const alive = useRef(true);
+  useEffect(() => {
+    alive.current = true;
+    return () => {
+      alive.current = false;
+    };
+  }, []);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (busy) return;
     const data = new FormData(event.currentTarget);
     setBusy(true);
+    setError("");
     try {
       const response = await clientFetch("/api/reports", {
         method: "POST",
@@ -1579,15 +1590,16 @@ function ReportModal({
         }),
       });
       const result = await response.json();
+      if (!alive.current) return;
       if (!response.ok) {
         setError(result.error || "举报失败，请重试");
         return;
       }
       onDone("举报已提交，平台会尽快处理");
     } catch {
-      setError("网络异常，请稍后重试");
+      if (alive.current) setError("网络异常，请稍后重试");
     } finally {
-      setBusy(false);
+      if (alive.current) setBusy(false);
     }
   }
   return (

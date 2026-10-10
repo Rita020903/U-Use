@@ -488,7 +488,7 @@ export default function NeedsPanel({
               {n.budget !== undefined && (
                 <>
                   {" "}
-                  · 预算 ¥{n.budget}
+                  · {n.accessMode === "rent" ? "日租预算" : "预算"} ¥{n.budget}
                   {n.accessMode === "rent" ? "/天" : ""}
                 </>
               )}

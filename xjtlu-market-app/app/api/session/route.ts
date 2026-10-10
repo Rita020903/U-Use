@@ -19,7 +19,9 @@ export const POST = api(async (request: NextRequest) => {
   const timetable: unknown = await jsonBody(request, 1048576);
   if (!validateTimetable(timetable))
     return NextResponse.json(
-      { error: "请检查周一开学日期、星期、时间和授课周次" },
+      {
+        error: "请检查学期日期、整周假期、星期、时间和授课周次，并逐条核对课程",
+      },
       { status: 400 },
     );
   const normalized = normalizedTimetable(timetable);

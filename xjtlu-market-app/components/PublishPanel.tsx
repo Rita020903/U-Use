@@ -5,7 +5,7 @@ import { Camera, X, Save, Upload } from "lucide-react";
 import { AccessMode, Campus, Product } from "../lib/types";
 import PlaceField from "./PlaceField";
 import NearbyMap from "./NearbyMap";
-import { ensureSession } from "../lib/client-session";
+import { ensureSession, resetSession } from "../lib/client-session";
 import {
   restoreFields,
   strings,
@@ -132,16 +132,22 @@ export default function PublishPanel({
     setSaved(false);
   }
   async function upload(files: FileList | null) {
-    if (!files?.length) return;
+    if (!ready || busy || uploading || !files?.length) return;
     setUploading(true);
     setError("");
+    const urls: string[] = [];
     try {
       if (draft.photos.length + files.length > 5)
         throw new Error("最多上传 5 张实物照片");
-      const urls: string[] = [];
-      for (const file of Array.from(files)) {
+      const selected = Array.from(files);
+      for (const file of selected) {
         if (file.size > 5 * 1024 * 1024)
           throw new Error("每张照片不能超过 5 MB");
+        if (!["image/jpeg", "image/png", "image/webp"].includes(file.type))
+          throw new Error("请选择 JPG、PNG 或 WebP 照片");
+      }
+      for (const file of selected) {
+        if (!alive.current) return;
         const form = new FormData();
         form.set("photo", file);
         const r = await clientFetch("/api/photos", {
@@ -150,23 +156,36 @@ export default function PublishPanel({
             body: form,
           }),
           data = await r.json();
+        if (!alive.current) return;
         if (!r.ok) throw new Error(data.error);
         urls.push(data.url);
+        setDraft((d) => ({ ...d, photos: [...d.photos, data.url] }));
+        setSaved(false);
       }
-      if (alive.current) update({ photos: [...draft.photos, ...urls] });
     } catch (e) {
-      setError(e instanceof Error ? e.message : "上传失败");
+      if (alive.current)
+        setError(
+          (urls.length ? `已保留 ${urls.length} 张成功照片；` : "") +
+            (e instanceof Error ? e.message : "上传失败"),
+        );
     } finally {
-      setUploading(false);
+      if (alive.current) setUploading(false);
       if (input.current) input.current.value = "";
     }
   }
   async function submit(event: FormEvent) {
     event.preventDefault();
+    if (!ready || busy || uploading) return;
     setBusy(true);
     setError("");
     try {
-      await ensureSession(true);
+      const person = await ensureSession(true);
+      if (!alive.current) return;
+      if (person.id !== account.current) {
+        resetSession();
+        throw new Error("账号已切换，请重新打开发布页面");
+      }
+      if (!person.verified) throw new Error("请先用西浦邮箱登录");
       submission.current = submissionFor(
         JSON.stringify(draft),
         submission.current,
@@ -197,9 +216,9 @@ export default function PublishPanel({
         product ? "修改已提交重新审核" : "已提交审核，可在「我的发布」查看进度",
       );
     } catch (e) {
-      setError(e instanceof Error ? e.message : "提交失败");
+      if (alive.current) setError(e instanceof Error ? e.message : "提交失败");
     } finally {
-      setBusy(false);
+      if (alive.current) setBusy(false);
     }
   }
   const returnRequired =

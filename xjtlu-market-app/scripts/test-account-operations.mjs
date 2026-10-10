@@ -12,6 +12,8 @@ try {
       t.load("account"),
     { mailQueue, deliverNotifications, retryMail } = t.load("notifications"),
     { createOnce } = t.load("submissions"),
+    { addProduct, editProduct, actOnBooking, getBookings } = t.load("data"),
+    { needProducts, offerProduct, finishNeed } = t.load("needs"),
     person = {
       id: randomUUID(),
       email: "account@example.test",
@@ -39,6 +41,8 @@ try {
       requesterId: person.id,
       requester: person.name,
       status: "已完成",
+      closedAt: new Date().toISOString(),
+      createdAt: new Date().toISOString(),
       note: "private note",
     });
     await tx.put("bookings", "active", {
@@ -80,6 +84,17 @@ try {
     });
   });
   const exported = await exportAccount(person);
+  await assert.rejects(
+    editProduct("own", person.id, { photos: ["/api/photos/missing"] }),
+    /照片已失效/,
+  );
+  await assert.rejects(
+    addProduct({ ownerId: person.id, photos: ["/api/photos/missing"] }),
+    /照片已失效/,
+  );
+  assert.deepEqual((await database((tx) => tx.get("products", "own"))).photos, [
+    "/api/photos/own",
+  ]);
   assert.equal(exported.account.email, person.email);
   assert.equal(exported.messages.length, 1);
   assert(!JSON.stringify(exported).includes("private-other@example.test"));
@@ -116,6 +131,26 @@ try {
     "已下架",
   );
   await assert.rejects(exportAccount(person), /失效/);
+  await assert.rejects(
+    editProduct("own", person.id, { title: "revived" }),
+    /注销/,
+  );
+  await assert.rejects(
+    actOnBooking("closed", person.id, "dispute", "stale private reason"),
+    /注销/,
+  );
+  await assert.rejects(getBookings(person.id), /注销/);
+  await assert.rejects(needProducts("own", person), /注销/);
+  await assert.rejects(offerProduct("other-need", "own", person), /注销/);
+  await assert.rejects(finishNeed("own", person, "withdrawn"), /注销/);
+  assert.equal(
+    (await database((tx) => tx.get("products", "own"))).title,
+    "已注销用户的物品",
+  );
+  assert.equal(
+    (await database((tx) => tx.get("bookings", "closed"))).status,
+    "已完成",
+  );
   await assert.rejects(
     database((tx) =>
       createOnce(tx, "needs", person.id, undefined, {}, async () => ({
@@ -201,7 +236,7 @@ try {
     restored.close();
   }
   console.log(
-    "PASS: account export isolation, timetable clearing, dedicated deletion OTP, committed attempt limits, active dispute blocking, session/photo cleanup, preserved closed history, stale writes rejected, mail leases/backoff/failure/manual retry, private SQLite backup and restored data integrity",
+    "PASS: account export isolation, timetable clearing, dedicated deletion OTP, committed attempt limits, active dispute blocking, session/photo cleanup, preserved closed history, deleted-account booking/edit/needs rejected, atomic photo ownership checks, mail leases/backoff/failure/manual retry, private SQLite backup and restored data integrity",
   );
 } finally {
   await t.cleanup();

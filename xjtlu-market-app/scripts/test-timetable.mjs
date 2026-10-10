@@ -12,6 +12,7 @@ const t = await testRuntime(),
     timetableCovers,
     normalizedTimetable,
     weekDates,
+    isTimetableDraft,
   } = t.load("timetable"),
   { parseTimetableText, weekdayAt } = t.load("timetable-text"),
   { detectCourseBoxes } = t.load("timetable-grid"),
@@ -33,6 +34,79 @@ try {
     "2026-10-11",
   ]);
   assert.equal(weekDates("2027-01-01")[0], "2026-12-28");
+  const pausedTerm = {
+    weekOne: "2026-09-07",
+    pausedWeeks: ["2026-09-28"],
+    lessons: [
+      {
+        id: "paused-week",
+        title: "Weekly class",
+        day: 1,
+        start: "09:00",
+        end: "10:00",
+        room: "TC-C-2012",
+        weeks: "4",
+        reviewed: true,
+      },
+    ],
+  };
+  assert(validateTimetable(pausedTerm));
+  assert(isTimetableDraft(pausedTerm));
+  assert(!isTimetableDraft({ ...pausedTerm, pausedWeeks: {} }));
+  assert(
+    !isTimetableDraft({
+      ...pausedTerm,
+      pausedWeeks: Array(54).fill("2026-09-28"),
+    }),
+  );
+  assert.equal(
+    lessonsOn(
+      {
+        ...pausedTerm,
+        pausedWeeks: ["2026-09-14", "2026-09-28"],
+        lessons: [{ ...pausedTerm.lessons[0], weeks: "3单" }],
+      },
+      "2026-10-05",
+    ).length,
+    1,
+  );
+  assert.deepEqual(lessonsOn(pausedTerm, "2026-09-28"), []);
+  assert.equal(
+    lessonsOn(pausedTerm, "2026-10-05").length,
+    1,
+    "teaching week 4 follows a paused calendar week",
+  );
+  assert(timetableConflict(pausedTerm, "2026-10-05T09:00:00+08:00"));
+  assert(timetableCovers(pausedTerm, "2026-10-11"));
+  assert(!timetableCovers(pausedTerm, "2026-10-12"));
+  assert.deepEqual(
+    normalizedTimetable(pausedTerm).pausedWeeks,
+    pausedTerm.pausedWeeks,
+  );
+  for (const pausedWeeks of [
+    ["2026-09-07"],
+    ["2026-09-29"],
+    ["2026-08-31"],
+    ["2026-09-28", "2026-09-28"],
+  ])
+    assert(!validateTimetable({ ...pausedTerm, pausedWeeks }));
+  assert(!validateTimetable({ ...pausedTerm, termEnd: "2026-09-20" }));
+  assert.equal(
+    lessonsOn({ ...pausedTerm, pausedWeeks: [] }, "2026-09-28").length,
+    1,
+    "other terms retain ordinary calendar weeks",
+  );
+  assert.equal(
+    lessonsOn(
+      {
+        ...pausedTerm,
+        lessons: [{ ...pausedTerm.lessons[0], dates: ["2026-09-30"] }],
+      },
+      "2026-09-30",
+    ).length,
+    1,
+    "explicit makeups can occur during a paused week",
+  );
   assert.deepEqual(parseWeeks("第1至8周（单）"), [1, 3, 5, 7]);
   assert.deepEqual(parseWeeks("2-10双"), [2, 4, 6, 8, 10]);
   assert.deepEqual(
@@ -259,7 +333,7 @@ try {
     }
   }
   console.log(
-    "PASS: arbitrary course names/counts/days, Chinese/English, independent terms, odd/even weeks, cancellations and makeups, confirmation, privacy, off-campus matching",
+    "PASS: arbitrary course names/counts/days, Chinese/English, independent terms, paused teaching weeks and odd/even numbering, cancellations and makeups, confirmation, privacy, off-campus matching",
   );
 } finally {
   await t.cleanup();

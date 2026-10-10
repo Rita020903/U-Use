@@ -24,6 +24,8 @@ import { placeFor } from "./places";
 import { notify } from "./notifications";
 import { availableInRange, DateRange } from "./availability";
 import { ApiError } from "./http";
+import { assertNotDeleted } from "./account-status";
+import { assertPhotoOwnership } from "./product-input";
 export class BookingError extends Error {
   constructor(
     message: string,
@@ -87,6 +89,7 @@ export async function addProduct(
       requestId,
       input,
       async () => {
+        await assertPhotoOwnership(tx, input.ownerId || "", input.photos);
         await tx.put("products", product.id, product);
         return product;
       },
@@ -119,10 +122,12 @@ export async function editProduct(
   changes: Partial<Product>,
 ) {
   return database(async (tx) => {
+    await assertNotDeleted(tx, ownerId);
     const item = await tx.get<Product>("products", id);
     if (!item) throw new BookingError("物品不存在", 404);
     if (item.ownerId !== ownerId)
       throw new BookingError("只能管理自己发布的物品", 403);
+    if (changes.photos) await assertPhotoOwnership(tx, ownerId, changes.photos);
     const bookings = await expire(tx);
     if (
       bookings.some(
@@ -146,6 +151,7 @@ export async function editProduct(
 }
 export async function getBookings(personId?: string, admin = false) {
   return database(async (tx) => {
+    if (!admin && personId) await assertNotDeleted(tx, personId);
     const bookings = await expire(tx);
     return bookings
       .filter(
@@ -375,6 +381,7 @@ export async function actOnBooking(
   reason = "",
 ) {
   return database(async (tx) => {
+    await assertNotDeleted(tx, personId);
     const bookings = await expire(tx),
       booking = bookings.find((b) => b.id === id);
     if (!booking) throw new BookingError("预约不存在", 404);

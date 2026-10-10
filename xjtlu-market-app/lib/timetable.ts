@@ -21,17 +21,21 @@ export type Timetable = {
   lessons: Lesson[];
   termEnd?: string;
   excludedDates?: string[];
+  pausedWeeks?: string[];
 };
 export function isTimetableDraft(value: unknown): value is Timetable {
   if (!value || typeof value !== "object") return false;
   const t = value as Timetable;
-  const dates = (v: unknown) =>
+  const dates = (v: unknown, maximum = 100) =>
     v === undefined ||
-    (Array.isArray(v) && v.every((s) => typeof s === "string"));
+    (Array.isArray(v) &&
+      v.length <= maximum &&
+      v.every((s) => typeof s === "string"));
   return (
     typeof t.weekOne === "string" &&
     (t.termEnd === undefined || typeof t.termEnd === "string") &&
     dates(t.excludedDates) &&
+    dates(t.pausedWeeks, 53) &&
     Array.isArray(t.lessons) &&
     t.lessons.length <= 200 &&
     t.lessons.every(
@@ -126,6 +130,14 @@ export function validateTimetable(value: unknown): value is Timetable {
     (t.lessons.length > 0 || !!t.termEnd) &&
     (t.termEnd === undefined ||
       (validDate(t.termEnd) && t.termEnd >= t.weekOne)) &&
+    (t.pausedWeeks === undefined ||
+      (Array.isArray(t.pausedWeeks) &&
+        t.pausedWeeks.length <= 53 &&
+        new Set(t.pausedWeeks).size === t.pausedWeeks.length &&
+        t.pausedWeeks.every(
+          (w) =>
+            validWeekOne(w) && w > t.weekOne && (!t.termEnd || w <= t.termEnd),
+        ))) &&
     (t.excludedDates === undefined ||
       (Array.isArray(t.excludedDates) &&
         t.excludedDates.length <= 100 &&
@@ -236,21 +248,39 @@ export function parseWeekday(text: string) {
       ) + 1
     : 0;
 }
+function teachingWeek(t: Timetable, date: string) {
+  const day = new Date(date + "T00:00:00Z");
+  const monday = new Date(
+    day.getTime() - ((day.getUTCDay() + 6) % 7) * 86400000,
+  )
+    .toISOString()
+    .slice(0, 10);
+  const week =
+    Math.floor(
+      (Date.parse(date + "T00:00:00Z") - Date.parse(t.weekOne + "T00:00:00Z")) /
+        604800000,
+    ) + 1;
+  const paused = new Set(t.pausedWeeks || []);
+  return {
+    number:
+      week - [...paused].filter((w) => w < monday && w > t.weekOne).length,
+    paused: paused.has(monday),
+  };
+}
 export function lessonsOn(t: Timetable, date: string) {
+  if (!validDate(date)) return [];
   if (t.excludedDates?.includes(date) || (t.termEnd && date > t.termEnd))
     return [];
   const day = new Date(date + "T00:00:00Z");
-  const week =
-    Math.floor(
-      (day.getTime() - new Date(t.weekOne + "T00:00:00Z").getTime()) /
-        604800000,
-    ) + 1;
+  const week = teachingWeek(t, date);
   const weekday = ((day.getUTCDay() + 6) % 7) + 1;
   return t.lessons.filter(
     (l) =>
       !l.excludedDates?.includes(date) &&
       (l.dates?.includes(date) ||
-        (l.day === weekday && parseWeeks(l.weeks).includes(week))),
+        (!week.paused &&
+          l.day === weekday &&
+          parseWeeks(l.weeks).includes(week.number))),
   );
 }
 export function timetableConflict(
@@ -295,12 +325,9 @@ export function timetableConflict(
   });
 }
 export function timetableCovers(t: Timetable, date: string) {
+  if (!validDate(date)) return false;
   if (date < t.weekOne || (t.termEnd && date > t.termEnd)) return false;
-  const week =
-    Math.floor(
-      (Date.parse(date + "T00:00:00Z") - Date.parse(t.weekOne + "T00:00:00Z")) /
-        604800000,
-    ) + 1;
+  const week = teachingWeek(t, date).number;
   return (
     !!t.termEnd ||
     t.lessons.some(
@@ -315,6 +342,7 @@ export function normalizedTimetable(t: Timetable): Timetable {
     weekOne: t.weekOne,
     termEnd: t.termEnd,
     excludedDates: t.excludedDates,
+    pausedWeeks: t.pausedWeeks,
     lessons: t.lessons.map((l) => ({
       id: l.id,
       title: l.title.trim(),

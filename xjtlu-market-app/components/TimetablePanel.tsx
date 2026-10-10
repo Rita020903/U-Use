@@ -34,7 +34,8 @@ export default function TimetablePanel() {
   const [lessons, setLessons] = useState<Lesson[]>([]),
     [weekOne, setWeekOne] = useState(""),
     [termEnd, setTermEnd] = useState(""),
-    [excluded, setExcluded] = useState("");
+    [excluded, setExcluded] = useState(""),
+    [pausedWeeks, setPausedWeeks] = useState("");
   const [busy, setBusy] = useState(false),
     [saving, setSaving] = useState(false),
     [message, setMessage] = useState(""),
@@ -65,6 +66,7 @@ export default function TimetablePanel() {
     lessons,
     termEnd: termEnd || undefined,
     excludedDates: dateList(excluded),
+    pausedWeeks: dateList(pausedWeeks),
   };
   useEffect(() => {
     let active = true;
@@ -107,6 +109,7 @@ export default function TimetablePanel() {
           setWeekOne(timetable.weekOne);
           setTermEnd(timetable.termEnd || "");
           setExcluded((timetable.excludedDates || []).join(", "));
+          setPausedWeeks((timetable.pausedWeeks || []).join(", "));
         }
         if (cached) {
           setDirty(true);
@@ -123,6 +126,7 @@ export default function TimetablePanel() {
       });
     return () => {
       active = false;
+      revision.current++;
       controller.current?.abort();
     };
   }, [loadingAttempt]);
@@ -140,7 +144,7 @@ export default function TimetablePanel() {
     } catch {
       setMessage("浏览器无法保留草稿，请及时保存");
     }
-  }, [lessons, weekOne, termEnd, excluded, dirty, ready]);
+  }, [lessons, weekOne, termEnd, excluded, pausedWeeks, dirty, ready]);
   useEffect(() => {
     const warn = (event: BeforeUnloadEvent) => {
       if (dirty) {
@@ -235,16 +239,18 @@ export default function TimetablePanel() {
   }
   async function save() {
     if (!ready || busy || saving) return;
+    const current = revision.current;
     const timetable = draft.current;
     if (!validateTimetable(timetable)) {
       setMessage(
-        "请核对每条课程，填写星期、时间、周次或指定日期，并设置第 1 周周一日期",
+        "请逐条核对课程及学期日期；整周假期须填写第1周之后、不重复的周一日期",
       );
       return;
     }
     setSaving(true);
     try {
       await ensureSession();
+      if (current !== revision.current) return;
       const normalized = {
         ...timetable,
         lessons: timetable.lessons.map(
@@ -258,6 +264,7 @@ export default function TimetablePanel() {
         body: JSON.stringify(normalized),
       });
       const data = await response.json();
+      if (current !== revision.current) return;
       if (!response.ok) throw new Error(data.error || "保存失败");
       setDirty(false);
       setEnabled(true);
@@ -269,25 +276,30 @@ export default function TimetablePanel() {
       }
       window.dispatchEvent(new Event("uuse-timetable"));
     } catch (e) {
-      setMessage(e instanceof Error ? e.message : "保存失败");
+      if (current === revision.current)
+        setMessage(e instanceof Error ? e.message : "保存失败");
     } finally {
-      setSaving(false);
+      if (current === revision.current) setSaving(false);
     }
   }
   async function clear() {
     if (!ready || busy || saving) return;
+    const current = revision.current;
     if (!(await confirm("删除已启用课表和本地草稿，停用课表匹配？"))) return;
+    if (current !== revision.current) return;
     setSaving(true);
     try {
       const response = await clientFetch("/api/session", {
         method: "DELETE",
         accountId: account.current,
       });
+      if (current !== revision.current) return;
       if (!response.ok) throw new Error("删除失败");
       setLessons([]);
       setWeekOne("");
       setTermEnd("");
       setExcluded("");
+      setPausedWeeks("");
       setDirty(false);
       setEnabled(false);
       setPreviews([]);
@@ -300,9 +312,10 @@ export default function TimetablePanel() {
       }
       window.dispatchEvent(new Event("uuse-timetable"));
     } catch (e) {
-      setMessage(e instanceof Error ? e.message : "删除失败");
+      if (current === revision.current)
+        setMessage(e instanceof Error ? e.message : "删除失败");
     } finally {
-      setSaving(false);
+      if (current === revision.current) setSaving(false);
     }
   }
   const dates = weekDates(weekDate);
@@ -477,6 +490,19 @@ export default function TimetablePanel() {
           onChange={(e) => {
             changed();
             setExcluded(e.target.value);
+          }}
+        />
+      </label>
+      <label className="form">
+        暂停教学周编号的整周假期（周一日期）
+        <input
+          aria-label="暂停教学周编号的整周假期（周一日期）"
+          disabled={busy || saving}
+          placeholder="YYYY-MM-DD, YYYY-MM-DD"
+          value={pausedWeeks}
+          onChange={(e) => {
+            changed();
+            setPausedWeeks(e.target.value);
           }}
         />
       </label>

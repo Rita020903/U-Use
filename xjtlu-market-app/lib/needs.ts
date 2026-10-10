@@ -6,6 +6,7 @@ import { availableInRange, dateRange, localToday } from "./availability";
 import { notify } from "./notifications";
 import { Booking } from "./types";
 import { createOnce } from "./submissions";
+import { assertNotDeleted } from "./account-status";
 
 export type Need = {
   id: string;
@@ -71,6 +72,7 @@ export function availableForNeed(p: Product, n: Need, bookings: Booking[]) {
 export async function needProducts(id: string, person: Person) {
   verified(person);
   return database(async (tx) => {
+    await assertNotDeleted(tx, person.id);
     const n = await tx.get<Need>("needs", id);
     if (!n || n.status !== "open" || n.to < localToday())
       throw new ApiError("求物已结束或过期", 409);
@@ -204,6 +206,7 @@ export async function finishNeed(
 ) {
   verified(person);
   return database(async (tx) => {
+    await assertNotDeleted(tx, person.id);
     const n = await tx.get<Need>("needs", id);
     if (!n) throw new ApiError("求物不存在", 404);
     if (n.ownerId !== person.id) throw new ApiError("只能管理自己的求物", 403);
@@ -252,6 +255,7 @@ export async function offerProduct(
 ) {
   verified(person);
   return database(async (tx) => {
+    await assertNotDeleted(tx, person.id);
     const n = await tx.get<Need>("needs", needId),
       p = await tx.get<Product>("products", productId);
     if (!n) throw new ApiError("求物不存在", 404);
