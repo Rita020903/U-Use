@@ -7,7 +7,9 @@ U Use is a campus item-access application for XJTLU students across SIP and XEC 
 | 要做什么 | 唯一当前入口 |
 | --- | --- |
 | 找自己的分工、每周任务、模板和个人 ZIP | [七人任务包](Team_Work_Packs_20261007/README.md) |
-| 修改正式作业草稿、slides、脚本、模型和 A4 支持 | [当前作业资料](Final_Submission_20261006/START_HERE.md) |
+| 看最新版 A1 六页 PPT、PDF、测算和待补清单 | [A1 当前交付（10 月 18 日）](A1_Current/README.md) |
+| 修改 A2 脚本、A3 草稿和 A4 支持 | [后续作业资料](Final_Submission_20261006/START_HERE.md) |
+| 看 15 份访谈的中文归纳 | [访谈润色稿](A1_Current/Research_Summaries.md) |
 | 开发产品、运行检查或看部署配置 | [产品代码](xjtlu-market-app/README.md) |
 | 学习访谈与统计记录方法 | [AI 合成练习](Team_Examples_SYNTHETIC_20261007/README.md)，不能当真实研究 |
 
@@ -17,13 +19,15 @@ U Use is a campus item-access application for XJTLU students across SIP and XEC 
 
 [Seven individual work packs / 七人任务包](Team_Work_Packs_20261007/README.md) contains the roles confirmed on 7 October, calendar-aligned weekly task cards, independent personal folders and the assessment/submission tracker. It distinguishes plans, real evidence and synthetic training examples; none of its checklists claim that a portal submission has happened.
 
-[Start here: 6 October 2026 package](Final_Submission_20261006/START_HERE.md) is the current course-facing entry point, reconciled with the supplied ENT303TC 2026/27 handbook. It contains the exact six-slide A1, twelve-slide A3, A2 recording script, venture dossier, editable cost model and seven individual A4 writing guides. Earlier pitches and numbered drafts remain historical; they are not the current submission specification. Real research, the recorded video, personal reflections and submission receipts remain team responsibilities.
+[Current A1 / 18 October 2026](A1_Current/README.md) contains the latest exact six-slide deck, matching PDF, editable pilot and concept model, interview summaries and remaining-input checklist. It supersedes the A1 in the 6 October package and personal ZIP copies. The current teaching week is Week 5 (12–18 October), with Week 6 starting on 19 October.
+
+[6 October supporting package](Final_Submission_20261006/START_HERE.md) remains the preparation entry for the twelve-slide A3 draft, A2 recording script, venture dossier and seven individual A4 writing guides. It is reconciled with the supplied handbook, not proof of completed research or portal submission. The recorded video, personal reflections and submission receipts remain team responsibilities.
 
 The project is not a generic second-hand marketplace. Its core idea is that students often need temporary access to an item without wanting to own it permanently. U Use turns that temporary use case into a structured product flow: verified identity, available time window, deposit rule, public handoff point, booking confirmation, return confirmation, and admin review.
 
 ## Product Vision
 
-Our working hypothesis is that students using friends, WeChat groups or second-hand platforms may face coordination friction around dates, return responsibility and meeting places. The existence and importance of that friction require authentic incident interviews and task tests; no completed participant study is claimed by the current package.
+Our working hypothesis is that students using friends, WeChat groups or second-hand platforms may face coordination friction around dates, return responsibility and meeting places. The team has supplied fifteen interview summaries and reconfirmed their basis in team interviews. The [edited summaries](A1_Current/Research_Summaries.md) preserve conditional and negative responses. Underlying dates, consent and source records remain to be linked privately; the summaries do not establish representative demand or measured usability results.
 
 U Use focuses on one sharper job:
 
@@ -76,6 +80,7 @@ ENT303TC/
 ├── ARCHITECTURE.md
 ├── TEAM_ROSTER_AND_DATA_POLICY.md
 ├── 00_README_先看这个.md
+├── A1_Current/                 # Latest six-slide A1 and supporting model
 ├── Team_Work_Packs_20261007/
 ├── Final_Submission_20261006/
 ├── Team_Examples_SYNTHETIC_20261007/
@@ -89,8 +94,9 @@ Important folders:
 - `xjtlu-market-app/`: the actual Next.js application; deployment details are in its README and DEPLOYMENT.md.
 - `ARCHITECTURE.md`: current application layers, ownership, storage, privacy and verification boundaries.
 - `Team_Work_Packs_20261007/`: seven personal work packs and downloadable ZIPs, weekly tasks and submission tracking.
-- `Final_Submission_20261006/`: current assessment drafts and supporting materials; not proof of submission.
-- `Team_Examples_SYNTHETIC_20261007/`: labelled fictional interview and test examples for practice, never real research evidence.
+- `A1_Current/`: latest A1 PPT, PDF, model, interview paraphrases and progress checklist.
+- `Final_Submission_20261006/`: A2/A3/A4 preparation and earlier supporting materials; its old A1 is superseded.
+- `Team_Examples_SYNTHETIC_20261007/`: historical interview draft and labelled synthetic test exercises. Current interview paraphrases are separate from the 100-person fictional task data.
 - `.github/workflows/verify.yml`: automated checks using an isolated PostgreSQL service, not the production database.
 - `Evidence_Hub/`: current record templates and instructions for private evidence; historical planning documents are isolated under `Archive/`, not presented as completed research.
 - `TEAM_ROSTER_AND_DATA_POLICY.md`: team roster, naming convention, and rules for demo data vs. real evidence.

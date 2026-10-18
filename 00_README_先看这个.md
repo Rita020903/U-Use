@@ -1,17 +1,21 @@
 # U Use 组员入口
 
-当前版本：2026-10-07。校区名称统一为 SIP / XEC（太仓）。现在是第一学期 Week 4，日期为 10 月 5 日至 11 日。
+当前版本：2026-10-18。校区名称统一为 SIP / XEC（太仓）。现在是第一学期 Week 5 结束；Week 6 为 10 月 19 日至 25 日。
+
+**先看 [A1 当前交付](A1_Current/README.md)**：最新版六页 PPT、PDF、测算、中文访谈归纳及整体待补清单均在这里。10 月 6 日旧 A1 和个人 ZIP 内的旧副本不再作为主稿。
 
 ## 先看自己的任务包
 
 打开 [七人任务包](Team_Work_Packs_20261007/README.md)，找到本人姓名，先读个人 README，再看本周任务卡。个人 ZIP 包含独立资料副本，可以单独下载；后续更新以 GitHub main 为准，ZIP 不会自动同步。
 
-## 四个入口
+## 当前入口
 
 | 要做什么 | 去哪里 |
 | --- | --- |
 | 看分工、本周任务、填写模板、交接与提交检查 | [七人任务包](Team_Work_Packs_20261007/README.md) |
-| 改 A1/A3 slides、A2 脚本、成本模型和 A4 写作支持 | [当前作业草稿](Final_Submission_20261006/START_HERE.md) |
+| 看 A1 六页成稿、PDF、测算与待补项 | [A1 当前交付](A1_Current/README.md) |
+| 看 15 份访谈的自然语言整理 | [中文访谈归纳](A1_Current/Research_Summaries.md) |
+| 改 A3 草稿、A2 脚本和 A4 写作支持 | [后续作业准备](Final_Submission_20261006/START_HERE.md) |
 | 改产品、运行测试、看上线配置 | [产品代码与说明](xjtlu-market-app/README.md)；[架构](ARCHITECTURE.md) |
 | 学习访谈记录和用户测试统计方法 | [AI 合成练习](Team_Examples_SYNTHETIC_20261007/README.md)，不能作为真实研究提交 |
 
@@ -25,7 +29,7 @@
 
 本人按任务卡完成实际产出，写明版本、依据和未完成项；交对应复核人，再由黄禹轩汇总 Weekly Log 和版本。产品改动由汤鋆秋协调优先级与验收，Rita 实现，李元龙复测。小组作业由 Rita 批准后上传并核验回执；七份 A4 各自独立完成和提交。
 
-当前包是协作计划和草稿，不证明访谈、签署、视频、个人反思或课程提交已完成。真实记录存放规则见 [Evidence Hub](Evidence_Hub/README_Evidence_Hub.md)。
+当前已有六页 A1 成稿和团队确认的 15 份访谈摘要，实际日期、原始来源与同意记录需私有关联。签署文件、视频、个人反思和提交状态按实际完成情况登记。真实记录存放规则见 [Evidence Hub](Evidence_Hub/README_Evidence_Hub.md)。
 
 ## 旧文件在哪里
 

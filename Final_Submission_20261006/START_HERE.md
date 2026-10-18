@@ -1,12 +1,14 @@
 # U Use 最终交付包
 
+**A1 已更新：请使用 [2026-10-18 当前交付](../A1_Current/README.md)。本目录原 A1 仅保留历史版本，勿与新版混用。A2、A3、A4 准备材料继续从本页进入。**
+
 版本日期：2026-10-06。以你提供的 ENT303TC 2026/27 handbook 为依据，独立 assessment brief 如有更具体要求，以它为准。本目录替代旧 pitch 和旧 JSON 原型描述，旧文件保留作历史记录。
 
 ## 正式作业
 
 | 作业 | 当前文件 | 官方要求 / 截止 |
 |---|---|---|
-| A1 | `01_Assessments/A1_UUse_6_Slides.pptx` | 6 页，含封面，不加 appendix；2026-11-06 23:59；20% |
+| A1 | [当前六页 PPT](../A1_Current/UUse_A1_6_Slides.pptx) | 6 页，含封面，不加 appendix；2026-11-06 23:59；20% |
 | A2 | `01_Assessments/A2_Recording_Script.md` | 3-6 分钟视频；2026-12-18；20%；视频需要实际拍摄 |
 | A3 | `01_Assessments/A3_UUse_12_Slides.pptx` | 10-12 页 + live pitch；2027-03-21 23:59 北京时间；30% |
 | A4 | `03_A4_Individual/` 七份角色专属材料 | 每人独立 reflection；2027-04-16；30% |
