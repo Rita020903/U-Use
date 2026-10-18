@@ -18,7 +18,7 @@
     "postinstall": "node scripts/prepare-assets.mjs",
     "predev": "node scripts/prepare-assets.mjs",
     "prebuild": "node scripts/prepare-assets.mjs",
-    "test:ocr": "node scripts/test-timetable.mjs"
+    "test:ocr": "node scripts/test-timetable.mjs --require-ocr"
   },
   "dependencies": {
     "@tesseract.js-data/chi_sim": "^1.0.0",

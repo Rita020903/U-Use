@@ -11,6 +11,7 @@ U Use is a campus item-access application for XJTLU students across SIP and XEC 
 | 修改 A2 脚本、A3 草稿和 A4 支持 | [后续作业资料](Final_Submission_20261006/START_HERE.md) |
 | 看 15 份访谈的中文归纳 | [访谈润色稿](A1_Current/Research_Summaries.md) |
 | 开发产品、运行检查或看部署配置 | [产品代码](xjtlu-market-app/README.md) |
+| 看代码能否封版、实际验收范围和剩余上线条件 | [工程验收结论](xjtlu-market-app/RELEASE_ACCEPTANCE.md) |
 | 学习访谈与统计记录方法 | [AI 合成练习](Team_Examples_SYNTHETIC_20261007/README.md)，不能当真实研究 |
 
 更详细的交接说明见 [组员入口](00_README_先看这个.md)。旧分工、旧周计划和旧 PRD 已集中到 [历史归档](Evidence_Hub/Archive/README_Archive.md)，不再作为当前规范。独立分发包保留必要资料副本，不是无用途的重复文件。

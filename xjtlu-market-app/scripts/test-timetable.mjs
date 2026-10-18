@@ -1,7 +1,17 @@
 import assert from "node:assert/strict";
 import { createRequire } from "node:module";
+import { spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 import path from "node:path";
 import { testRuntime } from "./test-runtime.mjs";
+const args = process.argv.slice(2),
+  screenshot = args[0] === "--require-ocr" ? args[1] : args[0];
+if (args[0] === "--require-ocr" && !screenshot) {
+  console.error(
+    "OCR 回归必须提供原七课程截图文件：npm run test:ocr -- /absolute/path/to/reference.jpg；不传文件不能验证 OCR。",
+  );
+  process.exit(1);
+}
 const t = await testRuntime(),
   {
     parseWeeks,
@@ -18,6 +28,16 @@ const t = await testRuntime(),
   { detectCourseBoxes } = t.load("timetable-grid"),
   { recommendations } = t.load("matching");
 try {
+  if (!screenshot) {
+    const missingInput = spawnSync(
+      process.execPath,
+      [fileURLToPath(import.meta.url), "--require-ocr"],
+      { encoding: "utf8" },
+    );
+    assert.equal(missingInput.status, 1);
+    assert.match(missingInput.stderr, /OCR 回归必须提供/);
+    assert(!missingInput.stdout.includes("PASS"));
+  }
   for (const bad of ["", "not-a-date", "2026-02-30", "2026-10-"])
     assert.deepEqual(
       weekDates(bad),
@@ -147,6 +167,26 @@ try {
   assert.equal(sample.room, "TC-C-2012");
   assert.equal(sample.weeks, "1-3,4-10");
   assert(!sample.reviewed);
+  const standaloneRoom = parseLesson(
+    "HIS110-Seminar\nCB-301\nWeek: 2-12\n14:00 - 15:50",
+    3,
+  );
+  assert.equal(standaloneRoom.room, "CB-301");
+  assert.equal(standaloneRoom.title, "HIS110-Seminar");
+  assert.equal(standaloneRoom.campus, undefined);
+  assert(!standaloneRoom.reviewed);
+  const roomBeforeTitle = parseLesson(
+    "AB - 2002\n设计史\n周次：1-13\n09:00 - 10:30",
+    1,
+  );
+  assert.equal(roomBeforeTitle.room, "AB-2002");
+  assert.equal(roomBeforeTitle.title, "设计史");
+  const hyphenatedCourse = parseLesson(
+    "CSE-101\nWeek: 1-13\n09:00 - 10:30",
+    1,
+  );
+  assert.equal(hyphenatedCourse.title, "CSE-101");
+  assert.equal(hyphenatedCourse.room, "");
   const unusual = {
     weekOne: "2026-08-31",
     termEnd: "2027-01-01",
@@ -277,11 +317,11 @@ try {
   paint(662, 150, 135, 124, [160, 193, 245]);
   paint(662, 350, 135, 124, [233, 195, 247]);
   assert.equal(detectCourseBoxes(pixels, w, h).length, 7);
-  if (process.argv[2]) {
+  if (screenshot) {
     const require = createRequire(import.meta.url),
       sharp = require("sharp"),
       { createWorker, PSM } = require("tesseract.js"),
-      file = process.argv[2],
+      file = screenshot,
       meta = await sharp(file).metadata();
     const { data, info } = await sharp(file)
       .resize({ width: Math.min(1000, meta.width) })

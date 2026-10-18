@@ -185,11 +185,17 @@ export function parseLesson(text: string, day: number): Lesson {
   const times = normalized.match(
     /([0-2]?\d)[:.]([0-5]\d)\s*(?:-\s*)+([0-2]?\d)[:.]([0-5]\d)/,
   );
+  // Preserve standalone building-room codes without inferring their campus.
   const room =
-    normalized
-      .match(
+    (
+      normalized.match(
         /(?:TC|SIP)\s*-\s*[A-Z]{1,3}\s*-\s*\d{3,5}|(?:Room|教室|地点)\s*[:：]?\s*([A-Z]{1,4}[- ]?\d{2,5}|[^\n,，]{2,25})/i,
-      )?.[0]
+      )?.[0] ||
+      normalized.match(
+        /^[ \t]*[A-Z]{1,2}[ \t]*-[ \t]*\d{2,5}[A-Z]?[ \t]*$/im,
+      )?.[0] ||
+      ""
+    )
       .replace(/^(?:Room|教室|地点)\s*[:：]?\s*/i, "")
       .replace(/\s/g, "")
       .toUpperCase() || "";
@@ -200,23 +206,21 @@ export function parseLesson(text: string, day: number): Lesson {
       )?.[1]
       ?.trim()
       .replace(/\s/g, "") || "";
+  const titleLines = normalized
+    .split("\n")
+    .map((s) => s.trim())
+    .filter((s) => s.replace(/\s/g, "").toUpperCase() !== room);
   const title =
-    normalized
-      .split("\n")
-      .map((s) => s.trim())
-      .find(
-        (s) => /[A-Z]{2,6}\s*\d{2,5}/i.test(s) && !/^(Room|教室|地点)/i.test(s),
-      ) ||
-    normalized
-      .split("\n")
-      .map((s) => s.trim())
-      .find(
-        (s) =>
-          s.length > 1 &&
-          !/^(Week|周次|授课周次|教室|Room|\d{1,2}[:.]|周[一二三四五六日天]|星期[一二三四五六日天]|(?:MON|TUE|WED|THU|FRI|SAT|SUN)(?:DAY|SDAY|NESDAY|RSDAY|URDAY)?\s*$)/i.test(
-            s,
-          ),
-      ) ||
+    titleLines.find(
+      (s) => /[A-Z]{2,6}\s*\d{2,5}/i.test(s) && !/^(Room|教室|地点)/i.test(s),
+    ) ||
+    titleLines.find(
+      (s) =>
+        s.length > 1 &&
+        !/^(Week|周次|授课周次|教室|Room|\d{1,2}[:.]|周[一二三四五六日天]|星期[一二三四五六日天]|(?:MON|TUE|WED|THU|FRI|SAT|SUN)(?:DAY|SDAY|NESDAY|RSDAY|URDAY)?\s*$)/i.test(
+          s,
+        ),
+    ) ||
     "";
   return {
     id: crypto.randomUUID(),
