@@ -1,0 +1,45 @@
+U Use A1 visual assets / 19 October 2026
+
+1. Cover concept image
+File: Assets/UUse_Concept_StillLife.png
+Mode: built-in image generation tool, generated 19 October 2026.
+Purpose: illustrative equipment still life for the cover. These props are not
+actual listed inventory, committed supply, university facilities or research
+participants. The cover typography remains native editable PowerPoint text.
+
+Final generation prompt:
+Use case: product-mockup.
+Asset type: full-bleed 16:9 cover background for the U Use campus item-access pitch deck, ideally 2560x1440.
+Primary request: create an exceptionally polished photorealistic studio still life of useful student equipment. A compact black mirrorless camera, a teal scientific calculator, a folded clean white cotton lab coat, a small folded tabletop tripod and a dark green reusable student tote. These are concept props, not actual campus inventory.
+Composition: wide cinematic landscape. Group the objects in a handsome asymmetric arrangement in the RIGHT 43 percent, on a low brushed-aluminium surface. Keep the LEFT 54 percent genuinely empty, almost uniform very dark charcoal (#111C19), suitable for large white editable PowerPoint typography. The scene fills the entire image, with no frame, no card and no typography. Keep all props comfortably inside the canvas with generous breathing space at the right edge.
+Style: premium industrial product photography, tactile real materials, crisp inspectable objects, subtle grounded shadows, restrained editorial art direction. Charcoal and muted forest green with a tiny chartreuse accent on one calculator key. Directional softbox light from upper right. Clear separation of black camera from background. Background continues uninterrupted across the whole frame.
+Constraints: no people, no hands, no screens, no text, no logos, no watermark, no charts, no circles, no decorative geometric objects, no floating objects, no visible coloured gradient or glow. Do not invent or depict a real university building. Do not draw a slide or a website. Image only.
+
+2. Product screenshots
+The two images on slide 4 come from the actual U Use local engineering QA run
+on 19 October 2026. They show synthetic QA accounts, a posted need, an offer,
+and a completed return fixture. The second image is a detail crop.
+These images demonstrate implemented interface states, not real demand,
+customer satisfaction, user-test success rates or market transactions.
+The original personal timetable example is not included in this package.
+
+3. Native editable charts
+Slide 3: four-week planning stages, 80 invitations, 8 posted requests and
+2 completed requests. Source: Pilot model B7, B8 and B10 in the unchanged
+UUse_A1_Market_Options_Evidence.xlsx. These are planning outputs, not observed
+conversion. The literal chart snapshot retains those numbers.
+Slide 4: Manual bulletin 3.60, Managed pool 2.55 and U Use 3.80, on a 0-5 scale.
+Source: Options C12:E12 in the same unchanged workbook. Displayed values use
+two-decimal precision. The weights and scores are planning judgments, not
+participant ratings. The original formulas remain in the external workbook.
+
+4. Native editable journey, tables and timeline
+The journey is the proposed user flow. The BMC records proposed partners and
+planning economics. The timeline records preparation milestones and agreed
+responsibilities, not completed contributions or portal submissions.
+
+5. Academic disclosure
+The speaker notes preserve factual sources, model assumptions and visual
+credits. This record describes assistance and provenance; it is not evidence
+of university approval, research consent or submission. Complete the required
+AI-use declaration and check the latest LMO instructions before submission.
