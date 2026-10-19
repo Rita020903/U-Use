@@ -7,7 +7,7 @@ U Use is a campus item-access application for XJTLU students across SIP and XEC 
 | 要做什么 | 唯一当前入口 |
 | --- | --- |
 | 找自己的分工、每周任务、模板和个人 ZIP | [七人任务包](Team_Work_Packs_20261007/README.md) |
-| 看最新版 A1 六页 PPT、PDF、测算和待补清单 | [A1 当前交付（10 月 19 日视觉升级版）](A1_Current/README.md) |
+| 看最新版 A1 六页 PPT、PDF、测算和待补清单 | [A1 当前交付（10 月 19 日高信息密度视觉版）](A1_Current/README.md) |
 | 修改 A2 脚本、A3 草稿和 A4 支持 | [后续作业资料](Final_Submission_20261006/START_HERE.md) |
 | 看 15 份访谈的中文归纳 | [访谈润色稿](A1_Current/Research_Summaries.md) |
 | 开发产品、运行检查或看部署配置 | [产品代码](xjtlu-market-app/README.md) |

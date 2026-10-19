@@ -23,7 +23,7 @@ These images demonstrate implemented interface states, not real demand,
 customer satisfaction, user-test success rates or market transactions.
 The original personal timetable example is not included in this package.
 
-3. Native editable charts
+3. Native editable charts and scoring matrix
 Slide 3: four-week planning stages, 80 invitations, 8 posted requests and
 2 completed requests. Source: Pilot model B7, B8 and B10 in the unchanged
 UUse_A1_Market_Options_Evidence.xlsx. These are planning outputs, not observed
@@ -32,11 +32,25 @@ Slide 4: Manual bulletin 3.60, Managed pool 2.55 and U Use 3.80, on a 0-5 scale.
 Source: Options C12:E12 in the same unchanged workbook. Displayed values use
 two-decimal precision. The weights and scores are planning judgments, not
 participant ratings. The original formulas remain in the external workbook.
+The complete native scoring table on slide 4 uses Options A6:E10 with weighted
+outputs C12:E12. The coloured score cells encode the existing 1-5 judgments,
+where a higher score is preferred. Sensitivity values C18:E18 are 4.05, 2.10
+and 3.80 after moving 15 percentage points from scheduling to operating burden.
+These comparisons are not user ratings and do not validate market demand.
+Slide 5: cash allocations of hosting CNY60, email CNY20, materials CNY50 and
+contingency CNY50 use Pilot model B27:B30, total CNY180. The same unchanged
+model supplies CNY20 paid GMV, CNY0 pilot fee revenue and -CNY180 pilot cash
+contribution. Assumed team time is 56 hours, valued at CNY1,120. These are
+planning assumptions, not expenses incurred, invoices or actual revenue.
 
 4. Native editable journey, tables and timeline
 The journey is the proposed user flow. The BMC records proposed partners and
 planning economics. The timeline records preparation milestones and agreed
 responsibilities, not completed contributions or portal submissions.
+Slide 3 compares the visible scope of Xianyu, Renrenzu and ATRenew with the
+proposed U Use route. The local comparison tasks are the team's assessment,
+not claims that competitors globally lack features. Official sources were
+reviewed again on 19 October 2026 and remain cited in slide 3 speaker notes.
 
 5. Academic disclosure
 The speaker notes preserve factual sources, model assumptions and visual
