@@ -7,7 +7,7 @@ U Use is a campus item-access application for XJTLU students across SIP and XEC 
 | 要做什么 | 唯一当前入口 |
 | --- | --- |
 | 找自己的分工、每周任务、模板和个人 ZIP | [七人任务包](Team_Work_Packs_20261007/README.md) |
-| 看最新版 A1 六页 PPT、PDF、测算和待补清单 | [A1 当前交付（10 月 18 日）](A1_Current/README.md) |
+| 看最新版 A1 六页 PPT、PDF、测算和待补清单 | [A1 当前交付（10 月 19 日）](A1_Current/README.md) |
 | 修改 A2 脚本、A3 草稿和 A4 支持 | [后续作业资料](Final_Submission_20261006/START_HERE.md) |
 | 看 15 份访谈的中文归纳 | [访谈润色稿](A1_Current/Research_Summaries.md) |
 | 开发产品、运行检查或看部署配置 | [产品代码](xjtlu-market-app/README.md) |
@@ -20,7 +20,7 @@ U Use is a campus item-access application for XJTLU students across SIP and XEC 
 
 [Seven individual work packs / 七人任务包](Team_Work_Packs_20261007/README.md) contains the roles confirmed on 7 October, calendar-aligned weekly task cards, independent personal folders and the assessment/submission tracker. It distinguishes plans, real evidence and synthetic training examples; none of its checklists claim that a portal submission has happened.
 
-[Current A1 / 18 October 2026](A1_Current/README.md) contains the latest exact six-slide deck, matching PDF, editable pilot and concept model, interview summaries and remaining-input checklist. It supersedes the A1 in the 6 October package and personal ZIP copies. The current teaching week is Week 5 (12–18 October), with Week 6 starting on 19 October.
+[Current A1 / 19 October 2026](A1_Current/README.md) contains the latest exact six-slide deck, matching PDF, editable pilot and concept model, interview summaries and remaining-input checklist. The deck now reflects the scoped engineering acceptance of code `cbb28a6` and a feature freeze for real user validation. The model and interview summaries remain unchanged from 18 October. It supersedes the A1 in the 6 October package and personal ZIP copies. The current teaching week is Week 6 (19–25 October).
 
 [6 October supporting package](Final_Submission_20261006/START_HERE.md) remains the preparation entry for the twelve-slide A3 draft, A2 recording script, venture dossier and seven individual A4 writing guides. It is reconciled with the supplied handbook, not proof of completed research or portal submission. The recorded video, personal reflections and submission receipts remain team responsibilities.
 
