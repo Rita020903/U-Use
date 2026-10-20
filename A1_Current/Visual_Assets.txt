@@ -1,4 +1,4 @@
-U Use A1 visual assets / 19 October 2026
+U Use A1 visual assets / 20 October 2026 / formal brief alignment
 
 1. Cover concept image
 File: Assets/UUse_Concept_StillLife.png
@@ -16,41 +16,41 @@ Style: premium industrial product photography, tactile real materials, crisp ins
 Constraints: no people, no hands, no screens, no text, no logos, no watermark, no charts, no circles, no decorative geometric objects, no floating objects, no visible coloured gradient or glow. Do not invent or depict a real university building. Do not draw a slide or a website. Image only.
 
 2. Product screenshots
-The two images on slide 4 come from the actual U Use local engineering QA run
+The two images on slide 3 come from the actual U Use local engineering QA run
 on 19 October 2026. They show synthetic QA accounts, a posted need, an offer,
 and a completed return fixture. The second image is a detail crop.
 These images demonstrate implemented interface states, not real demand,
 customer satisfaction, user-test success rates or market transactions.
 The original personal timetable example is not included in this package.
 
-3. Native editable charts and scoring matrix
-Slide 3: four-week planning stages, 80 invitations, 8 posted requests and
-2 completed requests. Source: Pilot model B7, B8 and B10 in the unchanged
-UUse_A1_Market_Options_Evidence.xlsx. These are planning outputs, not observed
-conversion. The literal chart snapshot retains those numbers.
-Slide 4: Manual bulletin 3.60, Managed pool 2.55 and U Use 3.80, on a 0-5 scale.
-Source: Options C12:E12 in the same unchanged workbook. Displayed values use
-two-decimal precision. The weights and scores are planning judgments, not
-participant ratings. The original formulas remain in the external workbook.
-The complete native scoring table on slide 4 uses Options A6:E10 with weighted
-outputs C12:E12. The coloured score cells encode the existing 1-5 judgments,
-where a higher score is preferred. Sensitivity values C18:E18 are 4.05, 2.10
-and 3.80 after moving 15 percentage points from scheduling to operating burden.
-These comparisons are not user ratings and do not validate market demand.
-Slide 5: cash allocations of hosting CNY60, email CNY20, materials CNY50 and
-contingency CNY50 use Pilot model B27:B30, total CNY180. The same unchanged
-model supplies CNY20 paid GMV, CNY0 pilot fee revenue and -CNY180 pilot cash
-contribution. Assumed team time is 56 hours, valued at CNY1,120. These are
-planning assumptions, not expenses incurred, invoices or actual revenue.
+3. Native editable charts and tables
+Slide 2: four-week planning stages, 80 invitations, 8 posted requests and
+2 completed requests, sourced from Pilot model B7, B8 and B10 in the
+unchanged UUse_A1_Market_Options_Evidence.xlsx. These are assumptions,
+not observed conversion. The table retains qualitative interview IDs.
+Slide 5: hosting60/email20/materials50/contingency50, total CNY180,
+sourced from Pilot model B27:B30. Paid GMV20, pilot fee0, cash result-180.
+The later CNY1 fee illustration assumes 5% of a CNY20 paid transaction,
+before costs, not pilot revenue. Deposits and team time are separate.
+The nine-block BMC is a native editable table. Partners are proposed.
 
-4. Native editable journey, tables and timeline
-The journey is the proposed user flow. The BMC records proposed partners and
-planning economics. The timeline records preparation milestones and agreed
-responsibilities, not completed contributions or portal submissions.
-Slide 3 compares the visible scope of Xianyu, Renrenzu and ATRenew with the
-proposed U Use route. The local comparison tasks are the team's assessment,
-not claims that competitors globally lack features. Official sources were
-reviewed again on 19 October 2026 and remain cited in slide 3 speaker notes.
+The three-concept comparison and sensitivity remain in the support workbook,
+not on the technology slide. Weights and scores are planning judgments:
+3.60/2.55/3.80, sensitivity4.05/2.10/3.80; not participant ratings.
+
+4. Native editable flow, technology and team
+Slide 3 shows the date-aware need/offer/handoff/agreement journey.
+Slide 4 shows browser-local PDF/OCR import, mandatory review, constraints,
+ranked suggestions and bilateral confirmation. Source: current repository
+lib/matching.ts, lib/timetable.ts and lib/timetable-import.ts.
+Heuristics are not a trained AI model; OCR is not guaranteed.
+Slide 6 lists all seven assigned roles/capability areas and dated next gates.
+These are responsibilities, not verified credentials or completed contributions.
+The team name remains provisional following Rita's clarification.
+
+Slide 2 names Xianyu, Renrenzu and ATRenew as real substitutes; source links
+remain in speaker notes. Current feature availability does not establish
+local willingness to adopt, superiority or an exclusive technical moat.
 
 5. Academic disclosure
 The speaker notes preserve factual sources, model assumptions and visual

@@ -7,8 +7,10 @@ U Use is a campus item-access application for XJTLU students across SIP and XEC 
 | 要做什么 | 唯一当前入口 |
 | --- | --- |
 | 找自己的分工、每周任务、模板和个人 ZIP | [七人任务包](Team_Work_Packs_20261007/README.md) |
-| 看最新版 A1 六页 PPT、PDF、测算和待补清单 | [A1 当前交付（10 月 19 日高信息密度视觉版）](A1_Current/README.md) |
-| 修改 A2 脚本、A3 草稿和 A4 支持 | [后续作业资料](Final_Submission_20261006/START_HERE.md) |
+| 看最新版 A1 六页 PPT、PDF、测算和待补清单 | [A1 当前交付（10 月 20 日正式 brief 对齐版）](A1_Current/README.md) |
+| 看四项正式要求、格式、评分和提交渠道 | [课程总控](Coursework_Requirements_20261020.md) |
+| 录制 A2、复核预测与资金用途 | [A2 当前准备](A2_Current/README.md) |
+| 修改 A3 草稿和 A4 支持 | [后续作业资料](Final_Submission_20261006/START_HERE.md) |
 | 看 15 份访谈的中文归纳 | [访谈润色稿](A1_Current/Research_Summaries.md) |
 | 开发产品、运行检查或看部署配置 | [产品代码](xjtlu-market-app/README.md) |
 | 看代码能否封版、实际验收范围和剩余上线条件 | [工程验收结论](xjtlu-market-app/RELEASE_ACCEPTANCE.md) |
@@ -20,11 +22,11 @@ U Use is a campus item-access application for XJTLU students across SIP and XEC 
 
 [Seven individual work packs / 七人任务包](Team_Work_Packs_20261007/README.md) contains the roles confirmed on 7 October, calendar-aligned weekly task cards, independent personal folders and the assessment/submission tracker. It distinguishes plans, real evidence and synthetic training examples; none of its checklists claim that a portal submission has happened.
 
-[Current A1 / 19 October 2026](A1_Current/README.md) contains the latest exact six-slide deck, matching PDF, editable pilot and concept model, claim-evidence map, interview summaries and remaining-input checklist. The deck reflects the scoped engineering acceptance of code `cbb28a6` and a feature freeze for real user validation. Rita reports approximately 430 students across the eight DTS classes. This cohort estimate is separate from the 80 planned invitations and two planned completions over four weeks. Recruitment permission and actual participation remain unconfirmed. The interview summaries remain unchanged from 18 October. This edition supersedes the A1 in the 6 October package and personal ZIP copies. The current teaching week is Week 6 (19–25 October).
+[Current A1 / 20 October 2026](A1_Current/README.md) contains the latest exact six-slide deck, matching PDF, editable pilot and concept model, claim-evidence map, interview summaries and remaining-input checklist. The deck reflects the scoped engineering acceptance of code `cbb28a6` and a feature freeze for real user validation. Rita reports approximately 430 students across the eight DTS classes. This cohort estimate is separate from the 80 planned invitations and two planned completions over four weeks. Recruitment permission and actual participation remain unconfirmed. The interview summaries remain unchanged from 18 October. This edition follows the formal six-slide brief architecture, adds all seven cover names and a technology slide, and supersedes earlier A1 copies. The 20 October personal ZIPs include current requirements and links to canonical artifacts. The current teaching week is Week 6 (19–25 October).
 
 The market context now uses **4,000+ XEC students**, as reported in a [May 2026 Xinhua Daily article hosted by XJTLU](https://www.xjtlu.edu.cn/zh/news/2026/05/xinhuaribao20zhounianxinwen). It is dated campus population context, not an October register or measured demand. The university-wide population is excluded from this XEC-first pilot denominator.
 
-[6 October supporting package](Final_Submission_20261006/START_HERE.md) remains the preparation entry for the twelve-slide A3 draft, A2 recording script, venture dossier and seven individual A4 writing guides. It is reconciled with the supplied handbook, not proof of completed research or portal submission. The recorded video, personal reflections and submission receipts remain team responsibilities.
+[Formal coursework requirements / 20 October](Coursework_Requirements_20261020.md) reconciles all four assessments with the supplied final CW brief. [A2 preparation](A2_Current/README.md) now includes an English recording script and an editable six-month financial model. [A3/A4 preparation](Final_Submission_20261006/START_HERE.md) includes a refreshed twelve-slide working draft and independent reflection guidance. A1/A2 require the same approved file on LMO and Dream Chaser, A3 is an eight-minute pitch plus five-minute Q&A, and A4 is 1,500–2,000 words with at least three academic references in APA 7. The recorded video, authentic personal reflections, team sign-off and actual receipts remain outstanding.
 
 The project is not a generic second-hand marketplace. Its core idea is that students often need temporary access to an item without wanting to own it permanently. U Use turns that temporary use case into a structured product flow: verified identity, available time window, deposit rule, public handoff point, booking confirmation, return confirmation, and admin review.
 
@@ -83,7 +85,9 @@ ENT303TC/
 ├── ARCHITECTURE.md
 ├── TEAM_ROSTER_AND_DATA_POLICY.md
 ├── 00_README_先看这个.md
+├── Coursework_Requirements_20261020.md
 ├── A1_Current/                 # Latest six-slide A1 and supporting model
+├── A2_Current/                 # Recording script, model and production guide
 ├── Team_Work_Packs_20261007/
 ├── Final_Submission_20261006/
 ├── Team_Examples_SYNTHETIC_20261007/
@@ -98,7 +102,8 @@ Important folders:
 - `ARCHITECTURE.md`: current application layers, ownership, storage, privacy and verification boundaries.
 - `Team_Work_Packs_20261007/`: seven personal work packs and downloadable ZIPs, weekly tasks and submission tracking.
 - `A1_Current/`: latest A1 PPT, PDF, model, interview paraphrases and progress checklist.
-- `Final_Submission_20261006/`: A2/A3/A4 preparation and earlier supporting materials; its old A1 is superseded.
+- `A2_Current/`: canonical recording preparation and conservative financial model; no completed MP4.
+- `Final_Submission_20261006/`: refreshed A3/A4 preparation and clearly historical October 6 support; its old A1 and old market workbook are superseded.
 - `Team_Examples_SYNTHETIC_20261007/`: historical interview draft and labelled synthetic test exercises. Current interview paraphrases are separate from the 100-person fictional task data.
 - `.github/workflows/verify.yml`: automated checks using an isolated PostgreSQL service, not the production database.
 - `Evidence_Hub/`: current record templates and instructions for private evidence; historical planning documents are isolated under `Archive/`, not presented as completed research.

@@ -1,8 +1,8 @@
 # U Use 组员入口
 
-当前版本：2026-10-18。校区名称统一为 SIP / XEC（太仓）。现在是第一学期 Week 5 结束；Week 6 为 10 月 19 日至 25 日。
+当前版本：2026-10-20，已核对正式 CW brief。校区统一为 SIP / XEC（太仓），本周为 S1 Week 6（10 月 19 日至 25 日）。
 
-**先看 [A1 当前交付](A1_Current/README.md)**：最新版六页 PPT、PDF、测算、中文访谈归纳及整体待补清单均在这里。10 月 6 日旧 A1 和个人 ZIP 内的旧副本不再作为主稿。
+**先看 [A1 当前交付](A1_Current/README.md)**：最新版六页 PPT、PDF、测算、中文访谈归纳及整体待补清单均在这里。旧 A1 不再作为主稿；本次已重打七人个人 ZIP，含当前要求与主稿链接。
 
 ## 先看自己的任务包
 
@@ -15,7 +15,9 @@
 | 看分工、本周任务、填写模板、交接与提交检查 | [七人任务包](Team_Work_Packs_20261007/README.md) |
 | 看 A1 六页成稿、PDF、测算与待补项 | [A1 当前交付](A1_Current/README.md) |
 | 看 15 份访谈的自然语言整理 | [中文访谈归纳](A1_Current/Research_Summaries.md) |
-| 改 A3 草稿、A2 脚本和 A4 写作支持 | [后续作业准备](Final_Submission_20261006/START_HERE.md) |
+| 查四项格式、评分、截止和双渠道提交 | [正式要求总控](Coursework_Requirements_20261020.md) |
+| 看 A2 英文录制稿、六个月模型和分镜 | [A2 当前准备](A2_Current/README.md) |
+| 改 A3 草稿和 A4 写作支持 | [后续作业准备](Final_Submission_20261006/START_HERE.md) |
 | 改产品、运行测试、看上线配置 | [产品代码与说明](xjtlu-market-app/README.md)；[架构](ARCHITECTURE.md) |
 | 学习访谈记录和用户测试统计方法 | [AI 合成练习](Team_Examples_SYNTHETIC_20261007/README.md)，不能作为真实研究提交 |
 
@@ -23,7 +25,7 @@
 
 姓名和职责以 [团队分工与数据规则](TEAM_ROSTER_AND_DATA_POLICY.md) 及七人任务包为准。课程要求与日期查看 [评分与提交要求](Team_Work_Packs_20261007/01_评分与提交要求.md)、[校历与倒排](Team_Work_Packs_20261007/02_校历与倒排.md) 和 [提交总账](Team_Work_Packs_20261007/04_提交总账.md)。
 
-如学校发布新的独立 assessment brief，以官方要求为准并同步任务包。不要继续使用旧 Week 3 分工、旧日历或旧文件里“直接照做”的说明。
+正式 CW brief 已收到并同步。后续如有更新，以正式公告为准。A1、A2 都要 LMO 与 Dream Chaser 双渠道；A2 为英文 MP4、3–6 分钟、≤500 MB；A3 为 8 分钟展示 + 5 分钟问答；A4 每人 1,500–2,000 英文词、.docx、APA 7。不要继续使用旧 Week 3 分工、旧日历或旧文件里“直接照做”的说明。
 
 ## 每周怎么交接
 
