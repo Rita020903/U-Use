@@ -1,4 +1,4 @@
-U Use A1 visual assets / 20 October 2026 / formal brief alignment
+U Use A1 visual assets / 31 October 2026 / checklist review revision
 
 1. Cover concept image
 File: Assets/UUse_Concept_StillLife.png
@@ -46,13 +46,29 @@ lib/matching.ts, lib/timetable.ts and lib/timetable-import.ts.
 Heuristics are not a trained AI model; OCR is not guaranteed.
 Slide 6 lists all seven assigned roles/capability areas and dated next gates.
 These are responsibilities, not verified credentials or completed contributions.
-The team name remains provisional following Rita's clarification.
+The project-team label is U Use Team because no separate team name was supplied.
+Rita leads product/technical coordination and reports carrying the main
+workload. The other roles are assigned responsibilities; actual completed
+contributions and capability examples still need member confirmation.
 
 Slide 2 names Xianyu, Renrenzu and ATRenew as real substitutes; source links
 remain in speaker notes. Current feature availability does not establish
 local willingness to adopt, superiority or an exclusive technical moat.
 
 5. Academic disclosure
+The31October edit uses the newer desktop source, preserving the existing
+cover and QA image assets. Slide2 now includes a task-fit comparison table
+and dated UK campus-research context, not a new local research sample.
+Slide5 adds the later contribution/break-even scenario from the unchanged
+A2 model. Both native chart workbooks retain their original embedded bytes.
+Original prompts and source image files remain unchanged.
+
+Latest scope clarification on31October: eight DTS classes, approximately430,
+are the initial channel. Wider SIP/XEC promotion is the next-step plan,
+not an achieved launch. Slide2 removes the XEC-only population headline.
+Mixed SIP/XEC qualitative summaries fit the intended outreach scope.
+Slide5 updates the segments/channels, with no increase to forecast demand.
+
 The speaker notes preserve factual sources, model assumptions and visual
 credits. This record describes assistance and provenance; it is not evidence
 of university approval, research consent or submission. Complete the required
