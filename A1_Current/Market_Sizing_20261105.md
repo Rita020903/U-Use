@@ -8,29 +8,25 @@ XJTLU's [English overview](https://www.xjtlu.edu.cn/en/about/overview) and [Chin
 
 This is the university's reported institution-wide population, not a verified current XEC-only population, a campus split, local reach, registrations or paying customers. For reproducible arithmetic use the fixed reference **N = 26,000**, while retaining the plus sign when displaying the official figure. This reference is not an exact enrolment count or a claim that 26,000 is the maximum possible population.
 
-## Serviceable-demand formula
+## Low-use serviceable-demand scenarios
 
 **SAM(4 weeks) = N × c × d**
 
-- **N:** published university population reference, 26,000 students.
-- **c:** share physically able to use an SIP/XEC handoff in the observation window. This removes people outside the local service boundary.
-- **d:** conditional share of those locally serviceable students with an unmet planned item need during the same four weeks, after considering familiar peers and existing services.
+- **N:** the published university population reference, 26,000 students.
+- **c:** share physically eligible for a feasible SIP/XEC handoff in the four-week window.
+- **d:** conditional share of those eligible students with a planned item need that familiar peers or existing channels cannot meet in that same window.
 
-The demand definition covers relevant student requesters. It does not count every student as a buyer or assume that every idle item has a willing owner. Staff, visitors and people unable to make a feasible campus handoff are outside this student-service model. Supply, willingness to register/pay and operating capacity constrain fulfilment separately.
+Use **c = 50%** as a planning input, not an official campus-share statistic. Explore **d = 0.1%, 0.25%, 0.5%** as alternative low-use assumptions. The model excludes staff, visitors and people unable to make a feasible campus handoff. Relevant supply, willingness to register/pay, travel and operating capacity constrain fulfilment separately.
 
-**Illustrative planning case:** c = 80%; d = 1%.
-
-**26,000 × 0.80 × 0.01 = 208 potentially serviceable students in four weeks.**
-
-The two percentages are explicit scenario inputs chosen for planning. They are **not** findings from the 15 qualitative summaries, an official campus-share estimate, measured adoption or a demand forecast. No quantitative demand prevalence has been established. The numerical example becomes an evidence-based estimate only when the inputs are replaced with suitable observations.
-
-| Unmet-need share d, with c held at 80% | Calculation | Scenario output |
+| Four-week unmet-need assumption d | Calculation | Scenario output |
 | --- | --- | --- |
-| 0.5% | 26,000 × 0.80 × 0.005 | 104 students / four weeks |
-| 1% | 26,000 × 0.80 × 0.01 | 208 students / four weeks |
-| 2% | 26,000 × 0.80 × 0.02 | 416 students / four weeks |
+| 0.1% | 26,000 × 0.50 × 0.001 | 13 people |
+| 0.25% | 26,000 × 0.50 × 0.0025 | 32.5, approximately 33 people |
+| 0.5% | 26,000 × 0.50 × 0.005 | 65 people |
 
-These sensitivity cases expose uncertainty; they do not establish growth or prove that this many students will use U Use.
+The **13–65** span is a set of chosen planning cases. It is **not** a confidence interval, observed lower/upper bound, verified market estimate or adoption forecast. The arithmetic is reproducible; the demand inputs remain assumptions. Lowering them does not make them measured evidence. Neither the 15 qualitative summaries nor the approximate 78-person participation account provides a representative denominator for these rates.
+
+The population definition, time window, local eligibility and unmet need are explicit so that observed evidence can later replace the scenario inputs. No campus-wide revenue or growth claim follows from the official headcount.
 
 ## Initial channel and obtainable pilot activity
 
@@ -49,9 +45,11 @@ The retained four-week pilot assumptions are:
 
 The owner capacity is eight possible uses in the scenario, but expected fulfilment is two. Invitations, requests, willing owners and completions are planning inputs/outputs, not achieved recruitment or transactions. The two completions are a transaction count, not two students or the university's market size. Eligibility and compatible supply must also hold; the formula is a simplified bounded pilot case, not a guarantee of matches.
 
-## Financial boundary
+## Financial boundary and cost-recovery strategy
 
-The official population and 208-person illustration are not directly multiplied by a rental price or platform fee. Pilot GMV remains **2 completions × 50% paid × CNY20 = CNY20**, platform fee revenue **CNY0**, cash budget **CNY180**, and cash result **−CNY180**.
+The official population and the 13–65-person sensitivity cases are not directly multiplied by a rental price or platform fee. Pilot GMV remains **2 completions × 50% paid × CNY20 = CNY20**, platform fee revenue **CNY0**, cash budget **CNY180**, and cash result **−CNY180**.
+
+Live transactions have not opened according to Rita. The strategy is a free transaction pilot, then evidence of cost recovery before a profit objective. The amounts above are prospective budgets and scenario outputs, not actual trades, income, spending or profit. No historical profit is inferred without cash records.
 
 The later cash break-even threshold remains **334 completed transactions/month** under its separate 5% fee scenario. This is a conditional cost calculation, not a prediction that the population base or serviceable-demand scenario can produce that activity. Team time, tax and unpriced losses are outside that threshold.
 

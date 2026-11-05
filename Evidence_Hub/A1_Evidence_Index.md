@@ -7,6 +7,7 @@ Current index: 5 November 2026. This repository already contains the public Evid
 | Current submission deck and preview | [A1 Current](../A1_Current/README.md) | Six-slide problem, market, solution, technology, business model and team case |
 | Claim-evidence map | [Claims and Evidence](../A1_Current/Claims_and_Evidence.csv) | Claim IDs, sources, type of support and limitations |
 | Market population and formula | [Market boundary and calculations](../A1_Current/Market_Sizing_20261105.md) | Official 26,000+ population source, explicit four-week scenario and distinct pilot-activity units |
+| Research/testing participation | [Retrospective participation account](../A1_Current/Research_Participation_20261105.md) | Approximate78-person team estimate across questionnaire, iterative experience and feedback; not78 completed tasks or transactions |
 | Local qualitative material | [15 edited summaries](../A1_Current/Research_Summaries.md) | V001–V015, mixed SIP/XEC, needs and contrary responses; edited summaries rather than raw transcripts or population estimates |
 | Roles and contribution record | [Current allocation and record](00_Team_Admin/03_分工表.md) | Named work ownership and Rita-confirmed campus recorders/log responsibilities; allocated work is distinct from completed output |
 | Weekly Log | [Log entry point](01_Weekly_Log/README.md) | Huang Yuxuan's responsibility, existing instructions and linkage to actual team logs |
@@ -19,7 +20,7 @@ Current index: 5 November 2026. This repository already contains the public Evid
 
 ## Record boundaries
 
-The existence of this Hub is confirmed. Rita confirms SIP interview recording by Li Yuanlong, XEC recording by Huang Junjie, and Weekly Logs W1–W7 submitted to LMO by Huang Yuxuan. Interview dates are not recalled; exact dates, independent raw-record links, consent records and portal receipts have not been established from the public files inspected. They are not created from templates or inferred from Git timestamps.
+The existence of this Hub is confirmed. Rita describes approximately78 research/testing participants across different activity types. This is a team retrospective estimate, with participant-level data not retained; stage allocations, overlap, percentages and task results are not recreated. Live transaction use has not opened.  Rita confirms SIP interview recording by Li Yuanlong, XEC recording by Huang Junjie, and Weekly Logs W1–W7 submitted to LMO by Huang Yuxuan. Interview dates are not recalled; exact dates, independent raw-record links, consent records and portal receipts have not been established from the public files inspected. They are not created from templates or inferred from Git timestamps.
 
 Private participant identities, raw recordings, consent signatures and portal receipts belong in the team's controlled-access store, linked through anonymous evidence IDs as appropriate. Access to that store is separate from readability of the public repository. Templates and historical plans remain labelled accordingly. The 100-person synthetic practice dataset is not local user research.
 
